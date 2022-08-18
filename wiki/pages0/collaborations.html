@@ -1,240 +1,39 @@
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
-    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+{% extends "layout.html" %}
+  
+{% block title %}Collaborations{% endblock %}
+{% block lead %}Sharing and collaboration are core values of iGEM. We encourage you to reach out and work with other teams on difficult problems that you can more easily solve together.{% endblock %}
 
-    <!-- Bootstrap CSS -->
-<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
-<link href="../../static/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
-<link href="../../static/style.css" rel="stylesheet">
+{% block page_content %}
 
-    <title>Attributions | IISER_TVM - iGEM 2022</title>
-
-</head>
-
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-
-    <!---- TEAM NAME ---->
-    <a class="navbar-brand" href="#">IISER_TVM</a>
-
-    <!---- SMALL SCREEN MENU ICON ---->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto left-aligned">
-
-        <!---- HOME ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-        </li>
-
-        <!---- TEAM ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Team
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
-          </ul>
-        </li>
-
-        <!---- PROJECT ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Project
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
-          </ul>
-        </li>
-
-        <!---- PARTS ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Parts
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
-          </ul>
-        </li>
-
-        <!---- SAFETY ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
-        </li>
-
-        <!---- HUMAN PRACTICES ---->
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
-        </li>
-
-        <!---- AWARDS ---->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Awards
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
-            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-  <div class="row mt-4">
-    <div class="col">
-      <div class="bd-callout bd-callout-info">
-        <h4>Silver Medal Criterion #2</h4>
-        <p>Collaborate with one (or more) 2022 iGEM team(s) in a meaningful way.</p>
-        <hr>
-        <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-lg-6">
-      <h2>Which teams can we work with?</h2>
+<div class="row mt-4">
+  <div class="col">
+    <div class="bd-callout bd-callout-info">
+      <h4>Silver Medal Criterion #2</h4>
+      <p>Collaborate with one (or more) 2022 iGEM team(s) in a meaningful way.</p>
       <hr>
-      <p>You can work with any other iGEM 2022 team in the competition. You can also work with non-iGEM research groups, but they do not count towards the iGEM team collaboration silver medal criterion.</p>
-    </div>
-    <div class="col-lg-6">
-      <h2>Some suggestions</h2>
-      <hr>
-      <ul>
-        <li>Improve the function of another team's BioBrick Part or Device</li>
-        <li>Characterize another team's part</li>
-        <li>Debug a construct</li>
-        <li>Model or simulate another team's system</li>
-        <li>Test another team's software</li>
-        <li>Help build and test another team's hardware project</li>
-      </ul>
+      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
     </div>
   </div>
 </div>
 
-<!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
-<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-6 col-xs-12">
-        <h4 class="mb-3">Heading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-          <ul class="m-2 p-2">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Nam mauris velit</a></li>
-            <li><a href="#">Etiam vitae mauris</a></li>
-            <li><a href="#">Fusce scelerisque</a></li>
-            <li><a href="#">Sed faucibus</a></li>
-            <li><a href="#">Mauris efficitur nulla</a></li>
-          </ul>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
-        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
-        <p class="mb-0">(541) 754-3010</p>
-        <p>info@hsdf.com</p>
-      </div>
-    </div>
+<div class="row mt-4">
+  <div class="col-lg-6">
+    <h2>Which teams can we work with?</h2>
     <hr>
-    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
-    <div class="row mt-4">
-      <div class="col">
-        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
-	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
-      </div>
-    </div>
+    <p>You can work with any other iGEM 2022 team in the competition. You can also work with non-iGEM research groups, but they do not count towards the iGEM team collaboration silver medal criterion.</p>
   </div>
-</footer>
+  <div class="col-lg-6">
+    <h2>Some suggestions</h2>
+    <hr>
+    <ul>
+      <li>Improve the function of another team's BioBrick Part or Device</li>
+      <li>Characterize another team's part</li>
+      <li>Debug a construct</li>
+      <li>Model or simulate another team's system</li>
+      <li>Test another team's software</li>
+      <li>Help build and test another team's hardware project</li>
+    </ul>
+  </div>
+</div>
 
-<!-- Wiki Tools: Teams are allowed to remove it -->
-<style>
-    .wiki-tools-footer {
-        --bs-gutter-x: 1.5rem;
-        background: #222124;
-        margin: 0;
-        max-width: 100%;
-        padding: 1rem 3rem;
-        display: flex;
-        gap: 1.5em;
-    }
-    .wiki-tools-footer a {
-        text-decoration: none;
-        color: white;
-        font-weight: 400;
-        transition: color 0.3s;
-    }
-    .wiki-tools-footer a:hover {
-        color: #08C784;
-    }
-    .wiki-tools-footer img {
-        object-fit: contain;
-    }
-</style>
-
-<section class="wiki-tools-footer container">
-    <a id="wiki-tools-link">Access Wiki Tools</a>
-    <a id="wiki-tools-repo">View Source Code</a>
-    <img id="wiki-tools-pipeline">
-</section>
-
-<script>
-    const wikiToolsLink = document.getElementById('wiki-tools-link')
-    const wikiToolsRepo = document.getElementById('wiki-tools-repo')
-    const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
-
-    const path = document.location.pathname.split('/')
-
-    const competitionSlug = document.location.host.split('.')[0]
-    const teamSlug = path[1]
-    const page = path[2] === '' ? 'index' : path[2]
-
-    wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
-    wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
-    wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
-</script>
-
-
-<!-- Bootstrap Bundle with Popper -->
-<!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
-<script src="../../static/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% endblock %}

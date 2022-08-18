@@ -1,128 +1,330 @@
-{% extends "layout.html" %}
-  
-{% block title %}Parts{% endblock %}
-{% block lead %}This page contains information about the parts created by the team.{% endblock %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
-{% block page_content %}
+    <!-- Bootstrap CSS -->
+<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
+<link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+<link href="../../static/style.css" rel="stylesheet">
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>Overview</h2>
-    <hr>
-    <p>Each team will make new parts during iGEM and will add them to the Registry of Standard Biological Parts</p>
-    <p>Remember that the goal of proper part documentation is to describe and define a part, so that it can be used without needing to refer to the primary literature. Registry users in future years should be able to read your documentation and be able to use the part successfully. Also, you should provide proper references to acknowledge previous authors and to provide for users who wish to know more.</p>
-  </div>
-</div>
+    <title>Attributions | IISER_TVM - iGEM 2022</title>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>Table</h2>
-    <hr>
-    <p>Please include a table of all the parts your team has made during your project on this page. For example:</p>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Type</th>
-          <th scope="col">Description</th>
-          <th scope="col">Designers</th>
-          <th scope="col">Length</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="http://parts.igem.org/Part:BBa_B0011">BBa_B0011</a></th>
-          <td>Terminator</td>
-          <td>LuxICDABEG (+/-)</td>
-          <td>Reshma Shetty</td>
-          <td>46 bp</td>
-        </tr>
-        <tr>
-          <td><a href="http://parts.igem.org/Part:BBa_C0012">BBa_C0012</a></th>
-          <td>Coding lacI</td>
-          <td>lacI repressor from E. coli (+LVA)</td>
-          <td>Grace Kenney, Daniel Shen, Neelaksh Varshney, Samantha Sutton</td>
-          <td>1153 bp</td>
-        </tr>
-        <tr>
-          <td><a href="http://parts.igem.org/Part:BBa_E0020">BBa_E0020</a></th>
-          <td>Coding ecfp</td>
-          <td>engineered cyan fluorescent protein derived from A. victoria GFP</td>
-          <td>Caitlin Conboy and Jennifer Braff</td>
-          <td>723 bp</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+</head>
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-warning">
-      <h4>Note</h4>
-      <p>Parts must be well documented on each Part's Main Page on the <a href="http://parts.igem.org">Registry</a>. This documentation includes all of the characterization data for your parts. <b>The part's data MUST be on the part's Main Page on the Registry for your team to be eligible for medals and special prizes pertaining to parts.</b></p>
-      <p>This page serves to <i>showcase</i> the parts you have made and should include links to the Registry pages for your parts. Future teams and other users are much more likely to find parts by looking in the Registry than by looking at your team wiki.</p>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="#">IISER_TVM</a>
+
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
+
+        <!---- HOME ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <!---- TEAM ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
+        </li>
+
+        <!---- PROJECT ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+          </ul>
+        </li>
+
+        <!---- PARTS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+          </ul>
+        </li>
+
+        <!---- SAFETY ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        </li>
+
+        <!---- HUMAN PRACTICES ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        </li>
+
+        <!---- AWARDS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Awards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+          </ul>
+        </li>
+
+      </ul>
     </div>
   </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Overview</h2>
+      <hr>
+      <p>Each team will make new parts during iGEM and will add them to the Registry of Standard Biological Parts</p>
+      <p>Remember that the goal of proper part documentation is to describe and define a part, so that it can be used without needing to refer to the primary literature. Registry users in future years should be able to read your documentation and be able to use the part successfully. Also, you should provide proper references to acknowledge previous authors and to provide for users who wish to know more.</p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Table</h2>
+      <hr>
+      <p>Please include a table of all the parts your team has made during your project on this page. For example:</p>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Designers</th>
+            <th scope="col">Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="http://parts.igem.org/Part:BBa_B0011">BBa_B0011</a></th>
+            <td>Terminator</td>
+            <td>LuxICDABEG (+/-)</td>
+            <td>Reshma Shetty</td>
+            <td>46 bp</td>
+          </tr>
+          <tr>
+            <td><a href="http://parts.igem.org/Part:BBa_C0012">BBa_C0012</a></th>
+            <td>Coding lacI</td>
+            <td>lacI repressor from E. coli (+LVA)</td>
+            <td>Grace Kenney, Daniel Shen, Neelaksh Varshney, Samantha Sutton</td>
+            <td>1153 bp</td>
+          </tr>
+          <tr>
+            <td><a href="http://parts.igem.org/Part:BBa_E0020">BBa_E0020</a></th>
+            <td>Coding ecfp</td>
+            <td>engineered cyan fluorescent protein derived from A. victoria GFP</td>
+            <td>Caitlin Conboy and Jennifer Braff</td>
+            <td>723 bp</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <div class="bd-callout bd-callout-warning">
+        <h4>Note</h4>
+        <p>Parts must be well documented on each Part's Main Page on the <a href="http://parts.igem.org">Registry</a>. This documentation includes all of the characterization data for your parts. <b>The part's data MUST be on the part's Main Page on the Registry for your team to be eligible for medals and special prizes pertaining to parts.</b></p>
+        <p>This page serves to <i>showcase</i> the parts you have made and should include links to the Registry pages for your parts. Future teams and other users are much more likely to find parts by looking in the Registry than by looking at your team wiki.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Adding parts to the Registry</h2>
+      <hr>
+      <p>You can add parts to the Registry at our <a href="http://parts.igem.org/Add_a_Part_to_the_Registry">Add a Part to the Registry</a> page.</p>
+      <p>We encourage teams to start adding and documenting their parts on the Registry as soon as they can. Once you add your parts to the Registry, you can continue to add documentation to them throughout the iGEM season (up until the Registry freeze). This will allow you to remember all the details about your parts and store their history in the wiki. Documentation includes the characterization data of your parts.</p>
+      <a class="btn btn-primary" href="http://parts.igem.org/Add_a_Part_to_the_Registry" role="button">Add Parts</a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h2>Basic Part Inspirations</h2>
+      <hr>
+      <p>We have a created a <a href="http://parts.igem.org/Well_Documented_Parts">collection of well documented parts</a> that can help you get started.</p>
+      <p>You can also take a look at the following examples for Basic Parts on the Registry:</p>
+      <ul>
+        <li><a href="http://parts.igem.org/Part:BBa_K3114006">2019 Calgary </a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3027000">2019 GO Paris Saclay</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3187028">2019 TU Darmstadt</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3552000">2020 Links China</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3558000">2020 UNSW Australia</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3338002">2020 Hannover</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Composite Part Inspirations</h2>
+      <hr>
+      <p>We have a created a <a href="http://parts.igem.org/Well_Documented_Parts">collection of well documented parts</a> that can help you get started.</p>
+      <p>You can also take a look at the following examples for Composite Parts on the Registry:</p>
+      <ul>
+        <li><a href="http://parts.igem.org/Part:BBa_K3198007">2019 NUS Singapore </a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K2932003">2019 Mingdao</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K2980009">2019 Tsinghua</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3407022">2020 TUDelft</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3380500">2020 Edinburgh</a></li>
+        <li><a href="http://parts.igem.org/Part:BBa_K3512042">2020 BITSPilani Goa India</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col">
+      <h2>What information do I need to start putting my parts on the Registry?</h2>
+      <hr>
+      <p>The information needed to initially create a part on the Registry is:</p>
+      <ul>
+        <li>Part Name</li>
+        <li>Part type</li>
+        <li>Creator</li>
+        <li>Sequence</li>
+        <li>Short Description (60 characters on what the DNA does)</li>
+        <li>Long Description (Longer description of what the DNA does)</li>
+        <li>Design considerations</li>
+      </ul>
+      <p>We encourage you to put up <em>much more</em> information as you gather it over the summer. If you have images, plots, characterization data and other information, you must also put it up on the part page.</p>
+    </div>
+  </div>
+
 </div>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>Adding parts to the Registry</h2>
+<!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+          <ul class="m-2 p-2">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Nam mauris velit</a></li>
+            <li><a href="#">Etiam vitae mauris</a></li>
+            <li><a href="#">Fusce scelerisque</a></li>
+            <li><a href="#">Sed faucibus</a></li>
+            <li><a href="#">Mauris efficitur nulla</a></li>
+          </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+      </div>
+    </div>
     <hr>
-    <p>You can add parts to the Registry at our <a href="http://parts.igem.org/Add_a_Part_to_the_Registry">Add a Part to the Registry</a> page.</p>
-    <p>We encourage teams to start adding and documenting their parts on the Registry as soon as they can. Once you add your parts to the Registry, you can continue to add documentation to them throughout the iGEM season (up until the Registry freeze). This will allow you to remember all the details about your parts and store their history in the wiki. Documentation includes the characterization data of your parts.</p>
-    <a class="btn btn-primary" href="http://parts.igem.org/Add_a_Part_to_the_Registry" role="button">Add Parts</a>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
+      </div>
+    </div>
   </div>
-</div>
+</footer>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>Basic Part Inspirations</h2>
-    <hr>
-    <p>We have a created a <a href="http://parts.igem.org/Well_Documented_Parts">collection of well documented parts</a> that can help you get started.</p>
-    <p>You can also take a look at the following examples for Basic Parts on the Registry:</p>
-    <ul>
-      <li><a href="http://parts.igem.org/Part:BBa_K3114006">2019 Calgary </a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3027000">2019 GO Paris Saclay</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3187028">2019 TU Darmstadt</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3552000">2020 Links China</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3558000">2020 UNSW Australia</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3338002">2020 Hannover</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h2>Composite Part Inspirations</h2>
-    <hr>
-    <p>We have a created a <a href="http://parts.igem.org/Well_Documented_Parts">collection of well documented parts</a> that can help you get started.</p>
-    <p>You can also take a look at the following examples for Composite Parts on the Registry:</p>
-    <ul>
-      <li><a href="http://parts.igem.org/Part:BBa_K3198007">2019 NUS Singapore </a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K2932003">2019 Mingdao</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K2980009">2019 Tsinghua</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3407022">2020 TUDelft</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3380500">2020 Edinburgh</a></li>
-      <li><a href="http://parts.igem.org/Part:BBa_K3512042">2020 BITSPilani Goa India</a></li>
-    </ul>
-  </div>
-</div>
+<!-- Wiki Tools: Teams are allowed to remove it -->
+<style>
+    .wiki-tools-footer {
+        --bs-gutter-x: 1.5rem;
+        background: #222124;
+        margin: 0;
+        max-width: 100%;
+        padding: 1rem 3rem;
+        display: flex;
+        gap: 1.5em;
+    }
+    .wiki-tools-footer a {
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        transition: color 0.3s;
+    }
+    .wiki-tools-footer a:hover {
+        color: #08C784;
+    }
+    .wiki-tools-footer img {
+        object-fit: contain;
+    }
+</style>
 
-<div class="row mt-4">
-  <div class="col">
-    <h2>What information do I need to start putting my parts on the Registry?</h2>
-    <hr>
-    <p>The information needed to initially create a part on the Registry is:</p>
-    <ul>
-      <li>Part Name</li>
-      <li>Part type</li>
-      <li>Creator</li>
-      <li>Sequence</li>
-      <li>Short Description (60 characters on what the DNA does)</li>
-      <li>Long Description (Longer description of what the DNA does)</li>
-      <li>Design considerations</li>
-    </ul>
-    <p>We encourage you to put up <em>much more</em> information as you gather it over the summer. If you have images, plots, characterization data and other information, you must also put it up on the part page.</p>
-  </div>
-</div>
+<section class="wiki-tools-footer container">
+    <a id="wiki-tools-link">Access Wiki Tools</a>
+    <a id="wiki-tools-repo">View Source Code</a>
+    <img id="wiki-tools-pipeline">
+</section>
 
-{% endblock %}
+<script>
+    const wikiToolsLink = document.getElementById('wiki-tools-link')
+    const wikiToolsRepo = document.getElementById('wiki-tools-repo')
+    const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
+
+    const path = document.location.pathname.split('/')
+
+    const competitionSlug = document.location.host.split('.')[0]
+    const teamSlug = path[1]
+    const page = path[2] === '' ? 'index' : path[2]
+
+    wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
+    wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
+    wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+</script>
+
+
+<!-- Bootstrap Bundle with Popper -->
+<!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
+<script src="../../static/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 var textContainer = document.querySelector('#bottle-path-container');
-const topElement = document.getElementById('twoCow');
+var textContainer1 = document.querySelector('#bottle-path-container1');
+const topElement = document.getElementById('header');
 const bottomElement = document.getElementById('footer');
 
 function setPathHeight() {
@@ -7,6 +8,7 @@ function setPathHeight() {
     var pathBottomY = bottomElement.getBoundingClientRect().top;
 
     textContainer.style['height'] = `${pathBottomY-pathTopY}px`;
+    textContainer1.style['height'] = `${pathBottomY-pathTopY}px`;
     console.log(pathBottomY-pathTopY);
 
 }
@@ -14,13 +16,16 @@ function setPathHeight() {
 setPathHeight();
 
 var textPath = document.getElementById('bottle');
+var textPath1 = document.getElementById('bottle1');
 
 var path = document.querySelector( textPath.getAttribute('href') );
+var path1 = document.querySelector( textPath1.getAttribute('href1') );
 
 var pathLength = path.getTotalLength();
 
 function updateTextPathOffset(offset){
   textPath.setAttribute('startOffset', offset);
+  textPath1.setAttribute('startOffset', offset);
 }
 
 updateTextPathOffset(0);
@@ -28,11 +33,17 @@ updateTextPathOffset(0);
 function bottleScroll(){
   requestAnimationFrame(function(){
     var rect = textContainer.getBoundingClientRect();
+    var rect1 = textContainer1.getBoundingClientRect();
 
     var scrollOffset = (window.innerHeight/2 - (rect.y));
+    var scrollOffset1 = (window.innerHeight/2 - (rect1.y));
     if (scrollOffset>=0){
         var scrollPercent = (scrollOffset)/(rect.height);
         updateTextPathOffset(pathLength*scrollPercent);
+    }
+    if (scrollOffset1>=0){
+        var scrollPercent1 = (scrollOffset1)/(rect1.height);
+        updateTextPathOffset(pathLength*scrollPercent1);
     }
   });
 }

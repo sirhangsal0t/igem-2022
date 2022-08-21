@@ -50,7 +50,7 @@
   --bs-warning-rgb: 228, 198, 98;
   --bs-danger-rgb: 161, 100, 104;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 33, 37, 41;
+  --bs-dark-rgb: 0, 33, 71;
   --bs-black-rgb: 0, 0, 0;
   --bs-white-rgb: 255, 255, 255;
   --bs-white-rgb: 255, 255, 255;
@@ -88,7 +88,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-blue);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -11606,7 +11606,7 @@ body {
 
 .about-section {
   padding-top: 10rem;
-  background: var(--bs-body-bg);
+  background: transparent;
 }
 .about-section p {
   margin-bottom: 5rem;

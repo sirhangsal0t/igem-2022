@@ -6,6 +6,16 @@ z-index:2;
 .bottle-path {
     position: absolute;
     display: block;
+    /*left: 50%;*/
+    height: 300vw;
+    overflow: visible;
+    /* transform: translate(-50%); */
+    z-index: -2;
+}
+
+.bottle-path1 {
+    position: absolute;
+    display: block;
     left: 50%;
     height: 300vw;
     overflow: visible;

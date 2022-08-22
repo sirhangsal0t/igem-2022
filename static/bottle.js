@@ -3,6 +3,8 @@ var textContainer1 = document.querySelector('#bottle-path-container1');
 const topElement = document.getElementById('header');
 const bottomElement = document.getElementById('footer');
 
+
+//sets path height, by updating the html code
 function setPathHeight() {
     var pathTopY = topElement.getBoundingClientRect().bottom;
     var pathBottomY = bottomElement.getBoundingClientRect().top;
@@ -19,7 +21,7 @@ var textPath = document.getElementById('bottle');
 var textPath1 = document.getElementById('bottle1');
 
 var path = document.querySelector( textPath.getAttribute('href') );
-var path1 = document.querySelector( textPath1.getAttribute('href1') );
+var path1 = document.querySelector( textPath1.getAttribute('href') );
 
 var pathLength = path.getTotalLength();
 
@@ -32,18 +34,13 @@ updateTextPathOffset(0);
 
 function bottleScroll(){
   requestAnimationFrame(function(){
+  
     var rect = textContainer.getBoundingClientRect();
-    var rect1 = textContainer1.getBoundingClientRect();
-
     var scrollOffset = (window.innerHeight/2 - (rect.y));
-    var scrollOffset1 = (window.innerHeight/2 - (rect1.y));
+    
     if (scrollOffset>=0){
         var scrollPercent = (scrollOffset)/(rect.height);
         updateTextPathOffset(pathLength*scrollPercent);
-    }
-    if (scrollOffset1>=0){
-        var scrollPercent1 = (scrollOffset1)/(rect1.height);
-        updateTextPathOffset(pathLength*scrollPercent1);
     }
   });
 }

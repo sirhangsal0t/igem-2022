@@ -6,26 +6,16 @@ z-index:2;
 .bottle-path {
     position: absolute;
     display: block;
-    /*left: 50%;*/
+    left: 50%;
     height: 300vw;
     overflow: visible;
-    /* transform: translate(-50%); */
-    z-index: -2;
-}
-
-.bottle-path1 {
-    position: absolute;
-    display: block;
-    right: 0px;
-    height: 300vw;
-    overflow: visible;
-    /* transform: translate(-50%); */
+    transform: translate(-50%);
     z-index: -2;
 }
 
 @font-face {
   font-family: bottleFont;
-  src: url("../../static/style/OMV.ttf");
+  src: url("../../static/style/bottlefont.ttf");
 }
 
 .bottle-txt {
@@ -33,13 +23,6 @@ z-index:2;
   font-size: 4vw;
   fill: #bae893;
 }
-
-.bottle-txt1 {
-  font-family: bottleFont;
-  font-size: 4vw;
-  fill: #FF4A4A;
-}
-
 body {
     max-width: 100vw;
     overflow-x: hidden;

@@ -16,15 +16,20 @@
 
     <!-- Bootstrap CSS -->
     <link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">-->
 
     <!-- Custom CSS -->
     <link href="../../static/style.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+    <link href="../../static/style/index.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'styles.css') }}" rel="stylesheet">-->
+    <link href="../../static/style/bottle.css" rel="stylesheet">
 
     <title>Index | IISER_TVM - iGEM 2022</title>
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
       <div class="container">
 
         <!---- TEAM NAME ---->
@@ -120,55 +125,100 @@
     </nav>
 
 
-    <div class="row">
-      <div class="col">
-        <h2>Before you start</h2>
-        <hr>
-        <p>Please read the following pages:</p>
-        <ul>
-          <li><a href="https://competition.igem.org/">The Competition Page</a></li>
-          <li><a href="https://competition.igem.org/deliverables/team-wiki">Wiki Requirements page</a></li>
-        </ul>
-      </div>
+    <!-- Masthead-->
+    <header class="masthead" id="header">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Duonco</h1>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="row mt-4">
-      <div class="col">
-        <h2>Styling your wiki</h2>
-        <hr>
-        <p>You may style this page as you like or you can simply leave the style as it is. You can easily keep the styling and edit the content of these default wiki pages with your project information and completely fulfill the requirement to document your project.</p>
-        <p>While you may not win Best Wiki with this styling, your team is still eligible for all other awards. This default wiki meets the requirements, it improves navigability and ease of use for visitors, and you should not feel it is necessary to style beyond what has been provided.</p>
+    <!--right svg path -->
+    <svg viewBox="0 0 541.56 5691.15" class="bottle-path" id="bottle-path-container" style="height: 6207.47px;">
+    <path d="m227.911 4.858a68.736 153.986 0 0 1-.515 42.672c-4.782 63.276-24.927 83.398-33.314 169.524-1.316 13.482-1.881 25.549-3.018 49.684-3.878 82.445.287 108.917-1.975 146.272-4.478 74.069-26.866 69.214-39.618 146.683-16.536 100.39 16.567 135.94 2.31 241.988-11.387 84.682-36.367 90.821-41.987 180.408-3.618 57.668 6.269 62.794 5.539 122.529-1.343 113.822-37.612 127.584-58.263 273.325-13.352 94.151-.179 102.186-17.194 212.437-11.221 72.725-21.076 95.967-16.643 138.127 5.781 55.01 26.897 56.515 47.982 127.986 19.133 64.84 7.805 84.12 23.731 150.335 27.381 113.661 70.684 98.033 79.702 179.685 7.491 67.97-21.108 91.603-19.299 199.346 1.151 68.261 12.864 72.584 18.148 142.661 9.936 131.817-28.258 159.593-25.075 292.293 2.924 120.853 35.723 143.804 29.194 253.784-4.63 78.041-25.075 132.409-33.631 154.678-48.457 125.779-105.354 86.407-129.901 191.592-12.219 52.362-13.218 126.812.188 179.555 24.179 95.074 80.056 60.266 105.323 162.502 13.084 52.914 1.084 74.32 18.143 146.382 18.403 77.73 36.529 70.388 43.729 124.385 9.466 70.999-19.612 100.671-26.624 225.698-5.105 91.011 9.403 91.352 4.478 181.681-6.918 127.163-36.591 143.293-31.984 229.289 4.263 79.516 30.488 81.682 37.76 177.398 5.709 75.233-8.902 94.623-5.512 164.96 4.737 98.434 37.272 141.698 57.914 208.354 21.493 69.364 37.232 187.148 12.416 400.167" id="path" stroke-dasharray="10 20" fill="none" stroke="#bae893" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"></path>
+    <text class="bottle-txt">
+      <textPath id="bottle" href="#path" startOffset="3506.8943709329687" alignment-baseline="middle" text-anchor="end">
+          B
+      </textPath>
+    </text>
+    </svg>
+    <svg viewBox="0 0 541.56 5691.15" class="bottle-path1" id="bottle-path-container1" style="height: 6207.47px;">
+      <path d="m284.089 4.858a68.736 153.986 0 0 0 .515 42.672c4.782 63.276 24.927 83.398 33.314 169.524 1.316 13.482 1.881 25.549 3.018 49.684 3.878 82.445-.287 108.917 1.975 146.272 4.478 74.069 26.866 69.214 39.618 146.683 16.536 100.39-16.567 135.94-2.31 241.988 11.387 84.682 36.367 90.821 41.987 180.408 3.618 57.668-6.269 62.794-5.539 122.529 1.343 113.822 37.612 127.584 58.263 273.325 13.352 94.151.179 102.186 17.194 212.437 11.221 72.725 21.076 95.967 16.643 138.127-5.781 55.01-26.897 56.515-47.982 127.986-19.133 64.84-7.805 84.12-23.731 150.335-27.381 113.661-70.684 98.033-79.702 179.685-7.491 67.97 21.108 91.603 19.299 199.346-1.151 68.261-12.864 72.584-18.148 142.661-9.936 131.817 28.258 159.593 25.075 292.293-2.924 120.853-35.723 143.804-29.194 253.784 4.63 78.041 25.075 132.409 33.631 154.678 48.457 125.779 105.354 86.407 129.901 191.592 12.219 52.362 13.218 126.812-.188 179.555-24.179 95.074-80.056 60.266-105.323 162.502-13.084 52.914-1.084 74.32-18.143 146.382-18.403 77.73-36.529 70.388-43.729 124.385-9.466 70.999 19.612 100.671 26.624 225.698 5.105 91.011-9.403 91.352-4.478 181.681 6.918 127.163 36.591 143.293 31.984 229.289-4.263 79.516-30.488 81.682-37.76 177.398-5.709 75.233 8.902 94.623 5.512 164.96-4.737 98.434-37.272 141.698-57.914 208.354-21.493 69.364-37.232 187.148-12.416 400.167" id="path1" stroke-dasharray="10 20" fill="none" stroke="#FF4A4A" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"></path>
+      <text class="bottle-txt bottle-txt1">
+        <textPath id="bottle1" href="#path1" startOffset="3506.8943709329687" alignment-baseline="middle" text-anchor="end">
+            B
+        </textPath>
+      </text>
+      </svg>
+    <div style="width:100%;height:10000px;">
+    <section class="about-section text-center" id="about">
+      <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-lg-8">
+                  <h2 class="text-black mb-4">Built with Bootstrap 5</h2>
+                  <p class="text-black-50">
+                      Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
+                      <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
+                      The theme is open source, and you can use it for any purpose, personal or commercial.
+                  </p>
+              </div>
+          </div>
       </div>
+    </section>
     </div>
-    <div class="row mt-4">
-      <div class="col-lg-8">
-        <h2>Tips</h2>
-        <hr>
-        <p>This wiki will be your team's first interaction with the rest of the world, so here are a few tips to help you get started:</p>
-        <ul>
-          <li>State your accomplishments! Tell people what you have achieved from the start.</li>
-          <li>Be clear about what you are doing and how you plan to do this.</li>
-          <li>You have a global audience! Consider the different backgrounds that your users come from.</li>
-          <li>Make sure information is easy to find; nothing should be more than 3 clicks away.</li>
-          <li>Avoid using very small fonts and low contrast colors; information should be easy to read.</li>
-          <li>Start documenting your project as early as possible; don't leave anything to the last minute before the Wiki Freeze. For a complete list of deadlines visit the iGEM 2022 calendar</li>
-          <li>Have lots of fun!</li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h2>Inspiration</h2>
-        <hr>
-        <p>You can also view other team wikis for inspiration! Here are some examples:</p>
-        <ul>
-          <li><a href="https://2019.igem.org/Team:Vilnius-Lithuania">2019 Vilnius Lithuania</a></li>
-          <li><a href="https://2019.igem.org/Team:NUS_Singapore">2019 NUS Singapore</a></li>
-          <li><a href="https://2019.igem.org/Team:Lambert_GA">2019 Lambert GA</a></li>
-          <li><a href="https://2020.igem.org/Team:Waterloo">2020 Waterloo</a></li>
-          <li><a href="https://2020.igem.org/Team:TUDelft">2020 TUDelft</a></li>
-          <li><a href="https://2020.igem.org/Team:XMU-China">2020 XMU China </a></li>
-          <li><a href="https://2020.igem.org/Team:TAS_Taipei">2020 TAS Taipei </a></li>
-        </ul>
-      </div>
+    <div class="indentContainer centerImage fadeInObs animateObs" id="footer">
+      <img src="https://static.igem.org/mediawiki/2021/7/7e/T--IISER_Kolkata--image-twoCows-1x.png" alt="image_twoCows">
     </div>
+
+    <script src="../../static/bottle.js" charset="utf-8"></script>
+    <!-- Projects-->
+    <!--<section class="projects-section bg-light" id="projects">
+      <div class="container px-4 px-lg-5">-->
+          <!-- Featured Project Row-->
+          <!--<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+              <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/static/asset/bg-masthead.jpg" alt="..." /></div>
+              <div class="col-xl-4 col-lg-5">
+                  <div class="featured-text text-center text-lg-left">
+                      <h4>Shoreline</h4>
+                      <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                  </div>
+              </div>
+          </div>-->
+          <!-- Project One Row-->
+          <!--<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+              <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
+              <div class="col-lg-6">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Misty</h4>
+                              <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                              <hr class="d-none d-lg-block mb-0 ms-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>-->
+          <!-- Project Two Row-->
+          <!--<div class="row gx-0 justify-content-center">
+              <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
+              <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                              <h4 class="text-white">Mountains</h4>
+                              <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                              <hr class="d-none d-lg-block mb-0 me-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>-->
     <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
       <div class="container">
         <div class="row mb-4">

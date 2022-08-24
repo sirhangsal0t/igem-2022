@@ -1,12 +1,16 @@
 var textContainer = document.querySelector('#bottle-path-container');
-const topElement = document.getElementById('twoCow');
+var textContainer1 = document.querySelector('#bottle-path-container1');
+const topElement = document.getElementById('header');
 const bottomElement = document.getElementById('footer');
 
+
+//sets path height, by updating the html code
 function setPathHeight() {
     var pathTopY = topElement.getBoundingClientRect().bottom;
     var pathBottomY = bottomElement.getBoundingClientRect().top;
 
     textContainer.style['height'] = `${pathBottomY-pathTopY}px`;
+    textContainer1.style['height'] = `${pathBottomY-pathTopY}px`;
     console.log(pathBottomY-pathTopY);
 
 }
@@ -14,22 +18,26 @@ function setPathHeight() {
 setPathHeight();
 
 var textPath = document.getElementById('bottle');
+var textPath1 = document.getElementById('bottle1');
 
 var path = document.querySelector( textPath.getAttribute('href') );
+var path1 = document.querySelector( textPath1.getAttribute('href') );
 
 var pathLength = path.getTotalLength();
 
 function updateTextPathOffset(offset){
   textPath.setAttribute('startOffset', offset);
+  textPath1.setAttribute('startOffset', offset);
 }
 
 updateTextPathOffset(0);
 
 function bottleScroll(){
   requestAnimationFrame(function(){
+  
     var rect = textContainer.getBoundingClientRect();
-
     var scrollOffset = (window.innerHeight/2 - (rect.y));
+    
     if (scrollOffset>=0){
         var scrollPercent = (scrollOffset)/(rect.height);
         updateTextPathOffset(pathLength*scrollPercent);

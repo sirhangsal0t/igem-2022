@@ -120,17 +120,17 @@
 <div class="cointainer my-4 mx-4">
   <div class="row">
     <div class="col-3">
-      <ul class="list-group">
-        <li class="list-group-item"><a href=#alder>Alder</a></li>
-        <li class="list-group-item"><a href=#Apple>Apple</a></li>
-        <li class="list-group-item"><a href=#Ash>Ash</a></li>
-        <li class="list-group-item"><a href=#Aspen>Aspen</a></li>
-        <li class="list-group-item"><a href=#Beech>Beech</a></li>
-        <li class="list-group-item"><a href=#Blackthorn>Blackthorn</a></li>
+      <ul class="list-group" id="sidenav">
+        <li class="list-group-item list-group-item-action "><a href=#alder>Alder</a></li>
+        <li class="list-group-item list-group-item-action "><a href=#Apple>Apple</a></li>
+        <li class="list-group-item list-group-item-action "><a href=#Ash>Ash</a></li>
+        <li class="list-group-item list-group-item-action "><a href=#Aspen>Aspen</a></li>
+        <li class="list-group-item list-group-item-action "><a href=#Beech>Beech</a></li>
+        <li class="list-group-item list-group-item-action "><a href=#Blackthorn>Blackthorn</a></li>
       </ul>
 
     </div>
-    <div class="col-9 " style="overflow-y: scroll; height: 600px;">
+    <div class="col-9 " style="overflow-y: scroll; height: 600px;" data-bs-offset="10" data-bs-target="#sidenav" data-bs-spy="scroll" tabindex="0">
       <p>
         <h3 id ="alder">Alder</h3><br>
 
@@ -253,6 +253,11 @@
     wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
     wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
     wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+</script>
+
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
 </script>
 
 

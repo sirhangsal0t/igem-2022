@@ -9412,3 +9412,9 @@ fieldset:disabled .btn {
     }
 }
 
+.fixed-content{
+    position: fixed;
+    z-index: 0;
+}
+
+

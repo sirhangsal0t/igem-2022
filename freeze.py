@@ -30,6 +30,6 @@ def index():
 def pages(page):
     return render_template(str(Path('pages')) + '/' + page.lower() + '.html')
 
-# Main Function, Runs at http://0.0.0.0:8080
+# Main Function, Freeze the website to ./public
 if __name__ == "__main__":
     freezer.freeze()

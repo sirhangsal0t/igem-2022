@@ -195,3 +195,13 @@ html.modal-active, body.modal-active {
     top: -20px;
   }
 }
+.promega{
+  height: 200px;
+  width: 200px;
+  margin: 0 15px;
+}
+.beck{
+  height: 120px;
+  width: 220px;
+  margin-left: 25px;
+}

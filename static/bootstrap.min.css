@@ -9413,8 +9413,8 @@ fieldset:disabled .btn {
 }
 
 .fixed-content{
-    position: fixed;
-    z-index: 0;
+    position: sticky;
+    top:40%;
+    z-index: 1;
 }
-
 

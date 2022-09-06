@@ -4565,6 +4565,18 @@ fieldset:disabled .btn {
     border-bottom-right-radius: inherit;
     border-bottom-left-radius: inherit;
 }
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
 .list-group-item.disabled,
 .list-group-item:disabled {
     color: #6c757d;
@@ -9417,4 +9429,3 @@ fieldset:disabled .btn {
     top:40%;
     z-index: 1;
 }
-

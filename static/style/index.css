@@ -88,7 +88,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: #fdfff0;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -11563,11 +11563,13 @@ body {
   min-height: 35rem;
   padding: 15rem 0;
   /*background: linear-gradient(to bottom, rgba(0, 33, 71, 1) 0%, rgba(255, 255, 255, 0.1) 100%, #000 100%), url("../../static/images/v1.png");*/
-  background:url("../../static/images/v1.png");
+  background-color: #002147;
+  background-image:url("../../static/images/v1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: cover;
+  background-size: 100% 100%;
+  
 }
 .masthead h1, .masthead .h1 {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11713,4 +11715,24 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+
+::-webkit-scrollbar{
+  width: 0.9em;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #002147;
+  border-radius: 0vh;
+  margin-block: 0px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: hsl(60, 8%, 85%);
+  border-radius: 100vh;
+  border: 0.2em solid hsl(0, 0%, 0%);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: hsl(60, 0%, 61%);
 }

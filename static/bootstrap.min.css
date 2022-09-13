@@ -15,7 +15,7 @@
     --bs-green: #198754;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
-    --bs-white: #fff;
+    --bs-white: #fdfff0;
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
     --bs-primary: #0d6efd;
@@ -129,6 +129,7 @@ h4 {
 .h5,
 h5 {
     font-size: 1.25rem;
+    color: #808080;
 }
 .h6,
 h6 {
@@ -9426,6 +9427,6 @@ fieldset:disabled .btn {
 
 .fixed-content{
     position: sticky;
-    top:35%;
+    top:10%;
     z-index: 1;
 }

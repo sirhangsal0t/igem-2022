@@ -1,0 +1,386 @@
+<!--{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+{% block lead %}<b>Welcome to iGEM 2022!</b> Your team has been approved and you are ready to start the iGEM season!{% endblock %}
+
+{% block page_content %}
+{% endblock %}-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+
+    <!-- Bootstrap CSS -->
+    <link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <link href="../../static/style.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+    <link href="../../static/style/index.css" rel="stylesheet">
+    <!--  <link href="{{ url_for('static', filename = 'styles.css') }}" rel="stylesheet">-->
+    <link href="../../static/style/bottle.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style/text-box2.css">
+    <link rel="stylesheet" href="../../static/style/text-box.css">
+
+    <title>Index | IISER_TVM - iGEM 2022</title>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+      <div class="container">
+
+        <!---- TEAM NAME ---->
+        <a class="navbar-brand" href="#">IISER_TVM</a>
+
+        <!---- SMALL SCREEN MENU ICON ---->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto left-aligned">
+
+            <!---- HOME ---->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+
+            <!---- TEAM ---->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Team
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+              </ul>
+            </li>
+
+            <!---- PROJECT ---->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Project
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+              </ul>
+            </li>
+
+            <!---- PARTS ---->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Parts
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+              </ul>
+            </li>
+
+            <!---- SAFETY ---->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+            </li>
+
+            <!---- HUMAN PRACTICES ---->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+            </li>
+
+            <!---- AWARDS ---->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Awards
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Masthead-->
+    <header class="masthead" id="header">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Duonco</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--right svg path -->
+    <svg viewBox="0 0 541.56 5691.15" class="bottle-path" id="bottle-path-container" style="height: 6207.47px;">
+    <path d="m227.911 4.858a68.736 153.986 0 0 1-.515 42.672c-4.782 63.276-24.927 83.398-33.314 169.524-1.316 13.482-1.881 25.549-3.018 49.684-3.878 82.445.287 108.917-1.975 146.272-4.478 74.069-26.866 69.214-39.618 146.683-16.536 100.39 16.567 135.94 2.31 241.988-11.387 84.682-36.367 90.821-41.987 180.408-3.618 57.668 6.269 62.794 5.539 122.529-1.343 113.822-37.612 127.584-58.263 273.325-13.352 94.151-.179 102.186-17.194 212.437-11.221 72.725-21.076 95.967-16.643 138.127 5.781 55.01 26.897 56.515 47.982 127.986 19.133 64.84 7.805 84.12 23.731 150.335 27.381 113.661 70.684 98.033 79.702 179.685 7.491 67.97-21.108 91.603-19.299 199.346 1.151 68.261 12.864 72.584 18.148 142.661 9.936 131.817-28.258 159.593-25.075 292.293 2.924 120.853 35.723 143.804 29.194 253.784-4.63 78.041-25.075 132.409-33.631 154.678-48.457 125.779-105.354 86.407-129.901 191.592-12.219 52.362-13.218 126.812.188 179.555 24.179 95.074 80.056 60.266 105.323 162.502 13.084 52.914 1.084 74.32 18.143 146.382 18.403 77.73 36.529 70.388 43.729 124.385 9.466 70.999-19.612 100.671-26.624 225.698-5.105 91.011 9.403 91.352 4.478 181.681-6.918 127.163-36.591 143.293-31.984 229.289 4.263 79.516 30.488 81.682 37.76 177.398 5.709 75.233-8.902 94.623-5.512 164.96 4.737 98.434 37.272 141.698 57.914 208.354 21.493 69.364 37.232 187.148 12.416 400.167" id="path" stroke-dasharray="10 20" fill="none" stroke="#bae893" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"></path>
+    <text class="bottle-txt">
+      <textPath id="bottle" href="#path" startOffset="3506.8943709329687" alignment-baseline="middle" text-anchor="end">
+          B
+      </textPath>
+    </text>
+    </svg>
+    <svg viewBox="0 0 541.56 5691.15" class="bottle-path1" id="bottle-path-container1" style="height: 6207.47px;">
+      <path d="m284.089 4.858a68.736 153.986 0 0 0 .515 42.672c4.782 63.276 24.927 83.398 33.314 169.524 1.316 13.482 1.881 25.549 3.018 49.684 3.878 82.445-.287 108.917 1.975 146.272 4.478 74.069 26.866 69.214 39.618 146.683 16.536 100.39-16.567 135.94-2.31 241.988 11.387 84.682 36.367 90.821 41.987 180.408 3.618 57.668-6.269 62.794-5.539 122.529 1.343 113.822 37.612 127.584 58.263 273.325 13.352 94.151.179 102.186 17.194 212.437 11.221 72.725 21.076 95.967 16.643 138.127-5.781 55.01-26.897 56.515-47.982 127.986-19.133 64.84-7.805 84.12-23.731 150.335-27.381 113.661-70.684 98.033-79.702 179.685-7.491 67.97 21.108 91.603 19.299 199.346-1.151 68.261-12.864 72.584-18.148 142.661-9.936 131.817 28.258 159.593 25.075 292.293-2.924 120.853-35.723 143.804-29.194 253.784 4.63 78.041 25.075 132.409 33.631 154.678 48.457 125.779 105.354 86.407 129.901 191.592 12.219 52.362 13.218 126.812-.188 179.555-24.179 95.074-80.056 60.266-105.323 162.502-13.084 52.914-1.084 74.32-18.143 146.382-18.403 77.73-36.529 70.388-43.729 124.385-9.466 70.999 19.612 100.671 26.624 225.698 5.105 91.011-9.403 91.352-4.478 181.681 6.918 127.163 36.591 143.293 31.984 229.289-4.263 79.516-30.488 81.682-37.76 177.398-5.709 75.233 8.902 94.623 5.512 164.96-4.737 98.434-37.272 141.698-57.914 208.354-21.493 69.364-37.232 187.148-12.416 400.167" id="path1" stroke-dasharray="10 20" fill="none" stroke="#FF4A4A" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"></path>
+      <text class="bottle-txt bottle-txt1">
+        <textPath id="bottle1" href="#path1" startOffset="3506.8943709329687" alignment-baseline="middle" text-anchor="end">
+            B
+        </textPath>
+      </text>
+      </svg>
+    <div style="width:100%;height:10000px;">
+    <section class="about-section text-center" id="about">
+      <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-lg-8">
+                  <h2 class="text-black mb-4">Built with Bootstrap 5</h2>
+                  <p class="text-black-50">
+                      Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
+                      <a href="https://startbootstrap.com/theme/grayscale/">the preview page.</a>
+                      The theme is open source, and you can use it for any purpose, personal or commercial.
+                  </p>
+              </div>
+          </div>
+      </div>
+    </section>
+    </div>
+    <main class="container-text">
+      <section class="card-text" data-aos="fade-right">
+        <div>
+          <h3>Acrylic Painting One</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+        </div>
+        <div>
+
+        </div>
+        <img src="../../static/style/paint-1.png" alt="" />
+      </section>
+
+      <section class="card-text" data-aos="fade-left">
+        <img src="../../static/style/paint-2.png" alt="" />
+        <div>
+
+        </div>
+        <div>
+          <h3>Acrylic Painting Two</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+        </div>
+      </section>
+
+      <section class="card-text" data-aos="fade-right">
+        <img src="../../static/style/paint-3.png" alt="" />
+        <div>
+          <h3>Acrylic Painting Three</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+        </div>
+        <div></div>
+      </section>
+
+      <section class="card-text" data-aos="fade-left">
+        <img src="../../static/style/paint-4.png" alt="" />
+        <div>
+
+        </div>
+        <div>
+          <h3>Acrylic Painting Four</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+        </div>
+      </section>
+
+      <section class="card-text" data-aos="fade-right">
+        <img src="../../static/style/paint-5.png" alt="" />
+        <div>
+          <h3>Acrylic Painting Five</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod error
+            enim laudantium, animi veniam libero eveniet culpa unde perferendis
+            illo fugit corporis, voluptatibus totam dolorum, maiores magnam
+            officia. Ab, delectus.
+          </p>
+        </div>
+        <div>
+
+        </div>
+      </section>
+    </main>
+    <div class="indentContainer centerImage fadeInObs animateObs" id="footer">
+      <img src="https://static.igem.org/mediawiki/2021/7/7e/T--IISER_Kolkata--image-twoCows-1x.png" alt="image_twoCows">
+    </div>
+
+    <script src="../../static/bottle.js" charset="utf-8"></script>
+    <script src='../../static/style/text-box2.js'></script><script  src="../../static/style/text-box.js"></script>
+    <!-- Projects-->
+    <!--<section class="projects-section bg-light" id="projects">
+      <div class="container px-4 px-lg-5">-->
+          <!-- Featured Project Row-->
+          <!--<div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+              <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/static/asset/bg-masthead.jpg" alt="..." /></div>
+              <div class="col-xl-4 col-lg-5">
+                  <div class="featured-text text-center text-lg-left">
+                      <h4>Shoreline</h4>
+                      <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                  </div>
+              </div>
+          </div>-->
+          <!-- Project One Row-->
+          <!--<div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+              <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
+              <div class="col-lg-6">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Misty</h4>
+                              <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                              <hr class="d-none d-lg-block mb-0 ms-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>-->
+          <!-- Project Two Row-->
+          <!--<div class="row gx-0 justify-content-center">
+              <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
+              <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                              <h4 class="text-white">Mountains</h4>
+                              <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                              <hr class="d-none d-lg-block mb-0 me-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>-->
+    <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+      <div class="container">
+        <div class="row mb-4">
+          <div class="col-lg-6 col-xs-12">
+            <h4 class="mb-3">Heading</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+          </div>
+          <div class="col-lg-3 col-xs-12">
+            <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+              <ul class="m-2 p-2">
+                <li><a href="#">Lorem ipsum</a></li>
+                <li><a href="#">Nam mauris velit</a></li>
+                <li><a href="#">Etiam vitae mauris</a></li>
+                <li><a href="#">Fusce scelerisque</a></li>
+                <li><a href="#">Sed faucibus</a></li>
+                <li><a href="#">Mauris efficitur nulla</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-xs-12">
+            <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+            <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+            <p class="mb-0">(541) 754-3010</p>
+            <p>info@hsdf.com</p>
+          </div>
+        </div>
+        <hr>
+        <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+        <div class="row mt-4">
+          <div class="col">
+            <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+            <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <style>
+      .wiki-tools-footer {
+          --bs-gutter-x: 1.5rem;
+          background: #222124;
+          margin: 0;
+          max-width: 100%;
+          padding: 1rem 3rem;
+          display: flex;
+          gap: 1.5em;
+      }
+      .wiki-tools-footer a {
+          text-decoration: none;
+          color: white;
+          font-weight: 400;
+          transition: color 0.3s;
+      }
+      .wiki-tools-footer a:hover {
+          color: #08C784;
+      }
+      .wiki-tools-footer img {
+          object-fit: contain;
+      }
+    </style>
+
+    <section class="wiki-tools-footer container">
+      <a id="wiki-tools-link">Access Wiki Tools</a>
+      <a id="wiki-tools-repo">View Source Code</a>
+      <img id="wiki-tools-pipeline">
+    </section>
+
+    <script>
+      const wikiToolsLink = document.getElementById('wiki-tools-link')
+      const wikiToolsRepo = document.getElementById('wiki-tools-repo')
+      const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
+
+      const path = document.location.pathname.split('/')
+
+      const competitionSlug = document.location.host.split('.')[0]
+      const teamSlug = path[1]
+      const page = path[2] === '' ? 'index' : path[2]
+
+      wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
+      wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
+      wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+    </script>
+    <script src="../../static/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

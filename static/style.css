@@ -76,6 +76,7 @@ footer a:hover { color: white; text-decoration: underline; }
     color: #ff3f34;
   }
 
+/* carousel */
   /* images */
   .img {
   display: block;
@@ -101,12 +102,18 @@ footer a:hover { color: white; text-decoration: underline; }
 				box-sizing: border-box;
 }
 
+/*top: -50%;
+left: 50%;
+transform: translate(-50%, -50%); */
 
 .carousel{
-  width: 100%;
+  position: relative;
+  width: 80%;
   overflow: hidden;
-	position: relative;
-  height:490px
+  height:490px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .carousel .item{
 	background-size: cover;

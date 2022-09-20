@@ -12,8 +12,10 @@
     <!-- Custom CSS -->
 <!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
 <link href="../../static/style.css" rel="stylesheet">
+<link href="../../static/style/modal.css" rel="stylesheet">
 
-    <title> Notebook | IISER_TVM - iGEM 2022</title>
+
+    <title>Notebook | IISER_TVM - iGEM 2022</title>
 
 </head>
 
@@ -115,53 +117,35 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
-  <div class="row mt-4">
-    <div class="col-lg-8">
-      <h2>What should this page contain?</h2>
-      <hr>
-      <ul>
-        <li>Chronological notes of what your team is doing.</li>
-        <li>Brief descriptions of daily important events.</li>
-        <li>Pictures of your progress.</li>
-        <li>Mention who participated in what task.</li>
-      </ul>
-    </div>
-    <div class="col-lg-4">
-      <h2>Inspirations</h2>
-      <hr>
-      <ul>
-        <li><a href="http://2018.igem.org/Team:Munich/Notebook">2018 Munich</a></li>
-        <li><a href="https://2019.igem.org/Team:Georgia_State/Notebook">2019 Georgia State</a></li>
-        <li><a href="https://2019.igem.org/Team:Newcastle/Notebook">2019 Newcastle</a></li>
-        <li><a href="https://2020.igem.org/Team:IISER-Pune-India/Notebook">2020 IISER Pune India</a></li>
-        <li><a href="https://2020.igem.org/Team:Lund/Notebook">2020 Lund</a></li>
-        <li><a href="https://2020.igem.org/Team:NOVA_LxPortugal/Notebook">2020 NOVA LxPortugal</a></li>
-        <li><a href="https://2020.igem.org/Team:RDFZ-China/NoteBook">2020 RDFZ China</a></li>
-      </ul>
-    </div>
+<header class="masthead" style= background:url("https://static.igem.wiki/teams/4359/wiki/woman.png"); id="alder">
+</header>
+<div>
+<div class="cointainer my-5 mx-5">
+  <div class="row">
+      <h3 style= "padding: 1% 3% 0% 8%; "> Lab Notebook</h3>
+      <p style= "padding: 0% 13% 0% 8%;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
   </div>
 </div>
+
+<iframe style="padding: 5px 5% 5% 10%; " src="../../pdfs/LockhartsLament.pdf" height="90%" width="90%"></iframe>
+
+
+
 
 <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
 <footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
   <div class="container">
     <div class="row mb-4">
-      <div class="col-lg-6 col-xs-12">
-        <h4 class="mb-3">Heading</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
-      </div>
-      <div class="col-lg-3 col-xs-12">
-        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-          <ul class="m-2 p-2">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Nam mauris velit</a></li>
-            <li><a href="#">Etiam vitae mauris</a></li>
-            <li><a href="#">Fusce scelerisque</a></li>
-            <li><a href="#">Sed faucibus</a></li>
-            <li><a href="#">Mauris efficitur nulla</a></li>
-          </ul>
-      </div>
+      <div class="col">
+        <img class="promega" src="../../static/images/New Eng.svg" alt="">
+        <img class="promega" src="../../static/images/promega.svg" alt="">
+        <img class="promega" src="../../static/images/IDT.svg" alt="">
+        <img class="beck" src="../../static/images/Beckmann.svg" alt="">
+     </div>
+
       <div class="col-lg-3 col-xs-12">
         <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
         <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
@@ -179,6 +163,7 @@
     </div>
   </div>
 </footer>
+
 
 <!-- Wiki Tools: Teams are allowed to remove it -->
 <style>
@@ -203,6 +188,13 @@
     .wiki-tools-footer img {
         object-fit: contain;
     }
+    header{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #084bc7;
+    height: 10%;
+    padding: 1%;
+  }
 </style>
 
 <section class="wiki-tools-footer container">
@@ -227,9 +219,17 @@
     wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
 </script>
 
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
+</script>
+
 
 <!-- Bootstrap Bundle with Popper -->
 <!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
 <script src="../../static/bootstrap.bundle.min.js"></script>
+<script src="../../static/sidenav.bundle.min.js"></script>
+<script src="../../static/style/script-sidenav.js"></script>
+
 </body>
 </html>

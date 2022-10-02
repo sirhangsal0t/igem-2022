@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 10;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 1px;
+    /* color: azure; */
+    /* color: #0B0C10;
+    color: #1F2833;
+    color: #C5C6C7;
+    color: #66FCF1;
+    color: #45A29E; */
+}
+
+
+.wrapall {
+    display: grid;
+    position: relative;
+    grid-template-columns: 5vw 90vw 5vw;
+    justify-items: center;
+    align-items: center;
+    z-index: 1;
+    /* background-color: blanchedalmond;
+    background-image: url('images/background1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
+.wrapall_progress_cover {
+    position: fixed;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+    margin-top: 50vh;
+    margin-bottom: 50vh;
+    width: 10px;
+    height: 20vh;
+    margin-left: 1vw;
+    z-index: 5;
+}
+
+.wrapall_masterbg_cover {
+    display: none;
+    position: fixed;
+    z-index: 1;
+}
+
+.wrapall_masterbg {
+    display: none;
+    position: fixed;
+    width: 100vw;
+
+}
+
+.wrapall_progress_bar {
+    position: relative;
+    border-radius: 9px;
+    width: 1vw;
+    height: 1vh;
+    background-color: lightblue;
+    opacity: 1;
+    z-index: 6;
+}
+
+.wrapall_main-heading {
+    grid-column: 2/3;
+    margin: 2rem;
+    font-size: 60px;
+}
+
+.wrapall_hd {
+    grid-column: 2/3;
+    margin: 2rem;
+}
+
+.wrapall_spline {
+    grid-column: 2/3;
+    height: 100vh;
+}
+
+.wrapall_hd2 {
+    position: fixed;
+    margin: 1rem;
+}
+
+.wrapall_para {
+    grid-column: 2/3;
+    font-size: medium;
+}
+
+.wrapall_para2 {
+    grid-column: 2/3;
+    justify-self: start;
+}
+
+.wrapall_img {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    grid-column: 2/3;
+    justify-self: center;
+    border-radius: 7px;
+    width: 700px;
+    height: 600px;
+}
+
+.wrapall_video {
+    grid-column: 2/3;
+    width: 80vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.wrapall_table {
+    grid-column: 2/3;
+}
+
+.tablecont {
+    width: 84vw;
+    overflow-x: scroll !important;
+}
+
+table {
+    border: none !important;
+    border-collapse: revert !important;
+    width: 85% !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 21px;
+}
+
+th {
+    padding: 5px !important;
+    border: none !important;
+    background-color: #e1e1e1 !important;
+    border-radius: 4px;
+    color: #000000 !important;
+}
+
+
+td {
+    padding: 5px;
+    background-color: #d9d9d9;
+    color: #000000;
+    border-radius: 4px;
+}

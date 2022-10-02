@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Modeling</title>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <link rel="stylesheet" href="../../static/model">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="main.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="wrapall_masterbg_cover">
+  <img src="images/background1.jpg" alt="" class="wrapall_masterbg">
+</div>
+  <div class="wrapall_progress_cover">
+
+    <div class="wrapall_progress_bar"></div>
+  </div>
+<div class="wrapall">
+
+  <h1 class="wrapall_hd">Mathematical modeling</h1>
+  <p class="wrapall_para">
+    Mathematical modeling plays a crucial role in understanding the project keeping precision l'esprit. For DUONCO, we segregated the entire project into its constituent steps to look at the avenues we had in hand.
+  </p>
+    <img class="wrapall_img" src="images/Project plan.png" alt="">
+
+    <p class="wrapall_para">We identified 7 areas where we could work on. Upon further counselling from experts, we realistically narrowed down our search to four. These avenues have been described below. We have also provided with a picture of our understanding as well as all the equations used and have cited the works we have used for achieving our goals</p>
+
+  <h1 class="wrapall_hd">OMV INTERNALISATION</h1>
+<p class="wrapall_para">
+    This is one of the most important areas of the project we hoped to model.
+    The output from this step gives us clues if our experiments are theoretically sound.
+    OMV internalisation
+
+
+    is the process where the OMV goes into the cell and releases its contents.
+
+    This is the most important step of the whole process as this determines the endocytosis will
+    be successful or not. An OMV that binds to the receptor is internalised by allowing it to form
+    a pouch in the cell membrane and the OMV enters the cell through this pouch and releases
+    the prodrug inside the cell. Acro pinocytosis, clathrin mediated endocytosis, caveolin mediated
+    endocytosis, or non‐caveolin, non clathrin mediated endocytosis. These pathways have all been
+    implicated in mediating OMV entry into host cells. Clathrin coated pits are formed allowing
+    OMVs to utilise toxin receptor mechanism to internalise the cargo. Different levels of purity in
+    preparation of OMVs affects the efficiency of drug delivery. OMV internalisation was also
+    mathematically modelled using one dimensional differential equation allowing us to attain
+    greater accuracy in overall understanding of the mechanism.
+
+    Initial vescicular association with the membrane can be descibed as given below
+    \[C+C_{bs} \underset{k_{d}}{\stackrel{k_{a}}{\rightleftharpoons}} C_{b}\]
+
+    Where \(C_{0}\) stands for the free vescicles, \(R_{s}\) for the number of free cell-surface receptors and \(C_{}\) for
+    the number of vesicles with single ligand bound to surface receptor. \(k_{a1}\) and \(k_{d1}\) represent the association and dissociation rate constants
+    \[C_{b} \overset{k_{int}}\to C_{i}\]
+    \[\frac{dC_{b}}{dt} = k_{a}C_{bs}C - k_{d}C_{b} - k_{int}C_{b}\]
+    \[\frac{C_{bs}}{dt} = -k_{a}C_{bs} + k_{d}C_{b} + R_{b}\]
+    \[\frac{dC_{i}}{dt} = k_{int}C_{b}\]
+
+    <h2 class="wrapall_hd2">Where the variables stand for:</h2>
+    <p class="wrapall_para">
+      <br>
+    \(C \to \) Concentration of Vescicles
+    <br>
+    \(C_{b} \to \) Concentration of bounded vescicles/cell
+    <br>
+    \(C_{bs} \to \) Concentration of free binding sites/cell
+    <br>
+    \(C_{i} \to \) Concentration of internalized vesicles/cell
+  </p>
+    <!-- \[C_{b}+C_{bs} \underset{k_{d 2}}{\stackrel{k_{d 2}}{\rightleftharpoons}} C_2\]
+    \[\frac{d C_{b}}{d t}=L_v k_{a} C C_{bs}-k_{d} C_{b}-\left(L_v-1\right) k_{a 2} C_{b} C_{bs}+2 k_{d 2} C_2\]
+    \[\frac{d C}{d t}=-2 k_{a} C C_{bs}+k_{d} C_{b}\]
+    \[\frac{d C_{0}}{d t}\!=\!-\!2k_{a1}C_{0}R_{s}\!+\!k_{d1}C_{1}\]
+    \[{\frac{d C_{2}}{d t}}=k_{a2}C_{1}R_{s}-2k_{d2}C_{2}\]
+    \[\frac{d C_{i n t}}{d t}=k_{i n t}C_{s}+\left(k_{d e g}-k_{r e c}\right)C_{i n t}\]
+    \[\]
+    \[\] -->
+</p>
+<img class="wrapall_img"src="/images/OMV internalization_seaborn.png" alt="">
+<h1 class="wrapall_hd"> TRANSCRIPTION AND TRANSLATION </h1>
+<p class="wrapall_para">
+  Transcription and Translation are the processes by which genetic information or instruction is passed
+  on by cells during cell division. Transcription is the process in which a DNA strand is copied onto an
+  RNA strand to encode proteins. The RNA polymerase binds to the promoter DNA and transcribes the
+  messenger RNA which serves as the template strand for protein synthesis. The ribosome binds to this
+  template strand during translation and codes for the respective protein. The quantification of transcription
+  is important as it controls which proteins are to be expressed and at what rate. A proper model of
+  Transcription and translation must take into account the various leakage factors and the initiation and
+  termination rates during the various steps of the process. A transcription circuit coupled with
+  translation circuit translated into a set of differential equations is what gives us the rate and relation
+  between various elements factored in our model. This allows us to achieve a decently accurate picture
+  of the genetic activity inside the cell.
+
+    A main question we wanted to answer was about the rate of production of proteins inside the cell. By knowing
+    our inputs precisely, how could we predict the rate of production of proteins inside the cell? To answer this question,
+    we made a flow diagram of the genetic activity of our interest inside the cell. The diagram is as given below.
+   </p>
+    <img class="wrapall_img" src="images/Gene circuit-02.png" alt="">
+    <p class="wrapall_para">
+    Here,to get the Protein output vs IPTG concentration on the extracellular space, we try to take into account each and every
+    metabolic process that could be realistically modeled within the time frame available to us.
+
+    Our gene of interest is inserted into E.coli SKBR3 using the plasmid pGEX-4T-1. The plasmid we used in our case had the
+    tac promoter in place for the lac operator that a normal lac operon model has. As such the system can be modeled as given below:
+
+    (1) Conversion of LacI gene to LacI mRNA through transcription
+    \[\phi \overset{K_{tcI}}\to mRNA_{LacI}\]
+    Loss of LacI mRNA through decay
+    \[ mRNA_{LacI}\overset{K_{dmI}}\to\phi \]
+
+    \[\frac{d[mRNA_{LacI}]}{dt} = K_{tcI} - K_{dmI}[mRNA_{lacI}]\]
+
+    (2) Coversion of LacI mRNA to LacI protein
+    \[mRNA_{LacI} \overset{K_{Ktl}}\to mRNA_{LacI} + LacI\]
+
+   Loss of LacI
+    \[LacI\overset{K_{dpI}}\to\phi\]
+    \[\frac{d[LacI - IPTG_{in}]}{dt} = K_{fI}[lacI][IPTG_{in}] - K_{bI}[LacI - IPTG_{in}]\]
+    (3)IPTG
+   </p>
+
+
+<h1 class="wrapall_hd">ELECTROPORATION</h1>
+<p class="wrapall_para">
+    Electroporation is the method of using high voltage electric pulses to increase cell permeability
+    facilitating delivery of drug and genetic material into the cell. In our project this technique has played
+    a crucial role in loading the drug into the OMV’s which acts as the vehicle for drug delivery in this
+    targeted model of delivery. The challenge was to optimize the size of the pore so as to enhance the
+    rate of drug carried in each OMV without compromising the drug loading process. Hence a
+    mathematical model was created to calculate the optimum pore size to be created and the most
+    effective carrying capacity of each OMV. This was done with help of one-dimensional differential
+    equations that took the pore size and carrying capacity as the variables. Protocols to be followed are to
+    be carefully studied as serious damage to OMVs jeopardise the final aim of the drug delivery
+    mechanism.
+
+    <h2 class="wrapall_hd2">Pore Density</h2>
+    <p class="wrapall_para">We assume the OMV's to be spherical in nature occupying a radius R. The electric field applied induces pores on the surface.
+      Their exact size and radius distribution depends on the electric field being applied. One must be careful with this process, because any slight mistake
+      could lead to irreversible electroporation and disruption of the membrane integrity.
+
+      The pore density N is governed by the well known Krassova and Filev equation, given below
+      \[\frac{d N}{d t}=\alpha\exp\left(\frac{V_{m}}{V_{e p}}\right)^{2}\left[1-\frac{N}{N_{0}\exp\left(q\left(\frac{V_{m}}{V_{e p}}\right)^{2}\right)}\right]\]
+    </p>
+
+    <p class="wrapall_para">Where {V_{m}} is the transmembrane potential of the spherical cell in a uniform electric field defined as:
+      \[{V_{m}} = 1.5E \times r_{c}cos\psi\]
+    </p>
+
+    <p class="wrapall_para">We isolate particulars of these equation using the below constants
+    \[K = \alpha{e}^{\frac{V_{m}^{2}}{V_{ep}^{2}}}\]
+    \[C = \frac{{e}^{-q{\frac{V_{m}^{2}}{V_{ep}^{2}}}}}{N_{o}}\]
+  </p>
+  <p class="wrapall_para"> The equation then becomes:
+    \[\frac{dN_{ep}}{dt} = K(1 - N_{ep}C)\]
+    Solving the above ordinary differential equation yeilds us:
+    \[-{\frac{ln(1 - N_{ep}C)}{C}}{\rvert}_{N_{epo}}^{{N_{ep}}^{t}}\]
+    \[-KCt = ln{(\frac{1 - {N_{ep}}^{t}C}{1 - {N_{ep}}^{o}C})}\]
+    \[e^{-kct} = \frac{1 - {N_{ep}}^{t}C}{1 - {N_{ep}}^{o}C}\]
+    \[e^{-kct}{(1 - {N_{ep}}^{o}C)} = {1 - {N_{ep}}^{t}C}\]
+    The constants for our case are given below:
+    \[\alpha = 1\times10^{9}\]
+    \[V_{m} = 0.08\]
+    \[V_{ep} = 0.258\]
+    \[{(\frac{V_{m}}{V_{p}})} = 0.3100775194\]
+    \[{(\frac{V_{m}}{V_{p}})}^{2} = 0.096148\]
+    \[e^{{(\frac{V_{m}}{V_{p}})}^{2}} = 1.10092\]
+    \[e^{-{(\frac{V_{m}}{V_{p}})}^{2}} = 1.10092\]
+    \[r_{m} = 0.8\times{10}^{-9}m\]
+    \[r_{a} = 0.51\times{10}^{-9}m\]
+    \[\frac{r_{m}}{r_{\alpha}} = 1.5686\]
+    \[q = 2.46059\]
+    \[K = \alpha{e}^{\frac{V_{m}^{2}}{V_{ep}^{2}}} = 1.10092\]
+    \[C = \frac{{e}^{-q{\frac{V_{m}^{2}}{V_{ep}^{2}}}}}{N_{o}}= {(\frac{0.789322}{N_{o}})}\]
+    We plug in these values for our original equation. It leads us to the plot shown below.
+    \[{N_{ep}}^{t} = {\frac{1 - e^{-kct}{(1 - {N_{ep}}^{o}C)}}{C}}\]
+    <!-- \[{N_{ep}}^{o} \to {N_{ep}}\; at\; t  = 0\]
+    \[{N_{ep}}^{t} \to {N_{ep}}\;  at\; t\] -->
+  </p>
+  <h1 class="wrapall_hd2">Discussion</h1>
+  <p class="wrapall_para">As expected the pore density exponentially decays off to 0 as we increase the field strength(characterized by membrane voltage Vm)</p>
+    </p>
+    <video  controls loop class="wrapall_video" src="videos/Pore density.mp4"></video>
+
+<h1 class="wrapall_hd">LIGAND RECEPTOR INTERACTION</h1>
+<p class="wrapall_para">
+    Ligand receptor interactions are a major class of protein-protein interactions that regulate life
+    processes and helps maintain specificity of various proteins and their functions. The conformational
+    change that the ligand undergoes effectively acts as a lock and key mechanism which discriminates
+    between proteins and makes sure that only the specific ligand binds to the receptor site.
+    Understanding ligand receptor interactions and quantifying their rates are crucial for designing the pro
+    drug delivery mechanism and ensuring the selective targeting of cancerous cells with minimum
+    collateral damage to healthy cells. The rate at which ligand binds at the receptor mechanism and the
+    probability of a ligand failing to do so give us important information in deciding the optimum dosage of
+    the pro drug to be loaded. It also helps in finding the rate of reaction and the time taken for the
+    successful completion of the binding. We proceed with finding the binding energies using Autodock Vina,
+    a popular molecular docking software.
+
+
+</p>
+<h1 class="wrapall_hd">PRODRUG ENZYME INTERACTION</h1>
+<p class="wrapall_para">
+    Prodrug is the precursor drug that is inactive independently but activates itself as it combines with the
+    promoiety. The damage to healthy cells is prevented by this inactive nature of prodrug, as the specific
+    combination of proteins found on the cancerous cells will make sure that only pro drug and pro
+    moiety enters the cell only in them and even if accidentally it enters in other cells only one of them
+    enters and being inactive will cause no damage to the cell. The prodrug enzyme kinetics are quite
+    important in understanding amount of prodrug required to destroy each cell and load it respectively.
+    Chemical instability, poor water solubility, rapid pre systemic metabolism, inadequate absorption, and
+    toxicity and many more hurdles in usual drug delivery mechanisms are overcome by the prodrug
+    method. This method also has less toxicity and is efficient compared to other methods making it a
+    suitable candidate for such processes.
+
+    <h2 class="wrapall_hd2">Assumptions</h2>
+    <p class="wrapall_para2">(i) Effect of serum concentration of 5-FC on measured tissue concentration of 5-FC is negligible</p>
+    <p class="wrapall_para2">(i) Effect of bound 5-FC and 5-FU on measured tissue concentrations of 5-FC and 5-FU is negligible</p>
+    <p class="wrapall_para2">(i) Distribution of 5-FC and 5-FU between interstitial and intercellular spaces is effectively instantaneous with a distribution volume of 1.0</p>
+    <p class="wrapall_para2">(i) The concentration of 5-FC, 5-FU and F Nuc withing the compartments is homogenous</p>
+    <p class="wrapall_para2">(i) The tranport of 5-FU and of the tissue for first-order kinetics is same for each of the animals studied here</p>
+    <p class="wrapall_para2">(i) Measured levels of 5-FU and FNuc are both, unidirectional</p>
+    <p class="wrapall_para2">(i) FNuc is effecively rapped within the tumor tissue</p>
+    <div  class="wrapall_table">
+    <table>
+        <tr>
+          <th>Rate</th>
+          <th>\[{K_{1}}^{app}\]</th>
+          <th>\[{K_{3}}^{app}\]</th>
+          <th>\[\frac{K_{1} \times K_{3}}{K_{2}+K_{3}}\]</th>
+          <th>\[{K_{1}}^{app}\]</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0.316</td>
+          <td>0.0029</td>
+          <td>0.0012</td>
+          <td>0.0090</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>0.831</td>
+          <td>0.0023</td>
+          <td>0.0025</td>
+          <td>0.0018</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>0.728</td>
+            <td>0.0010</td>
+            <td>0.0010</td>
+            <td>0.0009</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>0.287</td>
+            <td>0.0022</td>
+            <td>0.0008</td>
+            <td>0.0010</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>0.267</td>
+            <td>0.0028</td>
+            <td>0.0010</td>
+            <td>0.0011</td>
+          </tr>
+      </table>
+      </div>
+<p class="wrapall_para">
+      \[K_{i} = \frac{{K_{1}}^{app}\times{K_{3}^{app}}}{{K_{2}}^{app} + {K_{3}^{app}}}\]
+      \[Rate = -\frac{d[A]}{dt} = k[A]\]
+      \[\frac{d[A]}{A} = -kdt\]
+      \[\int_{[A]_{o}}^{[A]}\frac{d[A]}{[A]} = -\int_{to}^{t}kdt\]
+      \[\int_{1}^{[A]}\frac{d[A]}{[A]} = -\int_{to}^{t}kdt\]
+      \[ln[A] - ln[A_{o}] = -kt\]
+      \[ln[A] = -kt + ln[A_{o}]\]
+      \[t_{1/2} = \frac{ln2}{k}\]
+      \[t_{1/2} = 551.26\; \pm 404.92s\]
+
+    </p>
+</p>
+
+
+</div>
+
+
+
+</body>
+</html>

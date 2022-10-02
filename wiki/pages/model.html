@@ -37,12 +37,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto left-aligned">
 
-        <!-- HOME ---->
+        <!---- HOME ---->
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('index') }}">Home</a>
         </li>
 
-        <!-- TEAM ---->
+        <!---- TEAM ---->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Team
@@ -54,7 +54,7 @@
           </ul>
         </li>
 
-        <!-- PROJECT ---->
+        <!---- PROJECT ---->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Project
@@ -171,8 +171,7 @@
         <br>
         <p>We identified 7 areas where we could work on. Upon further counselling from experts, we realistically narrowed down our search to four. These avenues have been described below. We have also provided with a picture of our understanding as well as all the equations used and have cited the works we have used for achieving our goals.
         </p>
-        <br>
-        <br>
+
         <!--OMV Internalisation-->
         <h1 id="head2" style="color: #002147">OMV Internalisation</h1>
         <br>
@@ -197,7 +196,6 @@
         \[\frac{dC_{b}}{dt} = k_{a}C_{bs}C - k_{d}C_{b} - k_{int}C_{b}\]
         \[\frac{C_{bs}}{dt} = -k_{a}C_{bs} + k_{d}C_{b} + R_{b}\]
         \[\frac{dC_{i}}{dt} = k_{int}C_{b}\]
-      </p>
         <br><br>
         <h2>Where the variables stand for:</h2>
         <p>
@@ -232,7 +230,6 @@
               <em class="figure-legend"><strong>Figure 2. </strong>Gene Circuit</em>
             </p>
         </div>
-        <br>
         <p>
           Here,to get the Protein output vs IPTG concentration on the extracellular space, we try to take into account each and every
           metabolic process that could be realistically modeled within the time frame available to us.
@@ -240,21 +237,25 @@
           Our gene of interest is inserted into E.coli SKBR3 using the plasmid pGEX-4T-1. The plasmid we used in our case had the
           tac promoter in place for the lac operator that a normal lac operon model has. As such the system can be modeled as given below:
           <br>
-        <ol>
-          <li>Conversion of LacI gene to LacI mRNA through transcription
-            \[\phi \overset{K_{tcI}}\to mRNA_{LacI}\]
-             Loss of LacI mRNA through decay
-             \[ mRNA_{LacI}\overset{K_{dmI}}\to\phi \]
-             \[\frac{d[mRNA_{LacI}]}{dt} = K_{tcI} - K_{dmI}[mRNA_{lacI}]\]
+          <ol>
+          <li> Conversion of LacI gene to LacI mRNA through transcription
+          \[\phi \overset{K_{tcI}}\to mRNA_{LacI}\]
+          Loss of LacI mRNA through decay
+          \[ mRNA_{LacI}\overset{K_{dmI}}\to\phi \]
+
+          \[\frac{d[mRNA_{LacI}]}{dt} = K_{tcI} - K_{dmI}[mRNA_{lacI}]\]
           </li>
+
           <li>Coversion of LacI mRNA to LacI protein
           \[mRNA_{LacI} \overset{K_{Ktl}}\to mRNA_{LacI} + LacI\]
-          Loss of LacI
+
+         Loss of LacI
           \[LacI\overset{K_{dpI}}\to\phi\]
           \[\frac{d[LacI - IPTG_{in}]}{dt} = K_{fI}[lacI][IPTG_{in}] - K_{bI}[LacI - IPTG_{in}]\]
           </li>
+
           <li>IPTG</li>
-        </ol>
+        </ul>
         </p>
         <br>
         <!--Project Design Safety-->
@@ -262,10 +263,14 @@
         <br>
         <p>
           Electroporation is the method of using high voltage electric pulses to increase cell permeability facilitating delivery of drug and genetic material into the cell. In our project this technique has played
-          a crucial role in loading the drug into the OMV’s which acts as the vehicle for drug delivery in this targeted model of delivery. The challenge was to optimize the size of the pore so as to enhance the
-          rate of drug carried in each OMV without compromising the drug loading process. Hence a mathematical model was created to calculate the optimum pore size to be created and the most
-          effective carrying capacity of each OMV. This was done with help of one-dimensional differential equations that took the pore size and carrying capacity as the variables. Protocols to be followed are to
-          be carefully studied as serious damage to OMVs jeopardise the final aim of the drug delivery mechanism.</p>
+          a crucial role in loading the drug into the OMV’s which acts as the vehicle for drug delivery in this
+          targeted model of delivery. The challenge was to optimize the size of the pore so as to enhance the
+          rate of drug carried in each OMV without compromising the drug loading process. Hence a
+          mathematical model was created to calculate the optimum pore size to be created and the most
+          effective carrying capacity of each OMV. This was done with help of one-dimensional differential
+          equations that took the pore size and carrying capacity as the variables. Protocols to be followed are to
+          be carefully studied as serious damage to OMVs jeopardise the final aim of the drug delivery
+          mechanism.</p>
         <br>
         <h2>Pore Density</h2>
         <br>
@@ -415,21 +420,7 @@
         <!--<a class ="button" id="six">Read More</a>-->
         </div>
       </div>
-
-  <!-- <div id="mod-container" class="mod-containercss">
-    <div class="mod-background">
-      <div class="mod">
-        <h2>I'm a Modal</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
-                  <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
-        </svg>
-      </div>
-    </div>
-  </div> -->
+  </div>
 </div>
 
     <script  src="../../static/carousel.js"></script>

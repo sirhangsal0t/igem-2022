@@ -296,3 +296,11 @@ td {
     color: #000000;
     border-radius: 4px;
 }
+
+/* video */
+.wrapall_video {
+    grid-column: 2/3;
+    width: 80vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}

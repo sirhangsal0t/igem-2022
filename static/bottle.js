@@ -1,7 +1,7 @@
 var textContainer = document.querySelector('#bottle-path-container');
 var textContainer1 = document.querySelector('#bottle-path-container1');
 const topElement = document.getElementById('header');
-const bottomElement = document.getElementById('footer');
+const bottomElement = document.getElementById('svg-end');
 
 
 //sets path height, by updating the html code
@@ -34,10 +34,10 @@ updateTextPathOffset(0);
 
 function bottleScroll(){
   requestAnimationFrame(function(){
-  
+
     var rect = textContainer.getBoundingClientRect();
     var scrollOffset = (window.innerHeight/2 - (rect.y));
-    
+
     if (scrollOffset>=0){
         var scrollPercent = (scrollOffset)/(rect.height);
         updateTextPathOffset(pathLength*scrollPercent);

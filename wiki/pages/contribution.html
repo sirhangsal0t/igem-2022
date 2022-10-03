@@ -12,12 +12,13 @@
     <!-- Custom CSS -->
 <!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
 <link href="../../static/style.css" rel="stylesheet">
+<link href="../../static/style/modal.css" rel="stylesheet">
 
-    <title> Contribution | IISER_TVM - iGEM 2022</title>
+    <title>Contribution | IISER_TVM - iGEM 2022</title>
 
 </head>
 
-<body>
+<body style="background-color: #fdfff0">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
@@ -115,22 +116,154 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
-  <div class="row mt-4">
-    <div class="col">
-      <div class="bd-callout bd-callout-info">
-        <h4>Bronze Medal Criterion #4</h4>
-        <p>Make a useful contribution for future iGEM teams. Use this page to document that contribution.<p>
-        <p>If you are making a contribution by adding information to an existing Part or creating a new Part, you must document your contribution on the Part's Main Page on the <a href="http://parts.igem.org/Main_Page">Registry</a> for your team to be eligible for this criteria. You can use this page to link to that part and include additional information about your contribution.</p>
-        <hr>
-        <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
+<header class="masthead"> <img src="../../static/images/woman.png">
+</header>
+<!-- <header>
+<img src="../../static/images/V2.png" class="svg-end" style= id="header">
+</header> -->
+
+<div class="cointainer my-4 mx-4">
+  <div class="row">
+    <!-- <div class="col-3">
+      <ul class="list-group fixed-content" id="sidenav">
+        <ul class="navbar-links">
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="#head1">Introduction</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="#head2">Laboratory Safety</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="#head3">Chemical Safety</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="#head4">Project Design Safety</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="head5">Human Subject Research Safety</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="head6">References</a>
+          </li>
+        </ul>
+      </ul>
+  </div> -->
+
+
+
+    <div data-bs-target="sidenav" data-bs-spy="scroll"  style="padding-top: 20px" >
+      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px">
+
+        <!--Registry-->
+        <br>
+        <h1 id="head1" style="color: #002147">Contributions to the Registry</h1>
+        <br>
+        <p>During our project, we generated multiple basic and composite parts, and characterized and improved some existing parts. We created Cytolysin A (Y171F) (<a href="http://parts.igem.org/Part:BBa_K4359001">BBa_K4359001</a>) an attenuated version of Cytolysin A for future teams to safely work with. We added to the characterization of the myc tag (<a href="http://parts.igem.org/Part:BBa_K823036">BBa_K823036</a>), and demonstrated that anti myc antibodies cross react with endogenous c-myc present in many mammalian cell lines, making it incompatible for use with such systems. We characterized and added SuperTag RFP (part num) to the registry, an improvement over TagRFP (<a href="http://parts.igem.org/Part:BBa_K2557035">Part:BBa_K2557035</a>). </p>
+        <br><br>
+        <h2>Table for Basic Parts</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359000">BBa_K4359000</a></th>
+              <td>Coding Protein</td>
+              <td>E.coli K-12 Cytolysin A (ClyA)</td>
+              <td>1008 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359001">BBa_K4359001</a></th>
+              <td>Coding Protein</td>
+              <td>E.coli K-12 Cytolysin A (ClyA) (Y181F)</td>
+              <td>930 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359002">BBa_K4359002</a></th>
+              <td>Coding Protein</td>
+              <td>Anti-HER2 Affibody-ZHER2:342</td>
+              <td>177 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359003">BBa_K4359003</a></th>
+              <td>Coding Protein</td>
+              <td>(SSSSG) x2 serine glycine linker</td>
+              <td>30 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359004">BBa_K4359004</a></th>
+              <td>Coding Protein</td>
+              <td>Tumour homing peptide THP Pep-1 against SKBR3</td>
+              <td>30 bp</td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <h2>Table for Composite Parts</h2>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359000">BBa_K4359000</a></th>
+              <td>Coding Protein</td>
+              <td>E.coli K-12 Cytolysin A (ClyA)</td>
+              <td>1008 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359001">BBa_K4359001</a></th>
+              <td>Coding Protein</td>
+              <td>E.coli K-12 Cytolysin A (ClyA) (Y181F)</td>
+              <td>930 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359002">BBa_K4359002</a></th>
+              <td>Coding Protein</td>
+              <td>Anti-HER2 Affibody-ZHER2:342</td>
+              <td>177 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359003">BBa_K4359003</a></th>
+              <td>Coding Protein</td>
+              <td>(SSSSG) x2 serine glycine linker</td>
+              <td>30 bp</td>
+            </tr>
+            <tr>
+              <td><a href="http://parts.igem.org/Part:BBa_K4359004">BBa_K4359004</a></th>
+              <td>Coding Protein</td>
+              <td>Tumour homing peptide THP Pep-1 against SKBR3</td>
+              <td>30 bp</td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <!--Handbook-->
+        <h1 id="head2" style="color: #002147">Bacterial Outer Membrane Vesicles: A Guide</h1>
+        <br>
+        <p>As a team we are very passionate about OMVs and their potential in diverse fields of biomedical research. We performed extensive literature review regar̥ding the composition, biogenesis, bioengineering of OMVs and their applications in vaccines, as adjuvants, diagnostics. We wanted to collate this information and present an OMV handbook that can be used as a reference by iGEM teams and other researchers in the future.</p>
+        <br>
+        <div>
+          <iframe style="padding: 5px 5% 5% 10%; height: 500px; width: 80%;" src="../../pdfs/LockhartsLament.pdf"></iframe>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+
 <!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
-<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white">
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white ">
   <div class="container">
     <div class="row mb-4">
       <div class="col-lg-6 col-xs-12">
@@ -189,6 +322,13 @@
     .wiki-tools-footer img {
         object-fit: contain;
     }
+    header{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #084bc7;
+    height: 10%;
+    padding: 1%;
+  }
 </style>
 
 <section class="wiki-tools-footer container">
@@ -213,9 +353,15 @@
     wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
 </script>
 
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
+</script>
+
 
 <!-- Bootstrap Bundle with Popper -->
 <!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
 <script src="../../static/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,196 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+
+    <!-- Bootstrap CSS -->
+<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
+<link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+<link href="../../static/style.css" rel="stylesheet">
+
+    <title>Human Practices | IISER_TVM - iGEM 2022</title>
+
+</head>
+
+<body style="background-color: #fdfff0">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="#">IISER_TVM</a>
+
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
+
+        <!---- HOME ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <!---- TEAM ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
+        </li>
+
+        <!---- PROJECT ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+          </ul>
+        </li>
+
+        <!---- PARTS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+          </ul>
+        </li>
+
+        <!---- SAFETY ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        </li>
+
+        <!---- HUMAN PRACTICES ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        </li>
+
+        <!---- AWARDS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Awards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<header class="masthead" style= background:url("../../static/images/woman.png");>
+</header>
+<script defer src="../../static/modal.js"></script>
+<div class="cointainer my-4 mx-4">
+  <div class="row">
+    <div class="col-3">
+      <ul class="list-group fixed-content" id="sidenav">
+        <ul class="navbar-links">
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href=#overview>Overview</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a class="" href=#four>Our Approach</a>
+            <div class="dropdown">
+              <a href="#">Understanding the problem</a>
+              <a href="#">Ideate</a>
+              <a href="#">Define a solution</a>
+              <a href="#">Evaluate and execute</a>
+            </div>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a class="" href=#ihp>Integrated Human Practices</a>
+            <div class="dropdown">
+              <a href="#">Motivation</a>
+              <a href="#">Project Design</a>
+              <a href="#">Project Building</a>
+              <a href="#">Stakeholder Interactions</a>
+              <a href="#">Our Solution</a>
+              <a href="#">Safety</a>
+              <a href="#">Future Directions</a>
+            </div>
+          </li>
+
+          </li>
+        </ul>
+      </ul>
+    </div>
+
+
+    
+    <div data-bs-target="sidenav" data-bs-spy="scroll" class="col-9" style="padding-top: 20px" >
+      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px"   >
+        <h1 id="overview" style="color: #002147">Overview</h1>
+        <br>
+        <p>
+          Cancer is a leading cause of death worldwide, accounting for nearly 10 million deaths in 2020, or nearly one in every six. Each year, approximately 400,000 children develop cancer. In recent years even with the advancements in genomic, proteomic, and bioinformatics methods revealing the complex interaction of variables responsible for malignant phenotypes. We have had occasional successes and the treatment for most of the cancers are still a long way from reality.
+        </p>
+        <p>
+          Traditional cancer treatment is predicated on the notion that all somatic cells are equally malignant. Both malignant and normal cells are equally susceptible to existing chemotherapy medicines, thus, it kills both rapidly growing cancer cells and normal cells. This leads to many adverse effects or even death in some cases. Untargeted radiotherapy also faces similar specificity issues. Even for targeted drugs there are several flaws for example : antibody-drug conjugates often cause great side effects; pathway inhibitor drugs rely on specific pathways which sometimes can be bypassed by tumour cells.</p>
+        <p>
+          As we were informed of all these issues, we were determined to find a means to aid the millions of people suffering from cancer and its harsh treatment side effects. We began by learning how cancer medicines function and tried to get to the bottom of the issue. It was immediately apparent that present drug delivery systems were severely inadequate due to their unaffordable costs and off-site targeting. Therefore, we chose to build a more robust affordable drug delivery system with improved specificity and efficacy.</p>
+        <p>
+          Thus we formed a group of 15 enthusiastic research students to seek and tackle the challenge of offsite targeting by leveraging the ability of synthetic biology and combining the many features of cancer medication therapy in a synergistic manner. We started working extensively towards this goal and eventually it led to the creation of <strong>DUONCO</strong>, a novel dual nanovesicle drug delivery system that we think has the potential to reduce off-site targeting and to our knowledge is the first time such a dual marker system has been designed for targeted therapy.</p>
+        <p>
+          Our next objective was to select a suitable model for our project. We went through literature on current statistics of cancer rates in India and found out that breast cancer has become the most prevalent form of cancer with the highest rate of incidence and highest mortality rate. A few  of our members also attended a medical camp held in our community, where they learned about the dramatic increase in breast cancer cases and their lack of knowledge on the disease's diagnosis, causes, and treatments. This motivated us to select breast cancer as our model disease and move toward the development of our drug delivery system.</p>
+        <p>
+          As our project progressed, we engaged with oncologists, doctors, and drug delivery specialists to pick an appropriate nanovesicle, accessible biomarkers, and to finalise a few other components of our prototype. Our project modelling proved to be incredibly useful for comprehending OMV internalisation, augmenting our wetlab. With the aid of stakeholder interactions and their suggestions, we were able to choose and modify our components. While speaking with non-governmental organisations (Hair for Hope, Knitted Knockers), we observed the lack of knowledge and facilities and stigmas around breast cancer. This motivated us to organise awareness talks and drama, screening camp, hair donation campaign, awareness pamphlets, and various other outreach events to spread the word. We also conducted a survey via online and offline platforms to analyse their awareness on breast cancer and related topics. This gave us insights on people's misconceptions such as: males cannot get breast cancer, breast cancer can cause pregnancy issues.  So we made it a point to ensure that all of these issues were covered while preparing our outreach initiatives. Our meeting with companies and the government startup commission helped to get perspective on how to further our concept, and enabled us to build a suitable plan to introduce DUONCO to the public in the best manner.
+        </p><br>
+        
+        <h3>Survivor Interviews</h3>
+        <h5>Hello</h5>
+        <br>
+        <p>
+            The end users of our novel drug delivery method are the patients. Getting to know of their difficulties and expectations is essential. Cancer is a widely spoken topic. However, there are fewer discussed aspects of breast cancer. Less frequently discussed are the obstacles that patients face during therapy, including mental and physical frailty, societal pressure, and financial concerns. Therefore, we interviewed five individuals who had been cured of breast cancer. We obtained their permission prior to conducting our semi-structured interview. Their perspectives on various breast cancer elements are described <a href="#" data-modal-target="#modal1" class="button">here</a>.
+            <br><br>
+            The consent form is linked <a href="">here.</a>
+        </p>
+        <div class="modal" id="modal1">
+            <div class="modal-header">
+                <div class="title">Peer Discussion - 2nd July 2022</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body text-justify">
+                &emsp;&emsp;&emsp;Hosted by Arijit Das, a PhD student. An overview of the Standard Model of Particle Physics.The Higgs was turning ten, and the World’s Largest Experiment would reboot in full steam after more than three years of enhancements. The mood was a celebration, motivating us to an enthralling discussion on the almost spotless theory: The standard model of particle physics. The discussion hosted by Arijit Das (PhD student, batch 21) set for the 2nd of July 2022 delved into the ideas behind quantum field theory; how particles were consequential of excitations of points on particular fields and the Casimir effect, wherein two plates move towards each other when kept pretty close. We briefly explored the ties to quantum properties like the electron's magnetic moment, the g factor, and internal degrees of freedom. With the bridge done, it was time to look at the turkey on the table, and no discussion of the standard model is ever complete without a biscuit with the Higgs Boson. The ever-expanding field engulfs all of us and gives most particles their mass. We also took a trip to the mathematically intriguing gauge symmetries and how Wu’s Experiment ridiculed us with the counter-intuitive idea that “Nature does not hold symmetry holy.” Ending on a high, we explored the questions that we cannot resort to the all-encompassing model for and how it has been the inception of an entire field of its own, understanding the world beyond the standard model and our quest for a unified theory of everything.
+            </div>
+        </div>
+        <div id="overlay"></div>
+        
+        

@@ -263,7 +263,7 @@ transform: translate(-50%, -50%); */
 }
 
 /* table */
-.wrapall_table {
+/* .wrapall_table {
     grid-column: 2/3;
 }
 
@@ -294,7 +294,7 @@ td {
     background-color: #d9d9d9;
     color: #000000;
     border-radius: 4px;
-}
+} */
 
 /* video */
 .wrapall_video {

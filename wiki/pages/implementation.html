@@ -121,6 +121,7 @@
 
 <div class="cointainer my-4 mx-4">
   <div class="row">
+
     <div class="col-3">
       <ul class="list-group fixed-content" id="sidenav">
         <ul class="navbar-links">
@@ -144,36 +145,21 @@
             </div>
           </li>
           <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head4">Mode of Administration</a>
-          </li>
-          <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head5">Ex Vivo Testing</a>
-          </li>
-          <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head6">In-vivo Testing</a>
+            <a href="#head4">Administration and Testing</a>
             <div class="dropdown">
-              <a href="#subhead6.1">Animal Trials</a>
-              <a href="#subhead6.2">Clinical Trials</a>
+              <a href="#subhead6.1">Ex Vivo Testing</a>
+              <a href="#subhead6.2">In-vivo Testing</a>
             </div>
           </li>
           <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head8">Limitations</a>
+            <a href="#head5">limitations</a>
           </li>
           <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head9">Future Directions</a>
-          </li>
-          <li class="navbar-dropdown list-group-item list-group-item-action">
-            <a href="#head9">Market Analysis and Entrepreneurship</a>
-            <div class="dropdown">
-              <a href="#subhead10.1">Scalabilty</a>
-              <a href="#subhead10.2">Scientific and Business interests</a>
-              <a href="#subhead10.3">Global and Local Market sizes</a>
-              <a href="#subhead10.4">Startup</a>
-            </div>
+            <a href="#head6">Future Directions</a>
           </li>
         </ul>
       </ul>
-  </div>
+    </div>
 
 
 
@@ -184,251 +170,408 @@
         <h1 id="head1" style="color: #002147">Overview</h1>
         <br>
         <p>
-          During the duration of our project, we interacted, collaborated and exchanged ideas with multitude of teams around the globe. Ranging from synbio music video to a 3 day forum comprising talks, panel discussion, interview and quiz! Collaborations has been a golden oppurtunity for us to interact with teams who come from diverse backgrounds and nationality, appreciate the beauty of how inclusive research can be, learn from each other and grow during the iGEM duration. Our amazing set of collaborators has played a crucial role in molding and improvising our thought process, project ideation and execution. We learned the importance of collaboration and interpersonal skills. The happy ending of each collaboration definitely bought smile to our faces. Apart from spreading awareness on project or synbio, we had created a lot of joyful moments to cherish.
+          A fundamental issue in drug therapy for cancer is that current chemotherapeutic drugs have poor specificity and indiscriminately affect cancerous and non-cancerous cells. Developing drugs that preferentially target tumour cells represents a grand challenge in cancer therapy research that is of significant interest to biomedical researchers, patients, medical practitioners, and pharmaceutical companies. With Duonco we believe that we have taken positive strides towards this goal of targeted drug therapy, however as a student team we are limited by the scope of the experiments that we can carry out. In this page we showcase how our lab work and results can be extended to develop a fully functional drug delivery system.
         </p>
         <br>
 
 
-        <h1 id="head3" style="color: #002147">Group Collaborations</h1>
+        <h1 id="head3" style="color: #002147">Prodrug Enzyme System</h1>
         <br>
         <p>
-          Brainstorming sessions with individual teams, in time collated to collaborating with multiple teams at once and organising events at much bigger scale. This enabled us to address a wider set of audience.
-        </p>
-        <br>
-        <h2>Collaborations We Hosted</h2>
-        <br>
-        <p>
-          Among the group collaborations, for some of them we came up with the basic frame of event and then invited other teams to be a part of the venture. Though we hosted such collaborations, collaborators with their suggestions made the organisation and planning for event smoother and efficient.
-        </p>
-        <br>
-        <h3>We-Talk</h3>
-        <p>
-          Why not gather all of the teams addressing on women's issues under one roof? This thought prompted us to go for a grand collaboration! We had recurring meetups with teams iGEM IISER Tirupati, IISER Berhampur, IIT Roorkee, Yale and Tu Delft. We brainstormed on the best way to raise awareness about these women's issues and decided to have a three-day session comprising interviews, panel discussions, and talks with people and organisation that have made pioneering efforts to enhance women's lives. Due to the hectic schedule and time constraints, we decided to go ahead with IISER Tirupati, IIT Roorkee and IISER Berhampur.
+          An essential component of our project is using the prodrug enzyme system integrated with the dual OMV system. The prodrug enzyme system allows for an additional check point of specificity, wherein only when the two types of OMVs are internalised by a single cell expressing both types of cell surface receptors will the conversion of the prodrug to its active cytotoxic form occur. In the absence of simultaneous double internalisation, significant cytotoxic activity will not be observed. There are numerous pro-drug and enzyme combinations available in the market at present. However, selecting the best combination is a laborious process. Several aspects need to be taken into consideration while selecting the optimal combination, such as:
           <ul>
-            <li><strong>IISER Tirupati:</strong> Developing aptamer based diagnostic kit for PCOS</li>
-            <li><strong>IISER Berhampur:</strong> The  goal of their project is  to develop an aptamer-based diagnostic kit to detect uropathogenic bacteria; both gram-negative (E.coli K-12) and gram positive that cause maximum cases of UTIs</li>
-            <li><strong>IIT Roorkee: </strong>Developing a CRISPR/ Cas12a system to diagnose cervical cancer</li>
-            <!-- <li><strong>Yale: </strong> Engineering E. coli Nissle using the landing pad technology for the heterologous expression of the equol pathway as an alternative to menopause treatment</li>
-            <li><strong>Tu Delft: </strong>Creating a biosensor for GHB, a commonly used rape drug.</li> -->
+            <li><strong>The half-life of the pro-drug (before and after it is activated): </strong>We would want our active drug to have a short half-life so that it would not escape from the site of the tumour and invade the normal tissues killing the normal cells. This depends on the enzyme kinetics and how long it takes for both the OMVs to reach the tumour site. As many pro-drugs are alkylating agents and they are well known for their mutagenic and carcinogenic properties, so it is best to restrict their action by localising it to the tumour tissue.</li><br>
+            <li><strong>The half-life of the enzyme: </strong>Our enzyme should stay active long enough to allow for the entry of the prodrug into the cell.  If the enzyme were to degrade way before the pro-drug enters the cells, the purpose of the prodrug enzyme system would be defeated.</li><br>
+            <li><strong>Time for OMVs to reach our target tissue: </strong>
+            The time taken for the OMVs to reach the tumour site should be no longer than 10 minutes. This is primarily because the half-life of the enzyme that we would be selecting would be between 10-20 minutes. Also, the longer the OMVs stay in the bloodstream the higher the chances of them being attacked by the immune system and giving rise to inflammatory responses in non-target tissues.</li><br>
+            <li><strong>Off-site targets of the enzyme and pro-drug: </strong>The enzyme that we plan on using should have very high specificity for our prodrug and very minimal interactions with other proteins present in the cells. If a specific enzyme has an inherent negative interaction with components of the mammalian cell, this would lead to adverse effects even in the absence of the prodrug.
+            </li><br>
+            <li><strong>Bystander effect of the activated drug: </strong>Many drugs tend to diffuse outside of the cells into the extracellular matrix of the tissue and tend to affect other cells. While selecting a pro-drug, we should keep in mind that the bystander effect and the diffusion of this activated drug into the extracellular matrix is minimum.
+            </li><br>
+            <li><strong>Enzyme kinetics and its origin: </strong>The origin of enzymes is very important because a human enzyme is likely nonimmunogenic. However, if it is a non-mammalian enzyme with no human analogue, then it would have the benefit of being more specific but would be immunogenic, which would limit the repeated use due to host response. Bacterial enzymes also have superior kinetics, converting the prodrug more efficiently than mammalian enzymes. However, a mutated human enzyme that would have a pro-drug as its only substrate can be a long-term possibility, but the production and development of such an enzyme is a difficult task.
+            </li>
           </ul>
-          <!--<a class ="button" id="six">Read More</a>-->
+        </p>
+        <br>
+
+        <h2 id="subhead2.1">Our system </h2>
+        <br>
+        <p>
+          After doing an extensive survey on the widely used prodrug-enzyme combinations taking into consideration all of the above factors, we have come to a conclusion that the perfect fit as of now to our project would be the combination of 5-Fluorocytosine (5FC) and Cytosine deaminase (CD). Cytosine deaminase converts 5FC to 5-Fluorouracil (5FU). 5FU traverses into the neighbouring cells, hence if injected at the core of the tumour then even a small amount of the activated drug should be enough to cause a significant decrease in the size of the tumour. Also, phase 1 and phase 2 trials have been performed for this particular drug. It exerts its anticancer action through inhibition of thymidylate synthase and incorporation of its metabolites RNA and DNA.
         </p>
         <p>
-          We brainstormed on the best way to raise awareness about these women's issues and decided to have a three-day forum comprising interviews, panel discussions, and talks with people and organisations that have made pioneering efforts to enhance women's lives.
+          There are a few side effects associated with this drug such as mucositis, myelosuppression, dermatitis and cardiac toxicity. However, due to the modular design of Duonco, we can minimise the impact of the side effects because of the increased specificity and also by optimising the drug and enzyme concentration that will be injected. These side effects come into effect only when the drug is active, therefore, if and only if the prodrug comes in contact with the enzyme. Half life of the active form of the drug, i.e., 5FU is around 10-20 minutes. This will ensure that the drug is degraded before it starts spreading into the neighbouring tissues and killing non tumorous cells
+        </p>
+        <br>
+
+        <h2 id="subhead2.2">Loading of Prodrug and Enzyme</h2>
+        <br>
+        <p>
+          Before loading our OMVs with the drug and enzyme, a calibration curve would be plotted in order to determine the concentration of the drug in a given volume. Once a standard Absorbance vs Concentration curve with a linear fit and the R^2 value is obtained. The OMVs will then be incubated/ electroporated with the drug and the enzyme. After 24 hrs of incubation, at the optimum temperature, pH and ionic concentration, centrifuge the samples at 100,000g. Remove the supernatant and check the concentration using a spectrophotometer. From this, we can get the concentration of the drug/enzyme in the pellet (OMVs) by comparison with the calibration curve. To find the IC50 value of the OMVs containing drug and enzyme, the MTT assay would be performed.
+        </p>
+        <br>
+
+        <h1 id="head3">Characterization of OMVs</h1>
+        <br>
+        <p>
+          Before entering the clinical trial phase, it is necessary for our system to undergo a series of in-vitro and in-silico experiments to characterise the different aspects of drug delivery. What we hope to achieve in the preclinical phase includes quantification of vesicles, vesicle loading efficiency, prodrug enzyme interaction etc.
+        </p>
+        <br>
+
+        <h2 id="subhead3.1">Purification</h2>
+        <p>
+          Purification of native OMVs is carried out by tangential flow filtration (TFF), density gradient centrifugation or gel filtration. Tangential flow filtration involves using membranes with pore sizes between 0.1um to 10um. The sample is fed parallely to the membrane, this leads to particle accumulation over the membrane and a portion of the sample to pass through the membrane. The first-round separates supernatant with OMVs from the bacteria and the second round separates other impurities from the OMVs (<a href="https://doi.org/10.1016/j.vaccine.2019.01.076">Reference</a>). Second method of OMV purification is using density gradient centrifugation, wherein a gradient is created using substances such as dextran and sucrose and the sample will be distributed in a certain specific position in the gradient during ultracentrifugation. This would allow us to obtain homogeneously sized OMVs while separating out the impurities. Gel filtration involves the use of molecular sieves to separate OMVs with the same protein molecular weight. (<a href="https://link.springer.com/article/10.1007/s41048-019-00095-6">Reference</a>) employing strategies such as size exclusion chromatography and gel sieving.
+        </p>
+        <br>
+
+        <h2 id="subhead3.2">Protein and lipid profiling</h2>
+        <p>
+          The protein distribution in the outer membrane vs the OMVs are significantly different. Some proteins are exclusively present in OMVs and some in the outer membrane. This preferential translocation of proteins to OMVs is thought to be due to the interaction of proteins and lipids. Techniques such as lipid chromatography, mass spectroscopy and advanced protein profiling  can be employed to analyse the lipid and protein profile of OMVs. Once the profiles have been established, they can be used to check for contaminants as well as standardize each production run.  (<a href="https://journals.asm.org/doi/10.1128/spectrum.00634-21">Reference</a>)
+        </p>
+        <br>
+
+        <h2 id="subhead3.3">LPS content</h2>
+        <p>
+          OMVs isolated from gram negative bacteria such as E.coli have an inherent level of LPS associated with them. The safe limit for LPS in circulation is up to 5 picogram LPS/mL of blood (Wassenaar & Zimmermann, 2018). LPS reactogenicity can be attenuated by creating <i>msBb</i> and <i>lpxl1</i> gene knockouts in E.coli. Upon creating the knockout strain the Chromogenic Endotoxin Quant Kit (LAL test kit) can be used for detecting LPS toxicity and HPLC/MS for LPS quantification.
+        </p>
+        <br>
+
+        <h2 id="subhead3.4">Quantification</h2>
+        <p>
+          Using NTA, the OMV samples can be observed by light scattering using a light microscope, and then sequential videos are recorded, after which the NTA software tracks the Brownian motion of individual vesicles and calculates the size and concentration of our particles. Upon processing and purifying our OMV samples, we would perform a Bradford assay of the samples in order to determine the protein concentration. The samples are then loaded into the chamber after dilution of 1:500 or 1:1000 in 0.9% PBS. 3-5 individual videos of the 60s each are recorded for each sample. Then the analysis is done using the NTA software. All the experiments are done at room temperature.
+        </p>
+        <br>
+
+        <h1 id="head4">Administration and Testing</h1>
+        <br>
+
+        <h2>Mode of Administration</h2>
+        <p>
+          The environment in which the tumour survives creates inherent barriers to therapeutics thereby decreasing drug efficiency. Uncontrolled exposure of drugs to non-tumour compartments in the patient's body can affect the efficiency of the drug or could potentially elicit toxic or immune  responses. In addition to this the intravenous administration of OMVs into the bloodstream is a potent immune response stimulator, this could lead to the potential phagocytosis of OMVs before reaching the target tissue. Thus, localised methods of delivery are preferred. Subcutaneous, transdermal, intratumoral and transpapillary injections should be explored as preferred options
+        </p>
+        <br>
+
+        <h2 id="subhead4.2">Ex Vivo Testing</h2>
+        <p>
+          We intend to use 3D cell culture models in order to simulate physiological and pathophysiological conditions as closely as possible. Upon, culturing the patient derived xenografts to generate the spheroids the following treatment plan would be followed.
+        </p>
+        <p><strong> Drug Treatment Plans:</strong>
+          <ol>
+            <li>The PDX tumour spheroids would be divided into 5 different sub-groups which would be as follows:
+              <ul>
+                <li>PBS (vehicle) only treatment</li>
+                <li>Non modified OMVs</li>
+                <li>Type 1 OMVs only</li>
+                <li>Type 2 OMVs only</li>
+                <li>Type 1 + Type 2 OMVs</li>
+                <li>Doxil treatment</li>
+              </ul>
+            </li><br>
+            <li>The spheroids from a 6-day culture would be seeded with 1000 cells/well and given the above treatments</li><br>
+            <li>All the experimental groups would be cultured with RPMI culture media only or with supplemented with 20% of dimethyl sulfoxide (DMSO)</li><br>
+            <li>After 24, 48 and 72 h of treatment, the cell viability of three spheroids would be assessed using the CellTiter-glo 3D assay</li><br>
+            <li>Viability was calculated according to the equation:
+              <br>((S - PC)/(NC - PC))*100, where
+              <ul>
+                <li>S = Sample</li>
+                <li>PC = Positive control</li>
+                <li>NC = Negative control</li>
+              </ul>
+            </li><br>
+            <li>The drug-enzyme and the OMV concentrations would be based on the 2D culture experiments of MTT assay.</li>
+          </ol>
+        </p>
+        <br>
+
+        <h2 id=subhead4.3>In vivo Testing</h2>
+        <br>
+
+        <h3>Animal Trials</h3>
+        <p>
+          Animal testing will be conducted in accordance with New Drugs and Clinical Trials Rules, India 2019. Four groups of mice would be all injected with 0.2 ml/mouse of 5 * 10^6 cell/ml EMT6 breast cancer cells in the skin under the right forelimb subcutaneously. This would be used to demonstrate the safety and efficacy of the bioengineered OMVs as well as OMVs in conjugation with the prodrug enzyme system. Potential off-target effects associated with the system will also be analysed via animal studies.
+        </p>
+        <br>
+        <p><strong>Testing the efficacy of the system: </strong><br>
+          When the average size of the tumour would reach 50 mm^3, mice would be randomly divided into 5 groups to receive daily intratumoral injection of the following treatments:
+          <ol>
+            <li>Vehicle control (PBS)</li>
+            <li>Free drug (concentration determined from above)</li>
+            <li>Type 1 and Type 2 OMVs without the drug/enzyme loaded</li>
+            <li>OMV type 1 with drug loaded</li>
+            <li>OMV type 2 with enzyme loaded</li>
+            <li>Doxil treatment (as a positive control)</li>
+          </ol>
+        </p>
+        <p>
+          Tumours would be measured every day, and tumour volumes would be calculated from the following equation:
+        <p style="text-align: center;">Tumour Volume=(L×W2)/2</p>
+        <p>
+          Eleven days later, the mice would be subjected to dissection, and the tumours as well as the main organs would be removed for various analyses. Blood samples would also be collected for biochemical detection.
+        </p>
+        <br>
+        <p><strong>Testing the safety of the system</strong><br>
+          The animal testing would take place in two phases:
+          <ul>
+            <li>Phase 1: Using unloaded bioengineered OMVs</li>
+            <li>Phase 2: Using bioengineered OMVs loaded with the prodrug and the enzyme</li>
+          </ul>
+          Single dose toxicity testing using mice and rodent species will be carried out. Intravenous, transdermal,  to test for effects of local toxicity as well as to analyse the correlation between the efficacy of the delivery system and the mode of administration. Ten times the intended dosage for humans will be administered, and the models will be observed for a period of 14 days, the Minimum Lethal Dose (MLD) and Maximum Tolerated Dose (MTD) established. Symptoms, mode of death, effects on body weight, and gross pathological changes have to be reported.
+          <br><br>
+          Repeated dose toxicity testing uses two mammalian species (one rodent and one non-rodent) both being HCC1954 xenograft models, wherein the unloaded and loaded OMVs will be administered for 7 continuous days. Four groups will be created, to allow for different levels of doses. A control, low level (produces no observable toxicity), intermediate level (causes symptoms, but not gross toxicity or death), and the highest dose (causing observable toxicity). Behavioural, physiological, biochemical, and microscopic effects will be analysed in all four groups. Upon completion of the 7 day repeated dose test 14-, 28-, 90- and 180- day repeated dose toxicity studies will be conducted.
+          <br><br>
+          In addition to analysing the toxicity, off- target effects will be monitored in both single and repeated dose testing by measuring the drug concentration in the tumour vis-à-vis the plasma and other organs such as the liver, spleen, kidney etc.
+        </p>
+        <br>
+
+        <h2 id="subhead4.3">Clinical Trials</h2>
+        <br>
+        <p>
+          In India, clinical trials are divided into 4 phases; yet again we would perform the clinical trials in two phases.
+          <ul>
+            <li>Phase 1: Using unloaded bioengineered OMVs</li>
+            <li>Phase 2: Using bioengineered OMVs loaded with the prodrug and the enzyme</li>
+          </ul>
+          <br>
+          <strong>Human Pharmacology: </strong>
+          <br>
+          This will be a non-therapeutic trial and we’ll aim to determine the safety of our drug, its maximum tolerated dose and also the nature of adverse reactions that can be expected from it. These studies include both single and multiple-dose administration and will be ideally carried out at an adequately equipped site.
+          <br>
+          In this phase, we also study pharmacokinetics and pharmacodynamics, i.e., characterisation of a drug's absorption, distribution, metabolism and excretion by the body. Preliminary studies about the potential therapeutic benefits may also be conducted in Phase I as a secondary objective.
+          <br>
+          <br>
+          <strong>Therapeutic Exploratory Trials</strong>
+          <br>
+          These are controlled studies that will be conducted in a limited number of patients of either sex to determine therapeutic effects, effective dose range and further evaluation of safety and pharmacokinetics in patients. Generally, a narrow inclusion criteria is kept for patients to find effective dose, hence the study population will be more or less homogenous.
+          <br>
+          Additional objectives of Phase II studies would be to include evaluation of potential study endpoints, therapeutic regimens and target populations (e.g. mild versus severe disease) for further studies in Phase II or III.
+          <br>
+          <br>
+          <strong>Therapeutic Confirmatory Trials:</strong>
+          <br>
+          This phase will be conducted to obtain adequate data about the efficacy and safety of our drug in a larger number of patients of either sex usually in comparison with a standard drug. This is done to validate the efficacy and safety found in Phase II, intended to provide an adequate basis for marketing approval. Studies done in Phase III would help us explore the dose-response relationship to drug concentration in blood, clinical response of the drug in wider populations through the different stages of a disease, or the safety and efficacy of the drug in combination with other drugs. These studies carried out in Phase III will complete the prescribing information needed to support adequate instructions for using the drug.
+          <br><br>
+          <strong>Post-marketing Surveillance:</strong>
+          <br>
+          After approval of the drug for marketing, phase IV studies or post-marketing surveillance is undertaken to obtain additional information about the risks and benefits resulting from long-term usage of the drug. There is a need to correlate the adverse events reported during Phase IV trials with the toxicity data generated in animals, to draw markers for future warnings of potential adverse events likely to occur with other drugs. This step may not be necessary for approving the new drug for marketing, but may be required by the Licensing Authority for optimising its use. Phase IV trials will include additional drug-drug interaction, dose response or safety studies and trials designed to support use under the approved indication.
+        </p>
+        <br>
+
+        <h1 id="head5">Limitations</h1>
+        <br>
+        <p>
+          Despite the vast application and potential of OMV’s for targeted drug delivery , isolation and purification of OMV’s rely on time consuming ultracentrifugation and filtering techniques reducing the efficiency in manufacturing them as a biotechnological device.(<a href="https://www.frontiersin.org/articles/10.3389/fimmu.2021.733064">Reference</a>) Strategies to optimize the production of homogenous OMV’s are yet to be developed considering the fact that there could be heterogeneity in the OMVs produced(Turner L, Bitto NJ, Steer DL, Lo C, D’Costa K, Ramm G, et al. Helicobacter pylori Outer Membrane Vesicle Size Determines Their Mechanisms of Host Cell Entry and Protein Content. Front Immunol (2018) 9:1466 doi: 10.3389/fimmu.2018.01466),  . The yield of OMV production has to be increased , even from hyper vesiculating strain to efficiently utilise them for mass production. Processing and storage conditions of OMV’s are yet to be optimised for therapeutic use, even though some researchers have drawn out the stability of OMV’s under certain storage conditions. Encapsulation of the drugs within OMVs might decrease the transport issues that limit the efficiency of many antibiotics against gram negative bacteria. Standardisation of techniques in working with OMV and its worldwide implementation would accelerate the application of OMVs for wider therapeutic advancements.
+        </p>
+        <br>
+
+        <h1 id="head6">Future Directions</h1>
+        <br>
+        <p>
+          Though Duonco is being developed as a drug delivery system for breast cancer, it is a versatile system that can be adapted for varied applications.
+          <br><br>
+          <strong>Increasing specificity: </strong>
+          <br>
+          Currently, Duonco is being developed as a dual targeting system, in the future it can be extended to having multiple antigens expressed on the surface and segmenting the drug into the various types of vesicles to provide great control over drug delivery.
+          <br><br>
+          <strong>Co Encapsulation:</strong>
+          <br>
+          Drug cocktails can be loaded inside the vesicles in order to increase intracellular drug concentration and ensure drug synergy for extracting maximal therapeutic effects, the formulation can be developed on a patient specific basis.
+          <br><br>
+          <strong>Expanding to other cancers:</strong>
+          <br>
+          The modular design of Duonco allows it to be expanded to any kind of cancer by changing the relevant targeting epitopes on the surface of the OMVs as well as the drug/enzyme packaged inside.
+          <br><br>
+          <strong>Personalised medicine: </strong>
+          <br>
+          With the growing usage of genetic sequencing, patients' unique gene expression profiles can be used to tailor the drug delivery system in a highly personalised fashion. Upon performing tissue profiling, novel epitopes specific to the patient can be expressed on the OMVs and used for drug delivery.
+          <br><br>
+          <strong>Imaging and diagnostics:</strong>
+          <br>
+          OMV encapsulated with melanin can be used in photoacoustic imaging, allowing for non-invasive monitoring of cancer tissues. (<a href="https://doi.org/10.3389/fmats.2020.00202"> Reference</a>) OMVs can be loaded with fluorescent molecules and express a targeting epitope, to facilitate highly specific detection of the target tissue. (<a href="https://pubs.rsc.org/en/content/articlelanding/2017/cc/c7cc04246a">Reference</a>)
+        </p>
+        <br>
+        <h2>Market Analysis and Entrepreneurship</h2>
+        <br>
+        <p>
+          The project's real-world implementation is contingent on getting the drug delivery system from the lab bench to the end users.To accomplish this, we examined aspects of our product such as scalability, existing interest in nanovesicle and nanoparticle drug delivery systems, and SWOT analysis. We also considered end-user factors such as global and local market sizes for cancer therapeutics and personalized precision medicine, potential customers, business models, competitors, and so on. With this information in hand, we decided to learn the first steps of launching a real startup by interacting with people in the startup community. Given below are the Product features:
+        </p>
+        <p>
+          <strong>Scalability:</strong>
+          <br>
+          The flexibility and modularity of our drug delivery systems allow us to change the epitopes expressed on the surface of the vesicles, allowing us to target any other cancer. This adaptability can be used to broaden the delivery system to include both common cancer markers and to tailor the targeting epitopes to markers that are overexpressed in a person.
+          <br>
+          This expands the number of people who can benefit from this product and increases the potential market size, extending into personalized cancer therapy.
+          <br>
+          Dual targeting is a largely untapped concept of targeted therapies. The nanovesicle drug delivery system overcomes existing problems with cancer therapeutics such as nonspecific distribution to healthy cells and monotherapies' limited therapeutic efficacy. This enables the product to usher in a new paradigm of therapy throughout the field of cancer therapeutics.
+          <br>
+          The innovative dual targeting system broadens the possibilities for personalized therapies, increasing therapy efficacy. To make this scalability a reality, vesicle production, safety, and immunogenicity would need to be standardized.
+          <br>
+          This would entail a more thorough examination of the quality control procedures, as well as clinical trials to ensure safe use for the intended therapeutic effect.
+        </p>
+        <br>
+        <br>
+        <p>
+          <strong>Scientific and Business Interest: </strong>
+          <br>
+          There is growing interest in using outer membrane vesicles to treat cancer. Outer membrane vesicles have been used in vaccines as adjuvants, and their immunogenic properties have been used to improve vaccine formulation and development (DeLisa, 2017). Anticancer molecules have also been delivered to breast cancer tumors using these vesicles (Gujrati, 2014).
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 1. </strong>Brainstorming session</em>
+              <em class="figure-legend"><strong>Figure 1. </strong>Left- ,Right-</em>
             </p>
         </div>
         <br>
         <p>
-          Collaborators helped us with spreading out the word, coming up with ideas finding speakers, drafting mail and designing the promotional materials.
+          Academics are not the only ones who are interested in developing efficient drug delivery systems. In India, BIRAC (Biotechnology Industry Research Assistance Council) offers potential startups seed funding to develop commercial ideas in the drug delivery sector, including drug delivery systems, through its BIG (Biotechnology Ignition Grant). C-CAMP (Centre for Cellular and Molecular Platforms) has Discovery to Innovation Accelerators with Nanoparticle Drug Delivery System technologies ready for licensing.
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 2. </strong>Posters for Talk series</em>
+              <em class="figure-legend"><strong>Figure 2. </strong>Left- C-Camp DIA,Right- BIRAC</em>
             </p>
         </div>
         <br>
         <p>
-          On the first day, we had a quiz session when Science meets fun, hosted by Tirapti. On the next day a talk was organised by <strong>Dr. Indira Palo, Gynecologist & Obstetrician Doctor</strong> on the topic Menstrual Hygiene and Challenges in Adolescent Girls, which was hosted by IISER Berhampur. As a continuation to that we had a session with <strong>Dr Prerna Lakhwani, Senior Gynecologic Oncologist</strong> on the topic Cervical Cancer & Breast Cancer hosted by IIT Roorkee. We wrapped up the session with a panel discussion <i>A round-robin among collaborators</i> and an interview with <strong>Dr. Manjiri Bakre, CEO and Founder of OncoStem Diagnostics</strong> hosted by IISER TVM.
-        </p>
-        <br>
-
-        <h3>Come work with us!</h3>
-        <p>
-          What if you get a chance to roam around labs around the globe, beyond the continents and oceans. We felt that as research students it is our responsibility to introduce the laboratory facilities, not just limited to India but that of the global research community to an inaccessible community. We hope to give wings to the kids who dream to fly high, but are limited by the barriers of land and language. As a first step towards that big dream we collaborated with <strong>iGEM Patras, IISER Tirupati, Tec CEM, ABOA Finland and IISER Mohali</strong> to bring forth a mega lab tour video with snippets of lab facilities around the globe.
-        </p>
-        <br>
-
-        <h2>Collaborations we participated in</h2>
-        <br>
-        <p>Overview of what participated collabs are</p>
-        <br>
-        <h3>All India iGEM meet</h3>
-        <p>
-          An iGEM India get together! AIIM hosted by iGEM IISc Bangalore, was indeed a platform for presenting our project and getting inputs from co-Indian teams, iGEM EPIC and experienced mentors. A three-day event comprising talks, presentations by Indian iGEM team, mentoring session by iGEM Global committee member Varsha, EPIC elevator pitch and an amazing poster session. Loaded with fun, we made friends from different parts of the country, people who are enthusiastic about the wonders synbio can create!</p>
-        <br><br>
-        <div id="carousel" class="carousel">
-          <div class="item">
-            <img src="../../static/images/bg-masthead.jpg">
-          </div>
-          <div class="item">
-            <img src="../../static/images/bg-masthead.jpg">
-          </div>
-          <div class="item">
-            <img src="../../static/images/bg-masthead.jpg">
-          </div>
-            <!-- Control -->
-            <a class="prev" onclick="prevSlide()">&#10094;</a>
-            <a class="next" onclick="nextSlide()">&#10095;</a>
-            <!-- indicators -->
-            <div class="indicators">
-              <span class="dot" onclick="indicator(0)"></span>
-              <span class="dot" onclick="indicator(1)"></span>
-              <span class="dot" onclick="indicator(2)"></span>
-            </div>
-          </div>
-        <br>
-
-        <h3>Environment Day</h3>
-        <p>
-          Team iGEM Vilnius came up with the idea of raising awareness on environmental issues on World environment day. As their team focuses on water-related issues, featuring a water body in the surroundings teams iGEM ionis, metathess, tec_gdl, ABOA, iGEM Crete and Vilnius.
+          This review paper and its connected works, look at the newfound interest in extending outer membrane vesicles beyond their use as adjuvants and into the field of functional delivery platforms for various therapeutic, diagnostic and even theranostic purposes. The interest also has been towards several cancers, virulence regulation and other diseases as well.
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 8. </strong>IISER logos</em>
+              <em class="figure-legend"><strong>Figure 3. </strong>Review Paper</em>
             </p>
         </div>
         <br>
-
-        <h3>GMO Global Survey</h3>
         <p>
-          IISER Mohali came up with a global survey to understand the opinion of the general public towards genetic engineering and the application of synthetic biology and how much the educational background and geographical location of the respondents affect their perspective towards GMO and Synthetic biology. With iGEM Mohali, Patras and AFCM Egypt we released the survey. To go through the survey, check <a href="">education page.</a>
+          In the US Clinical trials registry, there were approximately 19 clinical trials associated with the keyword "outer membrane vesicles." The majority of them are for meningitis vaccines based on OMV. They are based on OMVs isolated from meningococcal bacteria and are designed to provide disease immunity. The potential of OMVs in cancer therapeutics has not been fully exploited, but there is a clear path forward and an opportunity for investment if we are to translate the existing body of academic work into clinical trials.
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 8. </strong>iGEM IISER Mohali and iGEM Patras</em>
+              <em class="figure-legend"><strong>Figure 4. </strong>US Clinical Trials</em>
             </p>
+            <>
         </div>
         <br>
-
-        <h3>Accessibility and inclusivity collab with iGEM Patras </h3>
         <p>
-          A series of informative videos about the competition, synthetic biology, wet and dry labs! It is essential to ensure that iGEM, the international platform for active discussions on synthetic biology research, becomes accessible to everyone around the globe irrespective of their nationality and language. In this exciting mission we were able to be a part of, by creating the informative video in malayalam, the native language in Kerala. <a href="https://youtube.com/playlist?list=PL5PqgxJDwR8DxeSBJ8RgKyTpO6KxhqdMK">Link for YouTube video</a>
+          There do not appear to be any registered clinical trials in India related with the phrase "outer membrane vesicles." This is conceivable since OMV-based therapies and solutions are still a largely untapped market in India. However, as evidenced by a search for "drug delivery systems" in India, there is a growing interest in drug delivery systems for various diseases.
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 8. </strong>IISER logos</em>
-            </p>
-        </div>
-        <br>
-        <h1 id="head2" style="color: #002147">One-on-one Collaborations</h1>
-        <br>
-        <p>
-          One of the most exciting segments of our iGEM project was the collaborations that we did with individual teams. These one on one collaborations kickstarted with a team meetup and exchanging of project ideas, which turned out to be cool brainstorming and fun sessions.
-        </p>
-        <br>
-
-        <h3>iGEM IISER Tirupathi</h3>
-        <br>
-        <p>
-          Through some common friends, iGEM IISER Tirupati turned out to be our first collaborator and iGEM friends throughout the journey. Our journey with IISER Tirupati began back in the month of May. First meetup indeed turned out to be a platform where we exchanged project ideas and progress so far. It turned out to be a fun and interactive discussion where we brainstormed potential collaborations that can be undertaken. With a bunch of interesting ideas from the synbio version of the TV show Family Feud, cool and fun filled games like Jeopardy to a music parody video. After discussing within our teams we decided to go ahead with the music video. With an amazing set of lyricists, editors, videographers and directors music video started to brew up! Dance monkey and I don't care turned out to be synbio tracks, and the transition with a synbio rap!
-        </p>
-        <p>
-          Through some common friends, iGEM IISER Tirupati turned out to be our first collaborator and iGEM friends throughout the journey. Our journey with IISER Tirupati began back in the month of May. First meetup indeed turned out to be a platform where we exchanged project ideas and progress so far. It turned out to be a fun and interactive discussion where we brainstormed potential collaborations that can be undertaken. With a bunch of interesting ideas from the synbio version of the TV show Family Feud, cool and fun filled games like Jeopardy to a music parody video. After discussing within our teams we decided to go ahead with the music video. With an amazing set of lyricists, editors, videographers and directors music video started to brew up! Dance monkey and I don't care turned out to be synbio tracks, and the transition with a synbio rap!
-        </p>
-        <br>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 1. </strong>Left- Collab workspace. Right- Teaser of the music video released on social media platforms.</em>
+              <em class="figure-legend"><strong>Figure 5. </strong>Indian CLinical Trials</em>
             </p>
         </div>
         <br>
         <p>
-          The music collaboration turned out to be a collab platform where we could discuss any of the iGEM queries, discuss and grow together. After a series of dance choreo recording and music recording and cut past works music video was released on …………
+          We conducted a SWOT analysis to assess the project's strengths, weaknesses, and opportunities for development. To that aim, we've identified our vulnerabilities and threats and are working on solutions to establish a place in the international market.
         </p>
         <div class="row">
             <img class="img" src="../../static/images/V1.png" alt="picture">
             <p class="article">
-              <em class="figure-legend"><strong>Figure 2. </strong>Here is a snapshot of the meetup, with members of both teams engrossed in discussions. </em>
+              <em class="figure-legend"><strong>Figure 6. </strong>SWOT table</em>
             </p>
         </div>
         <br>
 
-        <h3>iGEM University of Barcelona</h3>
+        <p>
+        <strong>Global and Local Market Sizes</strong>
+        <br>
+          In order to propose the formation of a startup to eventually put our proposal into reality, the international market for drug delivery systems and cancer therapies must be assessed in terms of economic parameters such as size, projected growth, key players, and segmentation.. In this section, we will look at the prospective growth and rivals in the drug delivery market, as well as the global cancer therapeutics market, with a brief glance at the APAC area for cancer therapeutics and breast cancer. Then there's a quick glance at the tailored cancer therapies market.
+          <br>
+          <ul>
+            <li><strong>The drug delivery market:</strong>
+              <br>
+              The global drug delivery systems market is expected to be worth USD 71.75 billion by 2029, growing at a 9.0% CAGR during the forecast period. The increased frequency of chronic diseases and patients' increasing preference for sophisticated medication delivery systems are expected to drive market expansion.
+              <br>
+              In 2021, the market was worth USD 34.70 billion, and in 2022, it was worth USD 39.33 billion.
+              <br>
+              The market segments were based on Type, Device Type, Distribution Channel and Geography.
+              <br>
+              The coronavirus pandemic may have accelerated the expansion of the worldwide medication delivery systems market. The increased production of injectable medication delivery devices has significantly fueled the market expansion. The increasing quantity of vaccinations delivered globally is boosting the market growth. Furthermore, the increasing use of self-injection devices and simple homecare solutions is increasing demand for improved drug delivery systems, supporting market growth.
+            </li>
+            <br>
+            <li><strong>The cancer therapeutics market:</strong>
+              <br>
+              According to Precedence Research, the global cancer therapies and biotherapeutics market is estimated to be $339.44 billion by 2030, rising at an 8.6% CAGR between 2022 and 2030. The Asia-Pacific area is the fastest expanding market for cancer treatments and biotherapeutics.
+              <br>
+              The cancer therapeutics market can be segmented as Application-Based (breast cancer, lung cancer), Top Selling Medicines (Revlimid, Herceptin), Product Type (chemotherapy, hormone therapy), By the End User (household, hospitals), Geographical(NA, Europe, APAC, MEA).
+              <br>
+              The rising prevalence of cancer is propelling the cancer therapies and biotherapeutics industry forward. During the projection period, the targeted therapy segment is expected to achieve the greatest CAGR and maintain its large market share.
+              <div class="row">
+                  <img class="img" src="../../static/images/V1.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 7. </strong>Precedence</em>
+                  </p>
+              </div>
+              <br>
+              China and India are the market leaders in cancer therapies and biotherapeutics in the Asia-Pacific region. Because of increased cancer awareness in countries like India, China, South Korea, and Japan, the Asia-Pacific cancer therapies and biotherapeutics market is expanding. The governments of these countries invest considerably in research and development.
+              <br>
+              The Asia Pacific oncology market was worth USD 52.2 billion in 2021. It is predicted to develop at an 11.7% annual pace between 2022 and 2028, owing to increased cancer treatment programmes by various government and non-government organisations.
+              <div class="row">
+                  <img class="img" src="../../static/images/V1.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 8. </strong>APAC Oncology Market</em>
+                  </p>
+              </div>
+              <br>
+              The increased focus of vendors on growing markets such as Asia-Pacific and Latin America is likely to drive market expansion. Because of increased R&D expenditure and cancer awareness, Asia-Pacific is expected to rise significantly. Furthermore, because existing markets are rather saturated, this region presents an exceptional potential for venture capitalists and investors.
+            </li>
+            <br>
+            <li><strong>Breast Cancer:</strong>
+              <br>
+              Breast cancer has been a significant health concern in the Asia Pacific for several decades. Despite remarkable gains in many high-income nations in reducing breast cancer mortality, low- and middle-income countries have achieved little progress.
+              <br>
+              China, India, Australia, South Korea, Japan, Thailand, Philippines, Indonesia, New Zealand, Malaysia, and Singapore comprise the Asia Pacific breast cancer therapies industry's regional geography. Given the increased need for sophisticated cancer care, the Chinese breast cancer therapeutics market is estimated to be worth USD 1.9 billion by 2028.
+              <br>
+              Eisai Co. Ltd, Sanofi S.A., Merck & Co. Inc., F. Hoffmann-La Roche AG, Amgen Inc., Novartis International AG, Bristol-Myers Squibb Co., Pfizer Inc., Eli Lilly and Company, and AstraZeneca plc are the leading companies defining the competitive landscape of the Asia Pacific breast cancer business space.
+              <br>
+              Breast cancer captured a substantial market share in 2019 and is expected to expand at the fastest CAGR, creating enormous prospects for players in the India Cancer Treatment Market.
+              <br>
+              In April 2020, Roche launched atezolizumab in India. The medication atezolizumab is used to treat advanced triple-negative breast cancer. This strategy expanded the company's product line and brought new cancer biology therapy clients.
+              <br>
+              The main competitors in the India Cancer Treatment Market are Amgen, AstraZeneca Plc, Merck and Co., Novartis AG, Pfizer Inc., Bayer AG, Astellas Pharma Inc., Celgene Corporation, Bristol-Myers Squibb, F. Hoffmann-La-Roche Ltd., Johnson & Johnson, and others.
+            </li>
+            <br>
+            <li><strong>Personalized Cancer Therapies</strong>
+              <br>
+              The market is expected to reach $272.1 billion by 2027, increasing at a CAGR of 10.6% between 2022 and 2027. Personalized medicines are also known as precision medicines since they are created using molecular profiling and medical imaging of specific patients to improve the efficacy of cancer treatments. The primary goal of using precision medicine or predictive biomarkers is to tailor the proper treatment to the right patient.
+              <br>
+              Several modern sequencing techniques, such as cancer genome sequencing and next-generation sequencing, aid gene discovery and give genomic data. Furthermore, biomarkers, capable of determining the patient's response to specific medical medications, play an important part in the development of tailored medicines. However, some patients' bodies do not adjust to therapies, such as chemotherapy, which worsens their predicament. As a result, precision medications make it simple for doctors to determine which therapy a patient should have in order to avoid further health complications.
+              <br>
+              The North America Personalized Medicines in Oncology Market is expected to account for the largest revenue share in 2021. It is due to the high presence of strong Med-tech businesses, which both government and private venture investors frequently back. However, Asia-Pacific is expected to lead the market between 2022 and 2027. It is due to an increase in research and development activities, particularly in cancer research.
+              <div class="row">
+                  <img class="img" src="../../static/images/V1.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 9. </strong>Personalised medicine</em>
+                  </p>
+              </div>
+              <br>
+              Product demand is expected to rise as research and development activities expand and technologies evolve. Increased cancer cases are expected to boost product demand. Not without obstacles, since a lack of understanding about precision medicines and pricey cancer therapies are expected to stymie market growth.
+              <br>
+              Product launches, mergers and acquisitions, joint ventures, and regional expansion are all essential strategies businesses use. Abbott, Exact Science Corporation, GE Healthcare, Illumina, Celera Diagnostics, Biogen, Decode Genetics, Danaher Corporation, Novartis, and Genelex Corporation are key players in this market.
+            </li>
+            <br>
+            <li><strong>Potential Customers and Business Models</strong>
+              <br>
+              Pharmaceutical firms, healthcare providers, and individuals seeking medical care would all be possible clients. We intend to establish a B2B relationship with pharmaceutical companies by licensing our drug delivery technology for testing with their drugs. Health care professionals and patients are our primary target market, and we provide them two distinct services: first, a generic drug delivery system set with typically expressed epitopes against cancer; second, our personalized vertical, in which we get the biomarker levels of individuals and synthesize a personalized set of our dual delivery system adjusted according to the biomarker levels, with a suitable prodrug-enzyme combination.
+              <br>
+            </li>
+          </ul>
+        </p>
         <br>
         <p>
-          The epic collaboration that evolved into an incredible partnership! It all started when iGEM UB replied to a collaboration request in slack. To our astonishment, we got to know that both teams are addressing the same issue using different components. With excitement at its peak to finally meet a team with a similar idea, we had our first meetup with UB on  . They were working on addressing Burkitt Lymphoma using external vesicles (EVs) as drug delivery vesicles whereas we were working on targeting breast cancer using bacterial outer membrane vesicles (OMVs) as drug delivery vehicles. We had a couple of brainstorming sessions where we looked into the possibilities of an HP collaboration, but later decided to go ahead with discussing the overlap aspects in the proposed implementation. Continuous meetings and discussions led to a partnership at a later stage.
+          <strong>Startup</strong>
+          <br>
+          Given the scientific and financial potential of our project and the need for real-world implementation of our drug delivery system, we propose the formation of a start-up to license, distribute, and manage the technology, which consists of the dual targeting system with checkpoint and the system design.
+          <br>
+          It is vital to consider the prior study while financing this enterprise because, despite its lucrative potential, there is no defined competition, and the design of the drug delivery system is not standardized for all variables.
+          <br>
+          This restricts financing within the context of sector corporations (or an early start-up acquisition). As a result, the most viable option would be to obtain funds from so-called "seed capital" to cover the business's first costs and investments in exchange for a variable part of the company.
+          <br>
+          Completing the regulatory process takes time, but it is vital to having a market-ready product for real-world use. Despite the challenges inherent in starting a business, we are keen to see our product used in the real world to aid patients and lessen the cancer burden.
         </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 3. </strong>Here is a snapshot of the meetup, with members of both teams engrossed in discussions.</em>
-            </p>
-        </div>
-        <br>
+        
 
-        <h3>iGEM IISER Berhampur</h3>
-        <br>
-        <p>
-          Started off with exchanging project ideas, we figured out that one common element in both our projects would be the fact that we are addressing women’s issues. We discussed about ways in which we could bring together iGEM teams addressing and tackling womens issues. We brainstormed ideas such as a comic strip series through which we’d be able to create awareness.
-        </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 3. </strong>Here is a snapshot of the meetup, with members of both teams engrossed in discussions. </em>
-            </p>
-        </div>
-        <br>
-
-        <h3>iGEM Patras Med</h3>
-        <!-- <h4>Name of collab</h4> -->
-        <br>
-        <p>
-          A brief but wonderful collaboration with iGEM Patras Med!  On world DNA day we teamed up to create a fun filled human DNA (hehe us being the bases). Later, we joined hands in creating a video series putting forth project ideas of iGEM teams around the globe. We were able to contribute the malayalam version of informative video.
-        </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 4. </strong>Ananya with A </em>
-            </p>
-        </div>
-        <br>
-
-        <h3>iGEM IIT Roorkee</h3>
-        <!-- <h4>Name of collab</h4> -->
-        <br>
-        <p>
-          Working on cervical cancer, we were excited to work on our common segments of project. Meeting team iGEM IIT Roorkee turned out to be an unforgettable experience where we exchanged our project ideas and realised the potencial of collaborating in math modelling aspects. This could have been a long term partnership, nevertheless we were able to collaborate with them on Women talk series.
-        </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 5. </strong>Screenshot in meet</em>
-            </p>
-        </div>
-        <br>
-
-        <h3>iGEM ASIJ_TOKYO</h3>
-        <!-- <h4>Name of collab</h4> -->
-        <br>
-        <p>
-          A chitchat turned into a project exchange meetup! That’s our journey with iGEM ASIJ TOKYO team. Although their current project idea is to create an aptamer based detection kit for Hepatitis B, during the initial stages they were working on developing a detection kit for breast cancer. We were super thrilled when they approached us saying theyd love to discuss ways to create awareness about breast cancer. We appreciate that their outreach efforts arent limited to ongoing project.
-        </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 6. </strong>Screenshot in meet</em>
-            </p>
-        </div>
-        <br>
-
-        <h3>Queens iGEM</h3>
-        <!-- <h4>Name of collab</h4> -->
-        <br>
-        <p>
-          On the International day of the world's indigenous people, we took part in the cool collaboration by team iGEM Queens. We joined hands with them and celebrated Dr G N Ramachandran, one of the eminent scientists hailing from India who came up with Ramchandran plot to analyse the range of protein confirmations, which stays as one of the best contribution to the field of structural biology.
-        </p>
-        <div class="row">
-            <img class="img" src="../../static/images/V1.png" alt="picture">
-            <p class="article">
-              <em class="figure-legend"><strong>Figure 7. </strong>Instagram screenshot</em>
-            </p>
-        </div>
-        <br>
-
-
-          </div>
-          <!--<a class ="button" id="six">Read More</a>-->
-        </p>
       </div>
     </div>
   </div>

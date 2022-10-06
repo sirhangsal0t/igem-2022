@@ -38,55 +38,6 @@
   /* --------------------------- */
 
   /* Team page */
-.postloader {
-  display: none !important;
-}
-
-.display_change {
-  display: block !important;
-}
-
-.wrapper-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.wrapper {
-  position: fixed;
-  margin-top: 50vh;
-  margin-bottom: 50vh;
-  margin-left: 50vw;
-  margin-right: 50vw;
-  transform: translate(0, -50%);
-  width: 20vw;
-  height: 20vh;
-}
-
-.content {
-  display: none !important;
-}
-
-#Rotor {
-  animation: rotor 2s infinite linear;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-#Eye1 {
-  animation: eyes 4s infinite ease-in;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-#Eye2 {
-  animation: eyes 4s infinite ease-in;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
 
 
   .background-wrapper {
@@ -311,34 +262,3 @@
     100% {opacity: 0.9;}
   } 
 
-@keyframes eyes {
-  0% {
-    transform: scale(1);
-  }
-
-  1% {
-    transform: scale(0);
-  }
-
-  10% {
-    transform: scale(0);
-  }
-
-  11% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotor {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
-}

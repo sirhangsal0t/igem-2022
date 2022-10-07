@@ -7,95 +7,109 @@ and i make function indicators and dotcolor : >
 
 */
 // Slider
-var carousel = document.getElementById('carousel'),
-   // push All Element in Array
-    arr = carousel.querySelectorAll('.item'),
-	dot = carousel.querySelectorAll('.indicators .dot'),
-    current = 0,
-    img = carousel.querySelector('.item > img'),
-    item = carousel.querySelector('.item ');
+arr = {}
+item = {}
+img = {}
+dot = {}
+current = {}
 
+
+var carousel = document.getElementsByClassName('carousel')
+   // push All Element in Array
+   for (let i = 0; i<carousel.length; i++) {
+      arr[i] = carousel[i].querySelectorAll('.item'),
+	    dot[i] = carousel[i].querySelectorAll('.indicators .dot'),
+      current[i] = 0,
+      img[i] = carousel[i].querySelector('.item > img'),
+      item[i] = carousel[i].querySelector('.item ');
+   }
 
    window.onresize = function(){
-   	carousel.style.height = img.height + 'px';
-   	item.style.height = img.height + 'px';
+     for (let i = 0; i<carousel.length; i++) {
+      carousel[i].style.height = img[i].height + 'px';
+   	  item[i].style.height = img[i].height + 'px';
+   	 }
    }
 
 
 
 // Display First Element in Array
-arr[current].style.left = 0;
+for (let i = 0; i<carousel.length; i++) {
+  arr[i][current[i]].style.left = 0;
+}
 
 // change background-color for  First Indicators
-dot[current].setAttribute("class", "dot active");
+for (let i = 0; i<carousel.length; i++) {
+  dot[i][current[i]].setAttribute("class", "dot active");
+}
 
 
 // Function For Get Previous Element in Array
-function prevSlide(){
+function prevSlide(n){
 var prev;
-	if(current === 0){
-		prev = arr.length - 1
+	if(current[n] === 0){
+		prev = arr[n].length - 1
 	}else{
-		prev = current - 1;
+		prev = current[n] - 1;
 	}
 
 	// setup prev and current for animation
-	arr[prev].style.left = '-100%';
-	arr[current].style.left = 0;
+	arr[n][prev].style.left = '-100%';
+	arr[n][current[n]].style.left = 0;
 	// add class
-	arr[prev].setAttribute("class", "item slideInLeft");
-	arr[current].setAttribute("class", "item slideOutRight");
+	arr[n][prev].setAttribute("class", "item slideInLeft");
+	arr[n][current[n]].setAttribute("class", "item slideOutRight");
 
 	// Update Current Position
-	current = prev ;
+	current[n] = prev ;
 	colorDot();
 
 }
 
 // Function For Get Next Element in Array
-function nextSlide(){
+function nextSlide(n){
 var next;
-	if(current === (arr.length -1) ){
+	if(current[n] === (arr[n].length -1) ){
 		next = 0
 	}else{
-		next = current + 1 ;
+		next = current[n] + 1 ;
 	}
 
 	// setup next and current for animation
-	arr[next].style.left = '100%';
-	arr[current].style.left = 0;
+	arr[n][next].style.left = '100%';
+	arr[n][current[n]].style.left = 0;
 	// add class
-	arr[next].setAttribute("class", "item slideInRight");
-	arr[current].setAttribute("class", "item slideOutLeft");
+	arr[n][next].setAttribute("class", "item slideInRight");
+	arr[n][current[n]].setAttribute("class", "item slideOutLeft");
 
 	// Update Current Position
-	current = next ;
+	current[n] = next ;
 	colorDot();
 
 
 }
 
 // Function For Indicators
-function indicator(n){
-	if(n <  current){
+function indicator(i, n){
+	if(n <  current[i]){
 
-	arr[n].style.left = '-100%';
-	arr[current].style.left = 0;
+	arr[i][n].style.left = '-100%';
+	arr[i][current[i]].style.left = 0;
 	// add class
-	arr[n].setAttribute("class", "item slideInLeft");
-	arr[current].setAttribute("class", "item slideOutRight");
-	current = n;
+	arr[i][n].setAttribute("class", "item slideInLeft");
+	arr[i][current[i]].setAttribute("class", "item slideOutRight");
+	current[i] = n;
 	}
-else if(n > current){
+else if(n > current[i]){
 	// setup next and current for animation
-	arr[n].style.left = '100%';
-	arr[current].style.left = 0;
+	arr[i][n].style.left = '100%';
+	arr[i][current[i]].style.left = 0;
 	// add class
-	arr[n].setAttribute("class", "item slideInRight");
-	arr[current].setAttribute("class", "item slideOutLeft");
-	current = n ;
+	arr[i][n].setAttribute("class", "item slideInRight");
+	arr[i][current[i]].setAttribute("class", "item slideOutLeft");
+	current[i] = n ;
 }else{
-	current = n;
+	current[i] = n;
 }
 	colorDot();
 
@@ -105,9 +119,11 @@ else if(n > current){
 
  function colorDot(){
 
-	var i;
-	for(i =0; i < dot.length; i++){
-		dot[i].classList.remove('active');
-	}
-	dot[current].classList.add('active');
+  for (let n = 0; n<carousel.length; n++) {
+    var i;
+	  for(i =0; i < dot.length; i++){
+		  dot[n][i].classList.remove('active');
+	  }
+	  dot[n][current[n]].classList.add('active');
+  }
 }

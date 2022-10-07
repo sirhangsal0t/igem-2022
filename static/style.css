@@ -22,9 +22,6 @@ footer a:hover { color: white; text-decoration: underline; }
   .navbar-links {
     list-style-type: none;
     background-color: #fdfff0;
-
-
->>>>>>> 2cd4ea511266765176d2d3c8d5d7507f4f3312b5
   }
   .navbar-links li a {
     display: block;
@@ -318,7 +315,7 @@ td {
     margin-bottom: 1vh;
 }
 
-.modal {
+.modal2 {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -326,8 +323,8 @@ td {
   transition: 200ms ease-in-out;
   border: 1px solid #fff;
   border-radius: 2px;
-  z-index: 1;
-  background-color: var(--clr-accent-3);
+  z-index: 10;
+  background-color: #fdfff0;
   color: #000000;
   width: 650px;
   max-width: 80%;
@@ -335,7 +332,7 @@ td {
   overflow-y: scroll
 }
 
-.modal.active {
+.modal2.active {
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -375,6 +372,7 @@ td {
   bottom: 0;
   background-color: rgba(0, 0, 0, .5);
   pointer-events: none;
+  z-index: 2;
 }
 
 #overlay.active{

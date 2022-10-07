@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <!-- Bootstrap CSS -->
+<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
+<link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+<link href="../../static/style.css" rel="stylesheet">
+<link href="../../static/style/modal.css" rel="stylesheet">
+
+    <title>Human Practices | IISER_TVM - iGEM 2022</title>
+
+</head>
+
+<body style="background-color: #fdfff0">
+<div class="progress-bar">
+  <div class="progress-bar-loader">
+
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="#">IISER_TVM</a>
+
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
+
+        <!---- HOME ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <!---- TEAM ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
+        </li>
+
+        <!---- PROJECT ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+          </ul>
+        </li>
+
+        <!---- PARTS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+          </ul>
+        </li>
+
+        <!---- SAFETY ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        </li>
+
+        <!---- HUMAN PRACTICES ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        </li>
+
+        <!---- AWARDS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Awards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<header class="masthead" style= background:url("../../static/images/woman.png"); id="alder">
+
+</header>
+
+<div class="cointainer my-4 mx-4">
+  <div class="row">
+    <div class="col-3">
+      <ul class="list-group fixed-content" id="sidenav">
+        <ul class="navbar-links">
+
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a class="" href=#four>Principal Investigators</a>
+            <div class="dropdown">
+              <a href="#">Prof. S Murthy Srinivasula</a>
+              <a href="#">Dr. Sandhya Ganeshan</a>
+
+            </div>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a class="" href=#ihp>Team Members</a>
+            <div class="dropdown">
+              <a href="#">Sneha P R</a>
+              <a href="#">Ira Zibbu</a>
+              <a href="#">Parth Ankam</a>
+              <a href="#">Kapavarapu Pratham</a>
+              <a href="#">Harshini Shivagnanam</a>
+              <a href="#">Ananya Aravind</a>
+              <a href="#">Pranav Thapron</a>
+              <a href="#">Siddharth Kurne</a>
+              <a href="#">Riya Shende</a>
+              <a href="#">Gopal Kulkarni</a>
+              <a href="#">Jyothilakshmi S</a>
+              <a href="#">Kavya S</a>
+              <a href="#">Merina Tony</a>
+            </div>
+          </li>
+
+          </li>
+        </ul>
+      </ul>
+  </div>
+
+
+
+    <div data-bs-target="sidenav" data-bs-spy="scroll" class="col-9" style="padding-top: 20px" >
+      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px"   >
+        <h1 id="overview" style="color: #002147">Principal investigators</h1>
+        <br>
+        <div class="team-container-RL">
+          <div class="team-container-card">
+            <img src="../../static/images/SMS.jpg" alt="" class="team-container-card-image">
+
+          </div>
+          <div class="team-container-card2">
+            <p class="team-container-card-heading"> Prof. S Murthy Srinivasula</p>
+            <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+          </div>
+        </div>
+
+        <div class="team-container-LR">
+          <div class="team-container-card">
+            <img src="../../static/images/Sandhya_mam.jpg" alt="" class="team-container-card-image">
+
+          </div>
+          <div class="team-container-card2">
+            <p class="team-container-card-heading"> Dr. Sandhya Ganeshan</p>
+            <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+          </div>
+        </div>
+        <p>
+          They played an instrumental role in our progress so far
+        </p>
+        <br>
+
+        <h1 id="four" style="color: #002147">Team Members</h1>
+        <br>
+                <br>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Sneha.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading"> Sneha P R</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Ira.png" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading"> Ira Zibbu</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Parth.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading"> Parth Ankam</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Pratham.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading"> Kapavarapu Pratham</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Harshini.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Harshini Shivagnanam</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Ananya.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Ananya Aravind</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Pranav.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Pranav Thapron</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Devashish.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Devashish Kalmegh</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Siddharth.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Siddharth Kurne</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Riya.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Riya Shende</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Gopal.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Gopal Kulkarni</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Jyothi.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Jyothilakshmi S</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+                <div class="team-container-RL">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Kavya.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Kavya S</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+                <div class="team-container-LR">
+                  <div class="team-container-card">
+                    <img src="../../static/images/Merina.jpg" alt="" class="team-container-card-image">
+
+                  </div>
+                  <div class="team-container-card2">
+                    <p class="team-container-card-heading">Merina Tony</p>
+                    <p class="team-container-card-desc"> fill in anything you want about them. This includes their likes and dislikes, their contribution to the team etc. etc</p>
+                  </div>
+                </div>
+
+
+
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <div id="mod-container" class="mod-containercss">
+    <div class="mod-background">
+      <div class="mod">
+        <h2>I'm a Modal</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
+                  <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src='../../static/style/modalscript.js'></script>
+    <script  src="../../static/style/modaljs.js"></script>
+
+
+<!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white ">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+          <ul class="m-2 p-2">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Nam mauris velit</a></li>
+            <li><a href="#">Etiam vitae mauris</a></li>
+            <li><a href="#">Fusce scelerisque</a></li>
+            <li><a href="#">Sed faucibus</a></li>
+            <li><a href="#">Mauris efficitur nulla</a></li>
+          </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+      </div>
+    </div>
+    <hr>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Wiki Tools: Teams are allowed to remove it -->
+<style>
+    .wiki-tools-footer {
+        --bs-gutter-x: 1.5rem;
+        background: #222124;
+        margin: 0;
+        max-width: 100%;
+        padding: 1rem 3rem;
+        display: flex;
+        gap: 1.5em;
+    }
+    .wiki-tools-footer a {
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        transition: color 0.3s;
+    }
+    .wiki-tools-footer a:hover {
+        color: #08C784;
+    }
+    .wiki-tools-footer img {
+        object-fit: contain;
+    }
+    header{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #084bc7;
+    height: 10%;
+    padding: 1%;
+  }
+</style>
+
+<section class="wiki-tools-footer container">
+    <a id="wiki-tools-link">Access Wiki Tools</a>
+    <a id="wiki-tools-repo">View Source Code</a>
+    <img id="wiki-tools-pipeline">
+</section>
+
+<script>
+    const wikiToolsLink = document.getElementById('wiki-tools-link')
+    const wikiToolsRepo = document.getElementById('wiki-tools-repo')
+    const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
+
+    const path = document.location.pathname.split('/')
+
+    const competitionSlug = document.location.host.split('.')[0]
+    const teamSlug = path[1]
+    const page = path[2] === '' ? 'index' : path[2]
+
+    wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
+    wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
+    wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+</script>
+
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
+</script>
+
+<script>
+  $(window).on('scroll', function() {
+    a = $(window).scrollTop()
+    b = $(window).height()
+    c = $(document).height()
+
+    var scrollpercent = (a/(c-b))*100
+    $('.progress-bar-loader').css({height:scrollpercent}, 100)
+    console.clear
+    console.log(scrollpercent)
+    console.log(a)
+    console.log(b)
+    console.log(c)
+  })
+</script>
+<!-- Bootstrap Bundle with Popper -->
+<!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
+<script src="../../static/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

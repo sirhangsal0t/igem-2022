@@ -19,10 +19,6 @@
 }
 
 
-html.modal-active, body.modal-active {
-  overflow: hidden;
-}
-
 #mod-container {
   position: fixed;
   display: table;

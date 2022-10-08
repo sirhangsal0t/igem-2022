@@ -116,8 +116,11 @@
 </nav>
 
 <!-- Page Content -->
-<header class="masthead" style= background:url("../../static/images/woman.png");>
-</header>
+<div>
+  <img src="../../static/images/woman.png" id="head1" class="svg-end">
+</div>
+
+  <script defer src="../../static/modal.js"></script>
 
 <div class="cointainer my-4 mx-4">
   <div class="row">
@@ -158,7 +161,7 @@
     </div>
 
     <div data-bs-target="sidenav" data-bs-spy="scroll" class="col-9" style="padding-top: 20px" >
-      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px"   >
+      <div class="container" data-bs-spy="scroll"  data-bs-offset="-200px"   >
 
         <h1 style="color: #002147">Overview</h1>
         <br>
@@ -295,7 +298,7 @@
           <br>
         </div>
 
-        <div>
+
           <h1 style="color: #002147">Integrated Human Practices</h1>
           <br>
           <p>
@@ -304,7 +307,7 @@
           </p>
           <br>
 
-
+        <div>
           <h2>Motivation</h2>
           <br>
           <p>
@@ -503,22 +506,22 @@
             <i>“Would i have to be known as Barbara who had breast cancer or would I be Barbara as i was before”</i>
           </p>
           <p>
-            Barbara Demorest is the founder of Knitted Knockers Support Foundation. She is also a breast cancer survivor. We interacted with her to know more about her journey as well as the need for the knitted knockers. She faced several difficulties during her treatment days, always felt that her mental health often took a backseat to her physical well being. Her not being able to have reconstruction surgery or use a synthetic prosthetic really held her back from going back to life. <a class="button" id="six">Read More</a>
+            Barbara Demorest is the founder of Knitted Knockers Support Foundation. She is also a breast cancer survivor. We interacted with her to know more about her journey as well as the need for the knitted knockers. She faced several difficulties during her treatment days, always felt that her mental health often took a backseat to her physical well being. Her not being able to have reconstruction surgery or use a synthetic prosthetic really held her back from going back to life. <a data-modal-target="#modal1" class="button">Read more</a>
           </p>
-          <div id="mod-container" class="mod-containercss">
-            <div class="mod-background">
-              <div class="mod">
+          <div class="modal2" id="modal1">
+              <div class="modal-header">
+                  <div class="title">Barbara Demorest</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body text-justify">
                 <p style="text-align: left;">
                   Knitted Knockers was introduced to her through her doctor. Her friend later knitted knockers for her with the help of tutorial videos and finally she was able to gain a sense of freedom to go out, hug people and wear a normal bra without having to use any medical prosthetic device, this gave her a sense of normalcy. This was her inspiration to form KNITTED KNOCKERS. Several people who joined the initiative were able to relate to the shared trauma that they all faced.
                   <br><br>
                   First step towards forming this Non Profit Organisation was contacting her doctor and finding out the demand of knockers (50,000 mastectomies in a year - USA). Once the doctor gave them a number, the next step was to find resources in terms of the yarn and people to knit, so they could provide these knitted knockers for free. In 10 years, they've grown to having 1900 medical clinics registered with them and 60 international countries. Every month 10-12,000 knockers are being handed out. Her strategy for this was to raise awareness and get the local community there to involve and provide for their region. Knitters make the knockers and send it to their headquarters where they stuff them and post them to clinics.
                 </p>
-                <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
-                  <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
-                </svg>
               </div>
             </div>
-          </div>
+            <div id="overlay"></div>
           <br>
           <div class="row">
               <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/9.png" alt="picture">
@@ -710,13 +713,16 @@
           <h5>Assistant Professor, IISER Thiruvananthapuram</h5>
           <br>
           <p>
-            We had several queries regarding drug delivery. We approached Dr Kurapati to clarify these aspects. Dr Rajendra Kurapati is the Assistant Professor in School of Chemistry at IISER Thiruvananthapuram, Kerala. As non-biodegradable nanoparticles are now used in a variety of industries, he is developing useful biodegradable materials for biomedical purposes. He has worked before with nanoparticles and drug delivery. To confirm the isolation of OMV, he suggested performing dls or TEM. He introduced the possibility of other receptors, such as Folate receptor alpha, being present on epithelial cells and overexpressed in cancer cells. This helped us identify the other potential receptors that can be targeted with OMVs in the future, given that folate receptors are overexpressed in triple-negative breast cancer cells. <a class="button" id="six">Read More</a>
-            <div id="mod-container" class="mod-containercss">
-              <div class="mod-background">
-                <div class="mod">
+            We had several queries regarding drug delivery. We approached Dr Kurapati to clarify these aspects. Dr Rajendra Kurapati is the Assistant Professor in School of Chemistry at IISER Thiruvananthapuram, Kerala. As non-biodegradable nanoparticles are now used in a variety of industries, he is developing useful biodegradable materials for biomedical purposes. He has worked before with nanoparticles and drug delivery. To confirm the isolation of OMV, he suggested performing dls or TEM. He introduced the possibility of other receptors, such as Folate receptor alpha, being present on epithelial cells and overexpressed in cancer cells. This helped us identify the other potential receptors that can be targeted with OMVs in the future, given that folate receptors are overexpressed in triple-negative breast cancer cells. <a data-modal-target="#modal0" class="button">here</a>
+            <div class="modal2" id="modal0">
+                <div class="modal-header">
+                    <div class="title">Dr. Rajendra Kurapati</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
                   <p style="text-align: left;">
                     During our conversation with Dr Kurapati, we inquired about clinical and preclinical trials as well as our future experimental plans. He provided information regarding the experiments we should conduct to standardise the concentration of OMVs and how to load the drugs into the vesicles. While loading the drug and enzyme into the vesicles, he stressed which factors (such as temperature, pH, salt content, etc.) must be taken into account .
-                    <br>
+                    <br><br>
                     He suggested using the MTT assay to determine the optimal drug concentration and assisted us with the protocol. The research papers he shared with us were invaluable for conducting MTT assay experiments and planning pre-clinical trials. It was his suggestion that prompted us to examine the cytotoxicity of OMVs and the effect of the drug on cells, which led us to consider utilising different OMV concentrations. It assisted us in determining the number of cells required for the MTT assay. He also recommended that we perform an LDH assay, which we were unable to do but will explore for future plans.
                     <br><br>
                     Additionally, he discussed Doxil, which greatly enhanced our understanding of the vesicle-based drug delivery systems that are already on the market. In order to reduce the LPS toxicity, he instructed us to compare our system to Doxil and to consider how different modifications of PEGylation applied to liposome-based delivery systems could be applied to our project.
@@ -725,12 +731,9 @@
                     <br><br>
                     For future directions of clinical trials, he suggested using the Bulb C mouse and other immunodeficient mouse models with xenografts to conduct various experiments with our dual OMV-based system. His suggestions assisted us in pursuing this path. He went on to discuss in-vivo drug efficacy studies and in-vivo drug trafficking studies. His insightful comments comparing the OMV uptake by various tissues to our tumours prompted us to conduct experiments involving similar studies.
                   </p>
-                  <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
-                    <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
-                  </svg>
                 </div>
-              </div>
             </div>
+            <div id="overlay"></div>
           </p>
           <div class="row">
               <img class="img" src="../../static/images/hp_5.png" alt="picture">
@@ -869,70 +872,39 @@
           </div>
           <br>
 
-          <!-- <div style="border-width:3px; border-style:solid; background-color:#B3E6B5; padding: 1em;">
-            <h3>Breast Cancer Screening Camp</h3>
-            <h5>In association with Indian Medical Association</h5>
-            <br>
-            <p>
-              Our team organised a successful Breast Cancer Screening campaign for our institution's female housekeeping staff. IMA (Indian Medical Association) and KIMS Health Centre, Thiruvananthapuram collaborated on the event. Dr. Hemalatha assisted in the organisation of this programme. Dr. Kavitha Ravi was the honoured guest during the event. She is an adjunct professor at Government Medical College, Thiruvananthapuram. <a class="button" id="six">Read More</a>
-            </p>
-            <div id="mod-container" class="mod-containercss">
-              <div class="mod-background">
-                <div class="mod">
-                  <p style="text-align: left;">
-                    The examination was administered utilising the iBreast Exam. It was handled by four KIMS Health Center technicians. The iBreastExam is a portable gadget that detects breast abnormalities. It is not a confirming test, although it can detect anomalies. The one-day screening camp was attended by around 35 housekeeping staff members. Participants were between the ages of 35 and 50. P roper written consent was obtained from the participants, and the respective doctors signed an MOU. To assure complete safety, we emailed the iGEM headquarters about our programme and obtained their approval before conducting tests. It is our responsibility to ensure that no stakeholders or members of the public are affected in any way by our project. Therefore, all safety regulations were fulfilled prior to implementing any programmes, especially large-scale ones.
-                    <br><br>
-                    The participants discussed their testing experiences. Nearly all of them were receiving screening tests for the first time, demonstrating the inaccessibility of such testing for persons living in rural areas. 8 percent of individuals who were tested came back positive, which is an extremely high percentage. Since the iBreast Exam is not a confirmatory test, they were referred for a proper confirmatory test and further for treatment.
-                    <br><br>
-                    The memorandum is available <a href="">here.</a>
-                    <br>
-                    The consent form can be found <a href="">here.</a>
-                  </p>
-                  <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
-                    <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <p>Add carousel</p>
-          </div> -->
 
           <div style= "background-color:#B3E6B5; padding: 1em;">
             <h3>Breast Cancer Screening Camp</h3>
             <h5 style="color:#002147">In association with Indian Medical Association</h5>
             <br>
             <p>
-              Our team organised a successful Breast Cancer Screening campaign for our institution's female housekeeping staff. IMA (Indian Medical Association) and KIMS Health Centre, Thiruvananthapuram collaborated on the event. Dr. Hemalatha assisted in the organisation of this programme. Dr. Kavitha Ravi was the honoured guest during the event. She is an adjunct professor at Government Medical College, Thiruvananthapuram. <a class="button" id="six">Read More</a>
+              Our team organised a successful Breast Cancer Screening campaign for our institution's female housekeeping staff. IMA (Indian Medical Association) and KIMS Health Centre, Thiruvananthapuram collaborated on the event. Dr. Hemalatha assisted in the organisation of this programme. Dr. Kavitha Ravi was the honoured guest during the event. She is an adjunct professor at Government Medical College, Thiruvananthapuram. <a data-modal-target="#modal2" class="button">Read more</a>
             </p>
-            <div id="mod-container" class="mod-containercss">
-              <div class="mod-background">
-                <div class="mod">
-                  <p style="text-align: left;">
-                    The examination was administered utilising the iBreast Exam. It was handled by four KIMS Health Center technicians. The iBreastExam is a portable gadget that detects breast abnormalities. It is not a confirming test, although it can detect anomalies. The one-day screening camp was attended by around 35 housekeeping staff members. Participants were between the ages of 35 and 50. P roper written consent was obtained from the participants, and the respective doctors signed an MOU. To assure complete safety, we emailed the iGEM headquarters about our programme and obtained their approval before conducting tests. It is our responsibility to ensure that no stakeholders or members of the public are affected in any way by our project. Therefore, all safety regulations were fulfilled prior to implementing any programmes, especially large-scale ones.
-                    <br><br>
-                    The participants discussed their testing experiences. Nearly all of them were receiving screening tests for the first time, demonstrating the inaccessibility of such testing for persons living in rural areas. 8 percent of individuals who were tested came back positive, which is an extremely high percentage. Since the iBreast Exam is not a confirmatory test, they were referred for a proper confirmatory test and further for treatment.
-                    <br><br>
-                    The memorandum is available <a href="">here.</a>
-                    <br>
-                    The consent form can be found <a href="">here.</a>
-                  </p>
-                  <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
-                    <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
-                  </svg>
+            <br>
+            <div class="modal2" id="modal2">
+                <div class="modal-header">
+                    <div class="title">Breast Cancer Screening</div>
+                    <button data-close-button class="close-button">&times;</button>
                 </div>
-              </div>
-            </div>
+                <div class="modal-body text-justify">
+                  The examination was administered utilising the iBreast Exam. It was handled by four KIMS Health Center technicians. The iBreastExam is a portable gadget that detects breast abnormalities. It is not a confirming test, although it can detect anomalies. The one-day screening camp was attended by around 35 housekeeping staff members. Participants were between the ages of 35 and 50. Proper written consent was obtained from the participants, and the respective doctors signed an MoU. MoU is attached here. To assure complete safety, we emailed the iGEM headquarters about our programme and obtained their approval before conducting tests. It is our responsibility to ensure that no stakeholders or members of the public are affected in any way by our project. Therefore, all safety regulations were fulfilled prior to implementing any programmes, especially large-scale ones.
+                  <br>
+                  The participants discussed their testing experiences. Nearly all of them were receiving screening tests for the first time, demonstrating the inaccessibility of such testing for persons living in rural areas. 8 percent of individuals who were tested came back positive, which is an extremely high percentage. Since the iBreast Exam is not a confirmatory test, they were referred for a proper confirmatory test and further for treatment.
 
+
+                </div>
+                </div>
+            <div id="overlay"></div>
             <div id="carousel0" class="carousel">
-            <div class="item">
-              <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp11a.png">
-            </div>
-            <div class="item">
-              <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp11b.png">
-            </div>
-            <div class="item">
-              <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp-11c.png">
-            </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp11a.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp11b.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/multiple-hp-11c.png">
+              </div>
 
               <a class="prev" onclick="prevSlide(0)">&#10094;</a>
               <a class="next" onclick="nextSlide(0)">&#10095;</a>
@@ -943,8 +915,226 @@
                 <span class="dot" onclick="indicator(0, 2)"></span>
               </div>
             </div>
-
           </div>
+          <br>
+
+          <h3>Awareness Talk</h3>
+          <h5>Conducted during the Breast Cancer Screening Camp</h5>
+          <br>
+          <p>
+            We determined, through activities such as surveys and interviews with the public, that the public is unaware of breast cancer and how early detection and good knowledge can save thousands of lives. Lack of awareness prevented individuals from getting screened for breast cancer, resulting in late-stage diagnosis. Compared to early detection, the percentage of cancer patients who are cured is substantially lower when the disease is identified at a later stage. Consequently, we saw the need for awareness. We organised a campus-wide breast cancer awareness lecture for our institution's housekeeping staff. Dr. Hemalatha Goldwin, medical officer of IISER Thiruvananthapuram, delivered the lecture. So that the audience could comprehend, it was conducted in the native tongue (Malayalam). The discussion included breast cancer examination procedures.
+          </p>
+          <p>
+            Approximately 80 staff members attended this presentation. It was regarded to be highly useful by the audience. They were delighted to be attending their first breast cancer awareness talk.
+          </p>
+          <br>
+          <div id="carousel1" class="carousel">
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/aware-2.png">
+            </div>
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/aware-1.png">
+            </div>
+
+            <a class="prev" onclick="prevSlide(1)">&#10094;</a>
+            <a class="next" onclick="nextSlide(1)">&#10095;</a>
+
+            <div class="indicators">
+              <span class="dot" onclick="indicator(1, 0)"></span>
+              <span class="dot" onclick="indicator(1, 1)"></span>
+            </div>
+          </div>
+          <br>
+
+          <h3>Name of Technician</h3>
+          <h5>iBreast Technician</h5>
+          <br>
+          <p>
+            iBreast is a preliminary screening test for Breast Cancer. A few members of our team spoke with an iBreast technician to learn how people are scanned at camps, whether people are reluctant to be screened, what challenges they encounter during the procedure, and what limitations the technique has.
+          </p>
+          <p>
+            iBreast is a preliminary screening test. For confirmation, mammogram or FNAC is required. The main aim of organising screenings is to reach middle-class household women who don't prioritise their health over their family and chores. The system involves a portable sensor and a Bluetooth connected screen to view the image of 1/16th of the area at a stretch. Gradually we scan the entire area in parts and complete the scan. If there are any lesions or lumps it will show a red colour as an indication. There are few situations where false positive cases are shown.  However, this method has proven quite helpful for screening a number of patients and assisting them in receiving an early diagnosis of their ailment.
+          </p>
+          <p>
+            Overall, she claimed that despite people's initial reluctance, after learning about cancer and the need for screening, they are prepared to undergo screening and to be kept informed of developments by the doctors.This was an inspiration for us to conduct a camp and spread awareness.
+          </p>
+          <br>
+
+          <div style= "background-color:#B3E6B5; padding: 1em;">
+            <h3>Pamphlets</h3>
+            <h5 style="color:#002147">In association with Indian Medical Association</h5>
+            <br>
+            <p>
+              The high percentage of positive iBreast Exam results indicated the prevalence of breast cancer. Our institute is nestled in the foothills of the western ghats, 40 kilometres from the main city of Thiruvananthapuram. People in the vicinity of our institute reside in rural areas and lack access to screening tools. Therefore, we decided to educate them on self-breast inspection techniques that can be undertaken in their homes. We distributed pamphlets on campus, in the neighbourhood near campus, and in our hometown. Brochures were available in English and three additional languages (Malayalam, Tamil,  and Hindi). Illustrations were utilised to emphasise the SBE (Self Breast Examination) approach. It was created so that people may easily comprehend and follow the instructions. Dr Hemalatha Goldwin verified it before distribution.
+            </p>
+            <p>
+              the pamphlet is available in <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/breast-cancer-info-pamphlet-english-version.pdf">English,</a>, <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/breast-cancer-info-pamphlet-tamil-version.pdf">Tamil</a> and <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/breast-cancer-info-pamphlet-hindi-version.pdf">Hindi</a>
+            </p>.
+            <div id="carousel2" class="carousel">
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/pamphlet-1.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/pamphlet-2.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/pamphlet-3.png">
+              </div>
+
+              <a class="prev" onclick="prevSlide(2)">&#10094;</a>
+              <a class="next" onclick="nextSlide(2)">&#10095;</a>
+
+              <div class="indicators">
+                <span class="dot" onclick="indicator(2, 0)"></span>
+                <span class="dot" onclick="indicator(2, 1)"></span>
+                <span class="dot" onclick="indicator(2, 2)"></span>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <div style= "background-color:#B3E6B5; padding: 1em;">
+            <h3>Stage Play to Raise Breast Cancer Awareness</h3>
+            <h5 style="color:#002147">In association with Theatrics Society of IISER TVM</h5>
+            <br>
+            <p>
+              We desired to increase the reach of our awareness campaigns. In addition to expanding the programme, our goal was to reach people of all ages and genders with our message. We decided to stage a play in public. We in collaboration with the Theatrics society of IISER Thiruvananthapuram performed a play to the public in one of the busiest malls of Thiruvananthapuram city - Mall of Travancore.  Team members and drama club members collaborated to create a play about the significance of early breast cancer screening. In the drama, a housewife discovers that the lump on her breast may be breast cancer after watching television awareness programmes. Her examination results indicate that she has breast cancer. A few months of treatment were enough to eradicate cancer. It disseminates the idea that cancer screening tests are available and can save lives when used appropriately. We also described how to diagnose breast cancer through our play. The audience considered our performance to be beneficial and appreciated our efforts. In addition, we presented them with leaflets that explained breast cancer detection in depth.
+            </p>
+            <br>
+            <div id="carousel3" class="carousel">
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/drama-1.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/drama-2.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/drama-3.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/human-practices/drama-4.png">
+              </div>
+
+              <a class="prev" onclick="prevSlide(3)">&#10094;</a>
+              <a class="next" onclick="nextSlide(3)">&#10095;</a>
+
+              <div class="indicators">
+                <span class="dot" onclick="indicator(3, 0)"></span>
+                <span class="dot" onclick="indicator(3, 1)"></span>
+                <span class="dot" onclick="indicator(3, 2)"></span>
+                <span class="dot" onclick="indicator(3, 3)"></span>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <h3>Premi Mathew</h3>
+          <h5>Founder and CEo of Hair for Hope India</h5>
+          <br>
+          <p>
+            Premi Mathew is the founder and CEO of Hair for Hope India and Protect your mom. She has survived breast cancer. She initiated the Protect Your Mom (PYM) campaign to emphasise the significance of breast cancer screening at an early stage. In this show, she aims to convey this message to children, through whom their mothers are informed. The mission of Hair for Hope India is to donate hair to cancer patients who have lost their hair as a result of chemotherapy.
+          </p>
+          <p>
+            Through our interactions with breast cancer survivors, we learned that although hair loss does not cause discomfort, it can have a significant impact on a patient's self-esteem. Additionally, it influences how others treat them. It is widely known that one of the negative effects of chemotherapy is hair loss. Thus, we visited with Premi Mathew and learned more about her business and her fight against cancer. She has encountered obstacles during her treatment. She was aware of the significance of early detection. To support her wonderful cause, we chose to cooperate with Hair for Hope India and the Protect your Mom campaign. We distributed posters conveying the PYM message.
+          </p>
+          <div class="row">
+            <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/10.png" alt="picture">
+              <p class="article">
+                <em class="figure-legend"><strong>Figure 24. </strong>Premi Mathew</em>
+              </p>
+          </div>
+          <br>
+
+          <div style= "background-color:#B3E6B5; padding: 1em;">
+            <h3>Hair Donation Campaign</h3>
+            <h5>In association with Hair for Hope, India</h5>
+            <br>
+            <p>
+              Our meeting with Premi Mathew prompted us to organise a campus-wide hair donation drive. The least we can do for cancer patients is to donate their hair. It is crucial because throughout cancer therapy, patients may get unwell and weak. Additionally, losing hair and being criticised by society are difficult to manage. Using wigs to restore their confidence might be of tremendous assistance. Approximately twenty ponytails of hair would be needed to create a wig. Therefore, as many individuals as possible should donate their hair. On August 15th, we held a hair donation event in partnership with the non-profit Hair for Hope India. We send information regarding hair donation in advance to students and faculty at our institution. Throughout the campaign, several students donated their hair. We obtained a written <a href="https://static.igem.wiki/teams/4359/wiki/safety/hair-donation-mou.pdf">MoU (Memorandum of Understanding)</a> from the CEO of the non-profit organisation to prevent any misuse of the donated hair. Only willing individuals with the minimum needed length donated their hair. We got <a href="https://static.igem.wiki/teams/4359/wiki/safety/consent-form-hair-donation.pdf">consent</a> from them before donating hair. We presented the donors with bookmarks as a token of our appreciation. It underscored the significance of their actions. We also informed them about the PYM (Protect Your Mom) Campaign and how early breast cancer screening can save lives. We packaged the hair and shipped the package to the Amala medical college in Thrissur, where the donated hair will be transformed into wigs for cancer sufferers.
+            </p>
+            <br>
+            <div id="carousel4" class="carousel">
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/safety/hair-1.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/safety/hair-2.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/safety/hair-3.png">
+              </div>
+              <div class="item">
+                <img src="https://static.igem.wiki/teams/4359/wiki/safety/hair-4.png">
+              </div>
+
+
+              <a class="prev" onclick="prevSlide(4)">&#10094;</a>
+              <a class="next" onclick="nextSlide(4)">&#10095;</a>
+
+              <div class="indicators">
+                <span class="dot" onclick="indicator(4, 0)"></span>
+                <span class="dot" onclick="indicator(4, 1)"></span>
+                <span class="dot" onclick="indicator(4, 2)"></span>
+                <span class="dot" onclick="indicator(4, 3)"></span>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <h3>Project Reveal</h3>
+          <h5>Presentation open to all of IISER Thiruvananthapuram</h5>
+          <br>
+          <p>
+            Once we had a clear understanding of our ideas, our team thought it would be fantastic to have a grant reveal for our project. So on World Cancer Day (February 4, 2022), we used a fun interactive mystery question to disclose the project's theme, and students could guess it by filling out a Google Form. To promote our initiative, we also placed posters throughout the campus and had a selfie competition with the poster. <a data-modal-target="#modal3" class="button">Read More</a>.
+          </p>
+          <div class="modal2" id="modal3">
+              <div class="modal-header">
+                  <div class="title">Project reveal - 16th May 2022</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body text-justify">
+                <p>
+                  After much anticipation, on May 16, 2022, we formally introduced our project concept and team to the faculty, staff, and students of our institute. To a group of more than 100 people, each team member introduced themselves and talked about the project and its different subteams. During the event, we also unveiled OMIVON, our team mascot.
+                </p>
+                <p>
+                  With the help of the <a href="https://www.mentimeter.com/">Mentimeter website</a>, which incorporates user ideas, we got to learn which social media platforms the audience prefers and how they view synthetic biology. Later, we planned and designed our human practices and outreach initiatives using these inputs. The previous iGEM team from our university also gave a speech about how iGEM had aided their development over the previous year. Additionally, we were able to get a lot of feedback from the audience, which was helpful for the project.
+                </p>
+              </div>
+          </div>
+          <div id="overlay"></div>
+          <br>
+          <div id="carousel5" class="carousel">
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/safety/reveal-1.png">
+            </div>
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/safety/reveal-2.png">
+            </div>
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/safety/reveal-3.png">
+            </div>
+            <div class="item">
+              <img src="https://static.igem.wiki/teams/4359/wiki/safety/reveal-4.png">
+            </div>
+
+            <a class="prev" onclick="prevSlide(5)">&#10094;</a>
+            <a class="next" onclick="nextSlide(5)">&#10095;</a>
+
+            <div class="indicators">
+              <span class="dot" onclick="indicator(5, 0)"></span>
+              <span class="dot" onclick="indicator(5, 1)"></span>
+              <span class="dot" onclick="indicator(5, 2)"></span>
+              <span class="dot" onclick="indicator(5, 3)"></span>
+
+            </div>
+          </div>
+          <br>
+
+
+
+
+
+
 
 
 
@@ -1293,55 +1483,15 @@
             </div> -->
           <br>
 
-          <h3>Project Reveal</h3>
-          <h5>Presentation open to all of IISER Thiruvananthapuram</h5>
-          <br>
-          <p>
-            Once we had a clear understanding of our ideas, our team thought it would be fantastic to have a grant reveal for our project. So on World Cancer Day (February 4, 2022), we used a fun interactive mystery question to disclose the project's theme, and students could guess it by filling out a Google Form. To promote our initiative, we also placed posters throughout the campus and had a selfie competition with the poster.
-          </p>
-          <p>
-            After much anticipation, on April 13, 2022, we formally introduced our project concept and team to the faculty, staff, and students of our institute. To a group of more than 100 people, each team member introduced themselves and talked about the project and its different subteams. During the event, we also unveiled OMIVON, our team mascot.
-          </p>
-          <p>
-            With the help of the Mentor-Mentee app, which incorporates user ideas, we got to learn which social media platforms the audience prefers and how they view synthetic biology. Later, we planned and designed our human practices and outreach initiatives using these inputs. The previous iGEM team from our university also gave a speech about how iGEM had aided their development over the previous year. Additionally, we were able to get a lot of feedback from the audience, which was helpful for the project.
-          </p>
-          <!-- <div id="carousel" class="carousel">
-            <div class="item">
-              <img src="../../static/images/bg-masthead.jpg">
-            </div>
-            <div class="item">
-              <img src="../../static/images/bg-masthead.jpg">
-            </div>
-            <div class="item">
-              <img src="../../static/images/bg-masthead.jpg">
-            </div>
 
-              <a class="prev" onclick="prevSlide()">&#10094;</a>
-              <a class="next" onclick="nextSlide()">&#10095;</a>
 
-            <div class="indicators">
-              <span class="dot" onclick="indicator(0)"></span>
-              <span class="dot" onclick="indicator(1)"></span>
-              <span class="dot" onclick="indicator(2)"></span>
-            </div>
-            </div> -->
           <br>
 
 
 
 
 
-          <h3>Name of Technician</h3>
-          <h5>iBreast Technician</h5>
-          <br>
-          <p>
-            iBreast is a preliminary screening test for Breast Cancer. A few members of our team spoke with an iBreast technician to learn how people are scanned at camps, whether people are reluctant to be screened, what challenges they encounter during the procedure, and what limitations the technique has.
-          </p>
-          <br>
-          <p>
-            iBreast is a preliminary screening test. For confirmation, mammogram or FNAC is required. The main aim of organising screenings is to reach middle-class household women who don't prioritise their health over their family and chores. The system involves a portable sensor and a Bluetooth connected screen to view the image of 1/16th of the area at a stretch. Gradually we scan the entire area in parts and complete the scan. If there are any lesions or lumps it will show a red colour as an indication. There are few situations where false positive cases are shown.  However, this method has proven quite helpful for screening a number of patients and assisting them in receiving an early diagnosis of their ailment. Overall, she claimed that despite people's initial reluctance, after learning about cancer and the need for screening, they are prepared to undergo screening and to be kept informed of developments by the doctors.This was an inspiration for us to conduct a camp and spread awareness.
-          </p>
-          <br>
+
 
 
 
@@ -1379,16 +1529,7 @@
             <br>-->
 
 
-          <h3>Awareness Talk</h3>
-          <h5>Conducted during the Breast Cancer Screening Camp</h5>
-          <br>
-          <p>
-            We determined, through activities such as surveys and interviews with the public, that the public is unaware of breast cancer and how early detection and good knowledge can save thousands of lives. Lack of awareness prevented individuals from getting screened for breast cancer, resulting in late-stage diagnosis. Compared to early detection, the percentage of cancer patients who are cured is substantially lower when the disease is identified at a later stage. Consequently, we saw the need for awareness. We organised a campus-wide breast cancer awareness lecture for our institution's housekeeping staff. Dr. Hemalatha Goldwin, medical officer of IISER Thiruvananthapuram, delivered the lecture. So that the audience could comprehend, it was conducted in the native tongue (Malayalam). The discussion included breast cancer examination procedures.
-          </p>
-          <p>
-            Approximately 80 staff members attended this presentation. It was regarded to be highly useful by the audience. They were delighted to be attending their first breast cancer awareness talk.
-          </p>
-          <br>
+
 
           <div style="border-width:3px; border-style:solid; border-color:#002147; padding: 1em;">
             <p>

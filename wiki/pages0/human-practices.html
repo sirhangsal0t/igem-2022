@@ -1,58 +1,1779 @@
-{% extends "layout.html" %}
-  
-{% block title %}Human Practices{% endblock %}
-{% block lead %}We ask every team to think deeply and creatively about whether their project is responsible and good for the world. Consider how the world affects your work and how your work affects the world.{% endblock %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
 
-{% block page_content %}
+    <!-- Bootstrap CSS -->
+<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
+<link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+<link href="../../static/style.css" rel="stylesheet">
+<link href="../../static/style/modal.css" rel="stylesheet">
 
-<div class="row mt-4">
-  <div class="col">
-    <div class="bd-callout bd-callout-info">
-      <h4>Silver Medal Criterion #3</h4>
-      <p>Explain how you have determined your work is responsible and good for the world.</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
+    <title>Human Practices | IISER_TVM - iGEM 2022</title>
+
+</head>
+
+<body style="background-color: #fdfff0">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="#">IISER_TVM</a>
+
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
+
+        <!---- HOME ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <!---- TEAM ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
+        </li>
+
+        <!---- PROJECT ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+          </ul>
+        </li>
+
+        <!---- PARTS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+          </ul>
+        </li>
+
+        <!---- SAFETY ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        </li>
+
+        <!---- HUMAN PRACTICES ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        </li>
+
+        <!---- AWARDS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Awards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+          </ul>
+        </li>
+
+      </ul>
     </div>
-  
-    <div class="bd-callout bd-callout-info">
-      <h4>Gold Medal Criterion #1</h4>
-      <p>Demonstrate how your team responded to your human practices reflections, research, and/or engagement. You should show how your activities impacted your project purpose, design, and/or execution. </p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/medals">2022 Medals Page</a> for more information.</p>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<header class="masthead" style= background:url("../../static/images/woman.png");>
+</header>
+
+<div class="cointainer my-4 mx-4">
+  <div class="row">
+
+    <div class="col-3">
+      <ul class="list-group fixed-content" id="sidenav">
+        <ul class="navbar-links">
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href=#head1>Overview</a>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href=#head2>Our Approach</a>
+            <div class="dropdown">
+              <a href="#subhead2.1">Understanding the problem</a>
+              <a href="#subhead2.2">Ideate</a>
+              <a href="#subhead2.3">Define a solution</a>
+              <a href="#subhead2.4">Evaluate and execute</a>
+            </div>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href="head3">Integrated Human Practices</a>
+            <div class="dropdown">
+              <a href="#subhead3.1">Motivation</a>
+              <a href="#subhead3.2">Project Design</a>
+              <a href="#subhead3.3">Project Building</a>
+              <a href="#subhead3.4">Stakeholder Interactions</a>
+              <a href="#subhead3.5">Our Solution</a>
+              <a href="#subhead3.6">Safety</a>
+              <a href="#subhead3.7">Future Directions</a>
+            </div>
+          </li>
+          <li class="navbar-dropdown list-group-item list-group-item-action">
+            <a href=#head4>References</a>
+          </li>
+          </li>
+        </ul>
+      </ul>
     </div>
-  
-    <div class="bd-callout bd-callout-info">
-      <h4>Best Integrated Human Practices Special Prize</h4>
-      <p>To compete for the this prize, please describe your work on this page and also fill out the description on the <a href="https://competition.igem.org/deliverables/judging-form">judging form</a>.</p>
-      <p>How does your project affect society and how does society influence the direction of your project? How might ethical considerations and stakeholder input guide your project purpose and design and the experiments you conduct in the lab? How does this feedback enter into the process of your work all through the iGEM competition? Document a thoughtful and creative approach to exploring these questions and how your project evolved in the process to compete for this award!</p>
-      <hr>
-      <p>Please see the <a href="https://competition.igem.org/judging/awards">2022 Awards Page</a> for more information.</p>
+
+    <div data-bs-target="sidenav" data-bs-spy="scroll" class="col-9" style="padding-top: 20px" >
+      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px"   >
+
+
+        <!--Overview-->
+        <div>
+          <h1 style="color: #002147">Overview</h1>
+          <br>
+          <p>
+            Cancer is a leading cause of death worldwide, accounting for nearly 10 million deaths in 2020, or almost one in every six <a href="#ref">[1]</a>. Despite advancements in science revealing the complex interaction of variables responsible for malignant phenotypes, successful treatments for most cancers are still a long way from reality.
+          </p>
+          <p>
+            Traditional cancer treatments rapidly kill growing cancer cells and normal cells. This leads to many adverse effects. Targeted drugs represent an improvement over conventional therapies but have several flaws; for example, antibody-drug conjugates often cause significant side effects; pathway inhibitor drugs rely on specific pathways, which sometimes can be bypassed by tumour cells <a href="#ref">[2]</a>.</p>
+          <p>
+            As we learned of all these issues, we were determined to find a means to aid the millions of people suffering from cancer and its harsh treatment side effects. We began by learning how cancer medicines function and tried to get to the bottom of the issue. It was immediately apparent that present drug delivery systems were severely inadequate due to their unaffordable costs and off-site targeting. Therefore, we chose to build a more robust, affordable drug delivery system with improved specificity and efficacy.
+          </p>
+          <p>
+            A group of 15 enthusiastic research students formed a group to seek and tackle the challenge of off-site targeting by leveraging the ability of synthetic biology to synergistically combine different approaches in cancer therapy. We started working extensively towards this goal, and eventually, it led to the creation of <strong>Duonco</strong>, a novel dual nanovesicle drug delivery system that we believe <strong>has the potential to reduce off-site targeting</strong>. We hope to establish a new method for drug delivery that can be improved and adapted to better serve the needs of patients. To our knowledge, this is the first time such a dual nanovesicle system has been designed for targeted therapy.
+          </p>
+          <p>
+            Our next objective was to <strong>select a suitable model for our project</strong>. We went through the literature on current statistics of cancer rates in India and found out that breast cancer has become the most prevalent form of cancer, with the highest gross incidence and mortality. A few of our <strong>members also attended a medical camp</strong> held in our community, where they learned about the dramatic increase in breast cancer cases and their lack of knowledge of the diagnosis, causes, and treatments. This motivated us to select breast cancer as our model disease and move toward developing our drug delivery system.
+          </p>
+          <p>
+            As our project progressed, we engaged with oncologists, doctors, and drug delivery specialists to finalise the components of our prototype. Our project modelling proved to be incredibly useful for comprehending the dynamics of OMV internalisation and augmenting our wet lab. While speaking with non-governmental organisations (Hair for Hope, Knitted Knockers), we observed the lack of knowledge and stigmas around breast cancer. This motivated us to organise talks and a drama to raise awareness, a breast cancer screening camp, a hair donation campaign, awareness pamphlets, and other outreach events. We also conducted a survey via online and offline platforms to analyse the awareness of the general public on breast cancer and related topics. This gave us insights into people's misconceptions (males cannot get breast cancer, and breast cancer can cause pregnancy issues), and we made it a point to ensure that all of these issues were covered while preparing our outreach initiatives. Our meeting with companies and the government startup commission helped to get perspective on how to further our concept and enabled us to build a suitable plan to introduce Duonco to the public in the best manner.
+            <a id="head2"></a>
+          </p>
+          <br>
+        </div>
+
+        <div>
+          <h1  style="color: #002147">Our Approach</h1>
+          <br>
+          <p>
+            When we started exploring our project more, we felt it would be best to develop a framework to execute our IHP effectively. Each step was planned in a manner that would help in working out the one that followed it. Our team used this method to ensure that discussions and lessons learned from one project stage were carried over and incorporated into the next. This made it easier for us to ensure that <strong>Duonco</strong>, as a drug delivery system, mirrored the values determined to be significant to our stakeholders.
+          </p>
+          <br>
+          <p>
+            The opinions of stakeholders, drug delivery experts, academia, cancer scientists, pharmaceutical companies, the general public, caretakers and doctors have all contributed significantly to determining the course of our project at each level of our human-centred, four-step approach to IHP.
+          </p>
+          <br>
+          <p>
+            <h3>Our Four Steps</h3>
+          </p>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-1.png" alt="picture">
+              <p class="article">
+                <a id="subhead2.1"></a>
+                <em class="figure-legend"><strong>Figure 1. </strong>Our Approach</em>
+                <a id="subhead2.1"></a>
+              </p>
+          </div>
+
+          <br>
+
+
+          <h2>1. Understanding The Problem</h2>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-1.png" alt="picture">
+              <p class="article">
+              </p>
+          </div>
+          <p>
+            As we began our project, we realised it was of utmost importance that we try to understand the magnitude of the problem we are addressing.
+            <ul>
+            <li><strong>Who are the people this work would impact?</strong></li>
+            <li><strong>What is currently being done to tackle the issue?</strong></li>
+            <li><strong>What resources can we obtain for this?</strong></li>
+          </ul>
+          </p>
+          <p>
+            In the first stage of our approach, to gain some preliminary answers to these questions, we took several measures: Preparing a survey to analyse the public's awareness of the subject, scouring through literature to gain a broader understanding of the severity of the issue and its significance in our society and talking to social scientists. These helped us identify our major stakeholders:
+            <ul>
+              <li>Patients</li>
+              <li>Pharmaceutical companies</li>
+              <li>Oncologists</li>
+            </ul>
+          </p>
+          <p>
+            In the second stage of understanding our problem, <strong>we interacted with our major stakeholders</strong>. We held interviews with breast cancer survivors (interviewed seven survivors) and doctors (four doctors) about the cost, efficacy, efficiency and affordability of current targeted drugs. We spoke with pharma companies such as <a href="https://www.sanofi.in/">Sanofi Amentis</a> to understand the process, right from the start of funding research for medicines to each stage of trials, marketing strategies and legal procedures. We learned about the outlook of the general public towards genetic engineering and the use of genetically modified organisms (GMOs) in medicine. From our interactions with professionals in the field of science communication, we developed an effective system for synthetic biology education.
+            <a id="subhead2.2"></a>
+            <a id="subhead2.2"></a>
+          </p>
+          <br>
+
+          <h2>2. Ideate</h2>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-1.png" alt="picture">
+              <p class="article">
+                <a id="subhead2.1"></a>
+              </p>
+          </div>
+          <p>
+            Having identified and understood the various aspects of contemporary cancer therapies, our team began brainstorming solutions.
+          </p>
+          <p>
+            After discussing and analysing our stakeholders' needs, we decided on a synthetic biology solution. These are all aimed at an effective mechanism to administer the medicine to tumour cells while keeping other cells safe. It was also where current methods fell short due to their high cost, lack of specificity, and failure to provide a sustained immunogenic action.
+          </p>
+          <p>
+            Key Points We Received From Our Stakeholders Are:
+            <ul>
+              <li>A solution for offsite targeting.</li>
+              <li>Safe to environment.</li>
+              <li>Inform the public about synthetic biology and its application in therapeutics to debunk any stigmas associated with GMOs.</li>
+              <li>Financially affordable and economical access to cancer therapy.</li>
+            </ul>
+          </p>
+          <p>
+            We began to go through published literature and found E.coli outer membrane vesicles (OMVs) as an attractive candidate for our nanocarrier due to studies on its efficiency as a drug carrier in in-vivo experiments. We met with several experts in the field— Dr. Denice Bay, Dr. Gujarati, and Prof. MRN Murty and decided upon OMVs and the usage of a dual OMV system to enhance the specificity of the therapeutic.
+          </p>
+          <br>
+          <p>
+            We finally <strong>chose our model to be breast cancer</strong>, realising its significance in our immediate locality from statistics and our firsthand interactions during <strong>UBA (UNNAT BHARAT ABHIYAN) medical camp</strong>. In Thiruvananthapuram, breast cancer had the highest incidence among all cancers and accounted for one-fourth of all new cancer cases in 2018-2019 [3]. All of this information cemented our desire to develop Duonco for use in breast cancer therapy.
+            <a id="subhead2.3"></a>
+            <a id="subhead2.3"></a>
+          </p>
+          <br>
+
+          <h2>3. Define A Solution</h2>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-1.png" alt="picture">
+              <p class="article">
+              </p>
+          </div>
+          <p>
+            To form a solution, we continuously met with our stakeholders and integrated their feedback throughout the design process. We strived to ensure Duonco holistically embodies the needs of everyone involved in our stakeholder chart.
+          </p>
+          <p>
+            We corresponded with wet lab experts and our PIs to design the experiments required to build and test our system. We prepared a list of materials and budgeted. We came up with a project plan comprising three phases:
+            <ul>
+              <li><strong>Phase 1: </strong>Optimise OMV isolation</li>
+              <li><strong>Phase 2: </strong>Isolation of engineered OMVs</li>
+              <li><strong>Phase 3: </strong>Testing OMV internalization in a HER2+ breast cancer cell line</li>
+            </ul>
+          </p>
+          <p>
+            Given the relatively short duration of the project, we chose to restrict our scope to generating engineered OMVs and testing their uptake. We attempted to supplement our experiments with results from math modelling and vice-versa. Primarily, we used mathematical modelling to obtain predictions for components or processes we were unable to experimentally achieve. This included electroporation to load the cargo into the OMVs and prodrug-enzyme interactions. We found a general correspondence between the results from math modelling and wet lab experiments, especially relating to protein expression. We parallelly planned awareness programmes and events to take our projects to people who really needed them.
+          </p>
+          <p>
+            Our final identified value was that the solution be financially viable and scalable, allowing realistic implementation of the solution. Synthetic biology lends itself well to being scalable and has excellent potential to be a financially viable solution. We made it a point to keep our four points from stakeholders during ideating to be the driving factor of our design for Duonco.
+            <a id="subhead2.4"></a>
+            <a id="subhead2.4"></a>
+          </p>
+          <br>
+
+          <h2>4. Evaluate And Execute</h2>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-1.png" alt="picture">
+              <p class="article">
+              </p>
+          </div>
+          <p>
+            Having defined our problem, our project and our plans, we organised our team to effectively work towards our goals. We distributed tasks among team members. We set a timeline for our work and frequently discussed our progress with our PIs, who always provided us with feedback.
+          </p>
+          <p>
+            We continued to meet with experts to better understand different wet lab techniques, such as electron microscopy (to image OMVs) and dynamic light scattering (to characterise OMVs). We reached out to researchers who kindly contributed hyper-vesiculating E.coli strains, plasmid backbones and breast cancer cell lines SKBR3 and MCF-10A. We procured other materials, such as antibodies and restriction enzymes, in the form of sponsorship from companies. This set us up for fruitful experiments in the lab.
+          </p>
+          <p>
+            We conducted several project awareness programmes like project reveal, awareness talk, distributing pamphlets etc, which all were inspired by the survey analysis and public interviews.
+          </p>
+          <p>
+            Our entire project, including our IHP journey, has been focused on people, and our proposed implementation is no different. Returning to our stakeholders and specialists throughout the implementation planning phase allowed us to <strong>close the loop</strong> and make decisions based on their values and needs in terms of ethics, technology, safety, and communication. Talking to the <strong>Kerala startup mission</strong> and drug delivery companies, we were able to devise a proper future plan to scale DUONCO to its next level.
+          </p>
+          <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/hp-2.png" alt="picture">
+              <p class="article">
+                <a id="head3"></a>
+                <em class="figure-legend">Flowchart representing all the identified stakeholders</em>
+              </p>
+          </div>
+          <br>
+        </div>
+
+
+          <h1 style="color: #002147">Integrated Human Practices</h1>
+          <br>
+          <p>
+          Understanding the impact of our project on the community, receiving input from the stakeholders and establishing a feedback loop is a fundamental component of integrated human practices. To facilitate this loop, we interacted with several individuals and organisations throughout the course of the project.
+          <a id="subhead3.1"></a>
+          </p>
+          <br>
+
+
+          <div>
+            <h2>Comprehending The Situation</h2>
+            <br>
+            <p>
+              In 2020, the number of cancer cases rose to 19.3 million, while the number of deaths surpassed 10 million. Cancer reach is accordingly ever evolving to battle against this exponential rise in cases. Many of the existing therapies for cancer have significant side effects associated with them. In order to fully comprehend the limitations of the existing therapies, we interacted with patients and clinicians who could give us a first-hand account of their impact.
+            </p>
+            <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+              <p class="article">
+                <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+              </p>
+            </div>
+            <br>
+
+            <h3>Unnat Bharat Abhiyan</h3>
+            <h5>Central Government Initiative</h5>
+            <br>
+            <p>
+              Unnat Bharat Abhiyan (UBA) is a central government initiative that enables higher education institutions to visit rural areas of India and bring in development in those areas.
+            </p>
+            <p>
+              On International Women's Day 2021, some of our team members volunteered for a breast cancer screening camp in association with the UBA committee of our institute at a nearby village of Chathancode, Kerala. They realised how much of an issue breast cancer has grown to become in a few years. In 2020, breast cancer became cancer with the highest gross incidence and mortality, both in India and worldwide. Even in our little community of Vithura (with a population of 20,000), the incidence of breast cancer patients was alarmingly high. This demonstrated the severity of this disease and the urgent need for a more effective treatment method. These statistics and the helplessness of the community we observed led us to choose breast cancer as a model to perform our study.
+            </p>
+            <br>
+
+            <h3>Ms Emily (71)</h3>
+            <h5>A Cancer Survivor</h5>
+            <br>
+            <p>
+              To better understand the side effects of current treatment methods, we spoke with a teacher who is a cancer survivor. Treatment was a traumatic experience, where she encountered the side effects of chemo and radiotherapy, such as hair loss, body weakness, and mastectomy-caused lymphoedema, not only affecting her overall state of well-being but also impacting her professional life, showing us the need for a better solution. She was open to the idea of using GMOs as an alternative, provided it helped alleviate some of the symptoms, showcasing to us that the general public might be receptive to synthetic biology solutions to real-world problems.
+            </p>
+            <p>
+              This interaction also made us aware that lymphoedema is a common condition for people who have undergone mastectomy. We decided to interact with respective stakeholders to get a better understanding of mastectomy. In addition, we decided to meet more cancer survivors and have a better understanding of the frequent issues patients confront throughout treatment to address some of them through our project.
+            </p>
+            <br>
+
+            <h3>Survivor Interviews</h3>
+            <h5>An Analysis</h5>
+            <br>
+            <p>
+              The end users of our novel treatment method are the patients. Getting to know their difficulties and expectations is essential. Though cancer is widely spoken about, some aspects of cancer therapy, including mental and physical frailty, societal pressure, and financial concerns, are never under the spotlight. Therefore, we interviewed <strong>five breast cancer survivors</strong>. We obtained their permission prior to conducting our semi-structured interview. The consent form is attached <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/consent-survivor-interview.pdf">here.</a>  Their perspectives on various breast cancer elements are described below.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Perspective</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Awareness level</th>
+                  <td>People lack knowledge of early detection. Typically, cancer signs are not recognised until a later stage, making treatment challenging. Most of the interviewees shared similar experiences. When a lump developed, no medical opinion was taken. Only when it began to spread did they conduct tests. Even minor ignorance can cost a great deal.
+                 <br>
+                  Men, particularly, took more time to get medical assistance due to the stigma that men can't get breast cancer. Thus a delay in recognising the condition is present.</td>
+                </tr>
+                <tr>
+                  <td>Side effects</th>
+                  <td>Most of the participants have undergone chemotherapy, and some have undergone radiation therapy and/or immunotherapy along with chemotherapy. Many of them have undergone surgery (mastectomy) before getting any other treatment, as they detected the disease at later stages. Receiving multiple treatments has severely affected the patients. Almost all of them were physically weak and felt nauseous during the treatment period. Patients who had undergone mastectomy and required physiotherapy developed lymphedema. Hair loss was experienced by the patients after undergoing chemotherapy. Several other side effects were shared by the patients, like difficulty swallowing, low blood count, constipation, and vomiting. </td>
+                </tr>
+                <tr>
+                  <td>Social life and Mental health</th>
+                  <td> All the participants' lives were altered by contracting this condition. Their career, family, and social lives were all affected. During the treatment period, they were unable to work due to the chemotherapy sessions and the fatigue that followed each session. Patients who were homemakers were also affected.
+                  <br>
+                 The interviewees described their feelings of mental fragility throughout those eras when society regarded them differently. People treated them with sympathy, which made them uneasy. Many of them struggled financially during those times.</td>
+                </tr>
+                <tr>
+                  <td>Future directions</th>
+                  <td>Participants discussed treatment strategies and societal attitudes concerning cancer patients. They are willing to take drugs containing GMOs upon showcasing their safety. They want the procedure to have fewer side effects. Additionally, they desired that the new treatment avoid hair loss. In addition, they hoped that people with cancer be treated equally and without prejudice. </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+
+              <h3>Adv. V.S. Baburaj</h3>
+              <h5>Vithura Grama Panchayat President</h5>
+              <br>
+              <p>
+                Adv. Baburaj is the Vithura Grama Panchayat President. Panchayat is a local village council. The Panchayat president is an elected representative who chairs the panchayat meetings. We spoke with him to learn about the current breast cancer statistics of the Vithura Panchayat. He gave us a general idea of the situation in our locality. We also wanted to know of existing programs by the local and central governments to increase detection tests for cancer. He connected us to Asha workers. ASHA workers are Accredited Social Health Activists who are actively involved in health awareness and implementation in rural areas.
+              </p>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                  </p>
+              </div>
+              <br>
+
+              <h3>Dr. Bharath V.M.</h3>
+              <h5>Doctor at Regional Cancer Center, Thiruvananthapuram</h5>
+              <br>
+              <p>
+                To learn about current treatment methods other than chemotherapy, we visited KIMS Health Centre in Thiruvananthapuram, Kerala. We met Dr. Bharath V.M., a surgical oncologist at KIMS. He introduced us to Breast-conserving surgery (BCS) or lumpectomy, where only the lump with roots will be removed surgically. He pointed out that all patients cannot undergo BCS. Even the patients who have undergone BCS may need to go through other treatment methods later, like radiation therapy, hormone therapy or chemotherapy. BCS can have side effects like pain, scar, dimples, or lymphedema in the arm. We understood that a better treatment method is essential. Then he discussed the <strong>gravity of HER2-positive breast cancer</strong>. It is a particularly aggressive form of breast cancer. The stages of HER2+ breast cancer is determined using a scoring method. The degree of HER2+ protein expression on the surface of breast cancer cells is indicated by immunohistochemistry scores ranging from 0 to 3. A score of 0 to 1+ suggests that it is HER2-positive. A score of 2+ indicates that the cells are borderline, while a score of 3+ indicates that they are HER2+. This information was relevant to us as we wanted to be sure HER2 receptors could be targeted by our drug delivery system.
+              </p>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-7.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 4. </strong>Dr. Bharath V.M.</em>
+                  </p>
+              </div>
+              <br>
+
+              <h3>Dr. Kavitha Ravi</h3>
+              <h5>Additional Professor at Government Medical College, Thiruvananthapuram</h5>
+              <br>
+              <p>
+                We interacted with Dr. Kavitha Ravi, MD Pathology, who is an additional professor of Pathology at the Government medical college in Thiruvananthapuram, Kerala. She provided us with cancer statistics in the city we live, Thiruvananthapuram. She confirmed the need for a drug delivery system targeting HER2. It is crucial due to the aggressive nature of the disease and the chances of relapse in other organs despite current treatment methods. She highlighted the positive effects of targeted therapy in which only malignant cells are affected. She also visited our institute and delivered an awareness speech regarding breast cancer to our staff.</p>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-6.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 5. </strong>Dr. Kavitha Ravi.</em>
+                  </p>
+              </div>
+              <br>
+
+              <h3>Dr. Sreekala Sreehari</h3>
+              <h5>Clinical Director, Pathology at University Hospitals Dorset NHS Foundation Trust</h5>
+              <br>
+              <p>
+                Dr. Sreekala Sreehari, MD FRCPath, is the Clinical Director, Pathology at University Hospitals Dorset NHS Foundation Trust. Aside from her years of experience as a histopathologist, she and a few other doctors created the <strong>Brexa app</strong>. It assists people in detecting breast cancer early and directing further treatment. It is used by thousands of people all over the world. It instructs users on how to perform self-breast examinations.
+              </p>
+              <p>
+                In our interaction with her, she reviewed our survey questions to ensure they were relevant and accurate. She emphasised that there are other types of breast cancer besides HER2-positive ones, like triple-negative breast cancer. Despite these cancers being of high grade, they lack the receptors that our drug delivery system targets. This interaction prompted us to learn more about other types of breast cancer and potential targetable receptors. This will aid in <strong>the expansion of our project Duonco to a broader range of cancer types</strong>. She discussed the issue of breast cancer detection in India, where people do not voluntarily undergo screening tests, to be a primary problem for the high rise in cases in past years. We recognised the importance of raising awareness in our society. We planned a number of public awareness campaigns to help with early detection, specifically Self Breast Examination.
+              </p>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/4.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 7. </strong>left- Dr. Sreekala Sreehari, Right- Screenshot of the meeting with Dr. Sreekala Sreehari</em>
+                  </p>
+              </div>
+              <br>
+
+              <h3>Breast Cancer Awareness Survey</h3>
+              <h5>Data Collection and Analysis</h5>
+              <br>
+              <p>
+                Once the team decided to use a novel drug delivery system to target breast cancer, we felt it was critical to ascertain how well-informed the general public is about the disease and whether there are any myths that we can dispel. So, with the help of Dr. Harilal Madhavan, we created a questionnaire and made sure we adhered to all the safety requirements for using human subjects in research. We made our survey available online in June 2022 in 5 different languages. We also collected print surveys from people that we believed we couldn't reach through online platforms.
+              </p>
+              <p>
+                We received over 300 responses for our survey, and we particularly aimed to find correlations between different parameters we asked in the questionnaire.
+                  <br>
+                  The suvey is linked <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/survey.pdf">here.</a>
+                  <br>
+                  The links for the survey in different regional languages- <a href="">Malayalam</a>, <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/survey.pdf">Bengali</a>, <a href="">Tamil</a> and <a href="">Hindi</a>
+              </p>
+              <br>
+              <h4>Analysis</h4>
+              <br>
+              <div>
+                <iframe style="padding: 5px 5% 5% 10%; height: 500px; width: 80%;" src="https://static.igem.wiki/teams/4359/wiki/safety/survey.pdf"></iframe>
+              </div>
+              <br>
+
+              <h3>Public Interview</h3>
+              <h5>Community Interacions</h5>
+              <br>
+              <p>
+                As soon as we began defining our stakeholders, it became clear that the general public was the most significant stakeholder in our project. We, therefore, believed it was imperative to reach out to them and learn more about their perceptions of cancer and drug delivery mechanisms. Team members travelled to their home states in different parts of India—Kerala, Tamil Nadu, Maharashtra, and New Delhi— and went out and spoke with people from various walks of life to get a general sense of how issues related to breast cancer are viewed. We obtained their permission before filming the interview. <a data-modal-target="#modal3" class="button">Read more</a>.
+                <div class="modal2" id="modal3">
+                  <div class="modal-header">
+                    <div class="title">Public Interviews</div>
+                    <button data-close-button class="close-button">&times;</button>
+                  </div>
+                  <div class="modal-body text-justify">
+                    <p>
+                      These exchanges gave us a lot of new information, including the fact that:
+                      <ul>
+                        <li>Most people felt shy to talk about the topic.</li>
+                        <li>Significantly few people were aware that men might develop breast cancer.</li>
+                        <li>Self-breast exams were not widely known.</li>
+                        <li>They were also unaware of the value of early diagnosis in treating the illness.</li>
+                      </ul>
+                    </p>
+                    <p>
+                        This served as our motivation for printing out informational pamphlets with essential breast cancer awareness information.
+                    </p>
+                  </div>
+                </div>
+                <div id="overlay"></div>
+                The consent form is available <a href="https://static.igem.wiki/teams/4359/wiki/human-practices/consent-form-street-interviews.pdf">here.</a>
+              </p>
+              <p>
+                The link for the public interviews are available <a href="">here.</a>
+              </p>
+              <br>
+
+              <h3>Ms Barbara Demorest</h3>
+              <h5>Founder of Knitted Knockers Support Foundation</h5>
+              <br>
+              <p>
+                <i>“Would I have to be known as Barbara who had breast cancer or would I be Barbara as I was before”</i>
+              </p>
+              <p>
+                Barbara Demorest is the founder of the <strong>Knitted Knockers Support Foundation</strong>. She is also a breast cancer survivor. We interacted with her to learn more about her journey and the need for knitted knockers. She faced several difficulties during her treatment days and felt that her mental health often took a backseat to her physical well-being. Her inability to have reconstruction surgery or use a synthetic prosthetic kept her from returning to life. <a data-modal-target="#modal2" class="button">Read more</a>.
+              </p>
+              <div class="modal2" id="modal2">
+                <div class="modal-header">
+                  <div class="title">Ms Barbara Demorest</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    Knitted Knockers was introduced to her through her doctor. Finally, she gained a sense of freedom to go out, hug people and wear a regular bra without having to use any medical prosthetic device or specialised bra. This gave her a sense of normalcy, and this was her inspiration to form KNITTED KNOCKERS. Several people who joined the initiative could relate to the shared trauma that they all faced.
+                    <br>
+                    <br>
+                    Her strategy was to raise awareness, get the local community involved and provide for their region. Knitters make the knockers and send them to their headquarters, where they stuff them and post them to clinics. They have spread across all states in the USA and six other countries in a few years. Talking to her really gave us the prompt to start small and achieve big.
+                  </p>
+                </div>
+              </div>
+              <div id="overlay"></div>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/9.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 11. </strong>Left- Barbara Demorest, Right- Screenshot of the meeting with Barbara Demorest</em>
+                  </p>
+              </div>
+              <br>
+
+              <h3>Breast Prosthesis Supply Centre</h3>
+              <h5>Regional Cancer Centre, Thiruvananthapuram</h5>
+              <br>
+              <p>
+                By interacting with mastectomy survivors and Ms Barbara Demorest, we learned that those who have undergone a mastectomy confront numerous challenges. They experience discomfort and may have postural issues. During our conversation with Dr. Kavitha Ravi of Thiruvananthapuram Medical College, we learned that the Regional Cancer Centre (RCC) in Thiruvananthapuram provides post-mastectomy breast prostheses. We went there to learn more about this. <a data-modal-target="#modal1" class="button">Read more</a>.
+              </p>
+              <div class="modal2" id="modal1">
+                <div class="modal-header">
+                  <div class="title">Breast Prosthesis Supply Centre</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    The centre is managed by nurses who are responsible for the patient's well-being. We visited Ms Geethakumari D., the head of the nursing staff. She explained that utilising a prosthesis or undergoing breast reconstruction surgery is entirely up to the patient's discretion. However, after a mastectomy, most women prefer to use one of these alternatives because their confidence has been impacted. She stated that prostheses are more popular than breast reconstruction surgery because they are less invasive. Patients who require silicone breast prostheses are provided with them. It cannot be used immediately after surgery because the area near the chest is extremely painful and may become contaminated. These prostheses are generally suggested two months post-surgery.
+                    <br>
+                    <br>
+                    We learned a lot from our visit, especially how the disease changes the lives of affected people even after their treatment and how it leaves behind issues of body image. We also made a note to provide information about the options available to patients post-surgery available in our future interactions with people.
+                  </p>
+                </div>
+              </div>
+              <div id="overlay"></div>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-1.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 12. </strong>At Regional Cancer Centre, Thiruvananthapuram</em>
+                  </p>
+              </div>
+              <br>
+
+              <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+                <strong>Summary</strong>
+                <br>
+                <br>
+                Our interactions with these doctors and cancer survivors reminded us that a more effective treatment strategy is necessary. It has to utilise the existing therapy medication, which is highly beneficial and reduces significant side effects. We chose to design a delivery system that uses not one but two cancer cell-specific cell surface receptors to improve the specificity of drug delivery and mitigate the side effects caused due to offsite targeting.
+                <a id="subhead3.2"></a>
+              </p>
+              <br>
+            </div>
+            <a id=subhead3.2"">
+          </div>
+
+          <div>
+            <h2>Project Design</h2>
+            <br>
+            <p>
+             The central theme for the design of our project was to develop a drug delivery system that would enhance the specificity of the chemotherapeutic agent. Thereby, it would circumvent most problems associated with off-site targeting, which is significantly high in the case of traditional chemotherapy. We had quite a few queries regarding the design of the project. They ranged from receptor targets of our tumour-homing peptide to defining models that would supplement our wet lab work. Thus, we interacted with experts in the field to receive their feedback and build upon our initial idea to develop a more robust project design.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Prof. M.K. Mathew</h3>
+            <h5>Professor, NCBS TIFR Bangalore</h5>
+            <br>
+            <p>
+              Prof. Mathew is a professor at the National Centre for Biological Sciences, Tata Institute of Fundamental Research, Bangalore. In addition, he serves as a visiting professor at IISER Thiruvananthapuram.
+            </p>
+            <p>
+              We initially met him during the infant stages of the project, when we intended to develop the drug delivery system using only one type of vesicle. He pointed out to us that it would not be very different from the existing targeted therapies and encouraged us to think about adding a double-check mechanism. During our second interaction with him, he assisted us with our mathematical modelling. He asked us to determine the drug concentration necessary to kill cancerous cells. This will assist us in quantitatively estimating the amount of prodrug/enzyme that needs to be loaded into the OMVs and, thereby, the pore size required to maintain the integrity of the membrane. We had planned to use a hydrophilic dye for showcasing internalisation. He suggested employing lipophilic dye. We realised that the use of lipophilic dye was a superior alternative to the use of hydrophilic dye. But due to limitations in resources, we could not employ it in our lab work, but we hope to incorporate it in our future work.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-20.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 13. </strong>Prof. M.K. Mathew</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Vipul Gujrati</h3>
+            <h5>Research Scientist and Consultant at the IBMI, TUM Germany.</h5>
+            <br>
+            <p>
+              Dr. Gujrati is Research Scientist and Consultant at the Institute for Biological and Medical Imaging, TUM Germany. He has excellent experience in various fields like drug discovery, non-clinical pharmacology, bioimaging, scientific writing, and immune and regenerative therapy.
+            </p>
+            <p>
+              Through this meeting we got several insights regarding subcloning and construct design. While designing our constructs the length of the linker is not significant, the order of linker and tag can be interchanged. Dr. Gujrati also kindly agreed to provide us with pGEX-4T1-ClyA_Myc_Affi, this served as a base for our entire cloning process. We had a few concerns regarding the stability of proteins post electroporation, he assured us that it would not be an issue and mentioned that while selecting our prodrug enzyme system we would need to take into account the size of the pore created via electroporation. As we were unsure if PBS would act as a cryopreservant he clarified that the use of PBS and other saline solutions would be the ideal buffer to resuspend our OMVs. He also cautioned us to maintain a sterile environment and use vacuum filter pumps to avoid contamination. Overall, his work on bioengineered bacterial outer membrane vesicles as cell-specific drug-delivery vehicles for cancer therapy served as a template for the design of our entire project.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 14. </strong>left- Dr. Vipul Gujrati, Right- Screenshot of the meeting with Dr. Vipul Gujrati</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Debora Ferreira</h3>
+            <h5>Junior Researcher, University of Minho</h5>
+            <br>
+            <p>
+              Dr. Ferreira is a junior researcher at the University of Minho. She is one of the authors of "Selection of a new peptide homing SK-BR-3 breast cancer cells". In this paper, they discovered a peptide, Pep-1, which selectively binds to the HER2+ breast cancer cell line SK-BR-3. Our meeting provided us with insights about the functioning of the peptide and its potential for us in a targeted delivery system like Duonco.
+            </p>
+            <p>
+              For successful delivery of the THP-OMV to the cancer cell, binding of the THP is not sufficient. Subsequent internalisation is also necessary. No experiments were done at physiological temperatures with Pep-1; hence its behaviour with respect to internalisation was unknown. She suggested that since other THPs generally internalise the following binding, it is likely that Pep-1 will as well. We discussed the difficulties associated with culturing the cell lines mentioned in the paper (MCF-10-2A and MCF-10A) and explored alternative cell lines that could be used to test Pep-1. From our discussion, HEK 293 emerged as an appealing alternative, given that it does not usually overexpress the target markers of Pep-1. Pep-1 contains cysteine at the C and N terminus. Dr. Ferreria helped us understand the role of these residues in the binding ability of the peptide by conferring a loop structure to it. She also mentioned that she has been utilising homing peptides for vesicle-based delivery and that the requirement of a disulphide bond should not be an issue during protein expression in a bacterial system <a href="#ref">[5]</a>.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-12.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 15. </strong>Dr. Debora Ferreira</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Ms Monica P</h3>
+            <h5>PhD student, IISER Thiruvananthapuram</h5>
+            <br>
+            <p>
+              Ms Monica P. is a PhD student at IISER Thiruvananthapuram, working under the supervision of Dr. Natesh Ramanathan, Assistant Professor, IISER Thiruvanathapuram. We intend to engineer two types of vesicles, Affi-OMV and THP-OMVs. Affi-OMV focuses on HER2, a commonly targeted receptor, whereas THP-OMV focuses on CX3CR1. Given the time constraints, she suggested that the team prioritise the production of the THP OMVs and characterise them as they were a novel component of our project with minimal background in literature. She also provided us with numerous practical suggestions regarding the planning and execution of our wet lab work. We followed many of her suggestions in order to maximise our efficiency in the lab.
+            </p>
+            <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-8.png" alt="picture">
+              <p class="article">
+                <em class="figure-legend"><strong>Figure 16. </strong>Ms. Monica P</em>
+              </p>
+            </div>
+            <br>
+
+            <h3>Dr. Nagaiah Chamakuri</h3>
+            <h5>Assistant Professor, IISER Thiruvananthapuram</h5>
+            <br>
+            <p>
+              Dr. Chamakuri is an Assistant Professor in the School of Mathematics at IISER Thiruvananthapuram. He suggested trying more differential equations in the mathematical modelling part of the project. He pointed out the practical difficulties of our work plan and said that forming new equations can be challenging for the short period of time the project. He suggested reading more literature. We made changes according to his advice, and we dug deeper into the literature to have a clear idea which later proved to be useful.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/7.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 17. </strong>Left-Dr. Nagaiah Chamakuri, Right- Screenshot of the meeting with Dr. Nagaiah Chamakuri</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Other Interactions</h3>
+            <h5>Mathematical Modelling</h5>
+            <br>
+            <p>
+              We had several doubts regarding various aspects of mathematical modelling, including the suitable model for each system.
+            </p>
+            <ul>
+              <li>We met with Prof. Apala Majumdar - University of Strathclyde, U.K. She explained the independent and dependent variables in our model. She asked us to achieve maximum mathematical precision in the argument. She also emphasised that there should be a logical flow of information and must have proper references. She suggested meeting Prof. Philip K. Maini from the Wolfson Centre for Mathematical Biology, Oxford University, to get more input on these aspects.</li>
+              <li>Our interaction with Prof. Rajen Kumar Sinha from IIT Guwahati proved helpful as he suggested modelling most of our projects using transport equations and boundary problems.</li>
+              <li>We also met with Prof. Daniele Boffi from King Abdullah University of Science and Technology, KSA.</li>
+              <li>Our meeting with Prof. Aektha Agarwal, IIM Indore, made us look into other models we could work with and connected us to Dr. Harish Kumar from IIT Delhi.</li>
+            </ul>
+            <br>
+
+            <h3>FS-BIO 2022</h3>
+            <h5>The Frontier Symposia in Biology, IISER Thiruvananthapuram</h5>
+            <br>
+            <p>
+              The Frontier Symposia in Biology are annual, 2-day conferences organised by the School of Biology, IISER Thiruvananthapuram. This year the symposium was held from 29th April to 1st May, 2022 at our campus. The meetings were a platform for discussing cutting-edge research topics in all fields of biology. Students and researchers from across the country came together to meet and discuss science.
+            </p>
+            <p>
+            Our team was fortunate enough to attend the conference and meet with Dr. Manidipa Banerjee, Prof. Dipshikha Chakravorty, Prof. Gaiti Hasan, Dr. Bushra Ateeq, Dr. Shantala Hari Dass, and Dr. Devendra Singh to discuss our project proposal. We were able to evaluate our options and study alternative drug delivery carriers thanks to our interactions with them before deciding to finalise OMVs as our drug carrier. After this encounter, our team had a project presentation with Prof. Dipshikha, and she accepted to be our external mentor.
+
+            <br>
+            <br>
+
+            <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+              <strong>Summary</strong>
+              <br>
+              <br>
+              All of our interactions with experts aided us in selecting each element of our project. We also got a direction regarding the kind of cell lines we can work on. Through these interactions, our project became more precise and became ready to be taken to its next stage of building it.
+              <a id="subhead3.3">
+            </p>
+            <br>
+
+          </div>
+
+          <div>
+            <h2>Project Building</h2>
+            <br>
+            <p>
+              With the need for our solutions validated and project design in progress, we started looking at the detailed work plan of the project. We required assistance in selecting the production procedure for the isolation of OMVs, choosing the epitope tags and characterising the OMVs, choosing the appropriate media and controls for our cell line work as well as guidelines for the sponsorship team. Thus, we decided to reach out to experts in these niches and seek their opinion.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Denice Bay</h3>
+            <h5>Assistant Professor, University of Manitoba</h5>
+            <br>
+            <p>
+              Dr. Denice Bay is an Assistant Professor in the Department of Medical Microbiology & Infectious Diseases at the University of Manitoba. She worked with OMVs to understand their formation associated with cationic antimicrobials and their application to reduce antimicrobial resistance (AMR) infections. Interaction with Dr. Denice helped us to <strong>optimise our OMV isolation protocol</strong>, as her previous work included isolating OMVs from bacteria. She advised us to follow centrifugation rather than ultrafiltration as filters are expensive. From her experience isolating OMV, she was confident that culturing with antibiotics will not result in impacting the overall yield of the OMVs, and proposed that we store the OMV pellets at -20 degree celsius. She also recommended the use of OmpA Antibody for OMV detection which we then implemented to be our preliminary confirmatory step after isolating the OMVs. Throughout our OMV isolation, her counsel was crucial.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/2.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 18. </strong>Left- Dr. Denice Bay, Right- Screenshot of meeting with D. Denice Bay</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Rajendra Kurapati</h3>
+            <h5>Assistant Professor, IISER Thiruvananthapuram</h5>
+            <br>
+            <p>
+              We approached Dr. Kurapati to clarify our queries on drug delivery. Dr. Rajendra Kurapati is an Assistant Professor in the School of Chemistry at IISER Thiruvananthapuram, Kerala, with previous experience in nanoparticles and drug delivery. To confirm the isolation of OMVs, he suggested performing DLS followed by TEM. He introduced the possibility of other receptors, such as Folate receptor alpha, being present in epithelial cells and overexpressed in cancer cells. This helped us identify the other potential receptors that can be targeted with OMVs in the future, given that folate receptors are overexpressed in triple-negative breast cancer cells. <a data-modal-target="#modal4" class="button">Read More</a>
+              <div class="modal2" id="modal4">
+                <div class="modal-header">
+                    <div class="title">Dr. Rajendra Kurapati</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                      During our conversation with Dr. Kurapati, we inquired about clinical and pre-clinical trials and our future experimental plans. He provided information regarding the experiments we should conduct to standardise the concentration of OMVs and <strong>how to load the drugs into the vesicles</strong>. While loading the drug and enzyme into the vesicles, he stressed which factors (such as temperature, pH, salt content, etc.) must be taken into account.
+                      <br><br>
+                      He suggested using the <strong>MTT assay to determine the optimal drug concentration and assisted us with the protocol</strong>. The research papers he shared with us were invaluable for conducting MTT assay experiments and planning pre-clinical trials. His suggestion prompted us to examine the cytotoxicity of OMVs and the effect of the drug on cells, which led us to consider utilising different OMV concentrations. It helped us determine the number of cells required for the MTT assay. He also recommended that we perform an LDH assay, which we were unable to do but will explore later on. Additionally, he discussed <strong>Doxil, a drug which greatly enhanced our understanding of the vesicle-based drug delivery systems already on the market</strong>. To reduce the LPS toxicity, he instructed us to compare our system to Doxil and to consider how different modifications of PEGylation applied to liposome-based delivery systems could be applied to our project.
+                      <br><br>
+                      He suggested that we use confocal to examine vesicle uptake by the breast cancer cell lines we have employed. He also suggested a few indicators to confirm the uptake. For future directions of clinical trials, he <strong>suggested using the BALB/c mouse and other immunodeficient mouse models with xenografts to conduct various experiments with our dual OMV-based system</strong>. His suggestions assisted us in pursuing this path. He went on to discuss in-vivo drug efficacy studies and in-vivo drug trafficking studies. His insightful comments comparing the OMV uptake by various tissues to our tumours prompted us to conduct experiments involving similar studies.
+                    </p>
+                  </div>
+                </div>
+                <div id="overlay"></div>
+            </p>
+            <div class="row">
+                <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Prof. M.R.N. Murty</h3>
+            <h5>Professor, IISc Bangalore</h5>
+            <br>
+            <p>
+              Prof. M.R.N. Murthy is a renowned crystallographer who retired as a professor of molecular biophysics from the Indian Institute of Science, Bangalore. He is currently the Distinguished Professor and AstraZeneca Chair at the Institute of Bioinformatics and Applied Biotechnology. Prof. Murty raised valid concerns about the formation of OMV, its solubility, its contents, the immune system’s response mechanism to it, and the structural similarities of its HER2 target. Since we met him around the inception of our project, his suggestions have been influential in shaping it. It helped us to go further into our plan. He suggested performing Cryo TEM to visualise OMVs better because heat from TEM can lead to membrane structure deformation.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-10.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 19. </strong>Prof. M.R.N. Murty</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Prof. Dipshikha Chakravortty</h3>
+            <h5>Professor, IISc Bangalore</h5>
+            <br>
+            <p>
+              We met Prof. Chakravortty to perform Cryo TEM as the facility was unavailable in our institute. She guided us to Dr. Somnath in IISc. Prof. Chakravortty, a renowned microbiologist and pathologist, works as a professor at the Indian Institute of Science (IISc), Bangalore.
+            </p>
+            <p>
+              She suggested not using the electroporation method to insert prodrug and enzyme, as it will be difficult for large molecules to get internalised. This did aid us in investigating other approaches for effective and rapid internalisation. We did a lot more reading to acquire better knowledge. She also brought up the topic of internalising enzymes in THP-OMV. She proposed <strong>substituting mRNA for enzymes and creating a prodrug-mRNA system</strong>. We decided to read more about this and choose an efficient system. She suggested an alternative method to verify the internalisation of the OMVs that did not involve the prodrug and enzyme. She proposed using small dye molecules as cargo to monitor internalisation. We could not conduct these experiments, but they provide a viable method for tracking the movement of OMVs after internalisation. She guided us in various aspects of our project and became our external mentor.
+              </p>
+              <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/3.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 20. </strong>Left-Prof. Dipshika Chakravortty, Right- Meeting with Prof. Dipshika Chakravortty at IISc Bangalore</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Somnath Dutta</h3>
+            <h5>Assistant Professor, IISc Bangalore</h5>
+            <br>
+            <p>
+              Dr. Somnath Dutta is the Assistant Professor at MBU at the Indian Institute of Science (IISc), Bangalore. According to Prof. Chakravotty’s guidance, we met with Dr. Dutta. He helped us to perform Cryo TEM on our isolated OMV. This was really critical in our project. It allowed us to realise that our method of OMV isolation is suitable and that it can be extended to the isolation of OMVs that we require.
+            </p>
+            <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-11.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 21.</strong> Dr. Somnath Dutta</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Dr. Santosh Kumar</h3>
+            <h5>RGCB, Thiruvananthapuram, Kerala</h5>
+            <br>
+            <p>
+               Dr. Santhosh working at Rajiv Gandhi Centre for Biotechnology, is a molecular biologist whose primary area of research is to understand the molecular mechanism of chemoresistance and tumour recurrence in triple-negative breast cancer cells. He highlighted the possibility of <strong>using different tags like myc and flag</strong>. The Myc tag present in a cancerous cell is different from the Myc tags expressed in OMV. We discussed the possible tags available and finalised one.
+            </p>
+            <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/6.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 22. </strong>Left- Dr. Santosh Kumar, Right- Screenshot of meeting with Dr. Santosh Kumar</em>
+                </p>
+            </div>
+            <br>
+
+            <h3>Other Interactions</h3>
+            <h5>Breast Cancer Cell Line</h5>
+            <br>
+            <p>
+              To study how OMV will be internalised into cancer cells, we decided to study mammalian cell lines. But we were unsure of which cells to use and how to proceed. We interacted with experts working in these fields. We met with Dr. Ramray Bhat, Associate Professor at the Indian Institute of Science (IISc), Bangalore. He guided us on the proper usage, viability and availability of different cell lines. In his opinion, HMLE cell lines are better than MCF-10 A. <a data-modal-target="#modal5" class="button">Read more</a>.
+              <div class="modal2" id="modal5">
+                <div class="modal-header">
+                    <div class="title">Breast cancer cell line</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    It made us aware of looking into other available cell lines and selecting cell lines for control experiments. To understand more about MCF-10A cell lines, we contacted Dr. Medhavi Vishwakarma. She directed us to doctoral candidate Ms Sindhu M. She highlighted the difficulties while working with MCF-10 A. Reaching confluency might be delayed without the presence of cholera toxin in the medium .for MCF-10 A culturing. We then interacted with Dr. Rakesh S. Laishram. He gave inputs on the quantification of OMVs and showed the possibility of using fluorophores for detection. After intense reading and contemplation, keeping in mind the inputs from the people we interacted with, we chose the cell lines we would be working on with. We chose SK-BR-3 as the cancer cell line and HEK 293 as the cell line for performing experiments in control.
+                  </p>
+                </div>
+              </div>
+              <div id="overlay"></div>
+              <br>
+
+            <h2>Prof. Suresh Das</h2>
+            <h5>Emiritus professor, IISER Thiruvananthapuram</h5>
+            <br>
+            <p>
+              Prof. Suresh Das is an emeritus professor at IISER Thiruvananthapuram. He was formerly the Executive Vice President of the Kerala State Council for Science, Technology and Environment.
+            </p>
+            <p>
+              We had planned outreach and communication initiatives. However, it was challenging to acquire the necessary funding for these endeavours. Prof. Suresh Das advised us on how to secure the financing of our proposed study. His suggestion to prepare a detailed budget breakdown assisted us in prioritising substances. We created a sample budget, which aided in the launch of our project.
+            </p>
+
+            <br>
+
+            <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+              <strong>Summary</strong>
+              <br>
+              <br>
+              On continually meeting with experts, we were able to find answers to all our questions and troubleshoot roadblocks we faced and were able to effectively integrate their insights to improve our work. With each help we took, we could further our project one step ahead, and it also allowed us to reflect if our work is catering to the initial values we aimed for.
+              <a id="subhead3.4">
+            </p>
+            <br>
+          </div>
+
+
+          <div>
+            <h2>Reaching Out To The Community</h2>
+            <br>
+            <p>
+              Not only did we want to connect with professionals in this field, but we also wanted to reach out to other people and explain our initiative. We desired their opinion to understand the social landscape on the premise of breast cancer and drug delivery. Knowing their expectations and level of awareness felt necessary to streamline our outreach activities and project design. From our conversations with stakeholders and analysing our survey results and interviews, we realised that people weren't aware of the diagnostic facilities available to them, when to get tested, or the available treatment options. We also discovered that financial constraints prevent people from getting tested in economically backward households. A general lack of proper awareness was also found among people, with them holding on to several taboos surrounding breast cancer, e.g., Men can't get breast cancer.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                </p>
+            </div>
+            <br>
+            <br>
+
+            <h3>Project Reveal</h3>
+            <h5>First Look Of Our Project</h5>
+            <br>
+            <p>
+              Once we understood our ideas clearly, our team thought it would be fantastic to have a grant reveal for our project. So on World Cancer Day (February 4, 2022), we used a fun interactive mystery question to disclose the project's theme, and students could guess it by filling out a Google Form. To promote our initiative, we also placed posters throughout the campus and had a selfie competition with the poster.
+             </p>
+             <p>
+               After much anticipation, on May 16, 2022, we formally introduced our project concept and team to our institute's faculty, staff, and students. <a data-modal-target="#modal6" class="button">Read More.</a>
+             </p>
+             <div class="modal2" id="modal6">
+               <div class="modal-header">
+                   <div class="title">Project Reveal - 16th May 2022</div>
+                   <button data-close-button class="close-button">&times;</button>
+               </div>
+               <div class="modal-body text-justify">
+                 <p>
+                   Each team member introduced themselves to a group of more than 100 people and talked about the project and its different subteams. During the event, we also unveiled OMIVON, our team mascot.
+                   <br><br>
+                   With the help of the <a href="https://www.mentimeter.com/Mentimeter">Mentimeter website</a>, which incorporates user ideas, we got to learn which social media platforms the audience prefers and how they view synthetic biology. Later, we planned and designed our human practices and outreach initiatives using these inputs. The previous iGEM team from our university also gave a speech about how iGEM had aided their development a year earlier. Additionally, we got a lot of feedback from the audience, which was helpful for the project.
+                 </p>
+               </div>
+             </div>
+             <div id="overlay"></div>
+             <div class="row">
+                 <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                 </p>
+             </div>
+             <br>
+             <br>
+
+             <h3>Interactions</h3>
+             <h5>Housekeeping Staff at IISER Thiruvananthapuram</h5>
+             <br>
+             <p>
+               We spoke with the housekeeping staff of our institute. Most of them came from nearby villages. We interacted with them to know their level of awareness of breast cancer. To further see if they have undergone any detection tests earlier. Most were aware of cancer detection tests like mammograms, but none had undergone them. They were also aware that breast cancer might be associated with a lump. But they were not sure how to detect them correctly. We arranged an awareness talk for them, and they were eager to attend. Some even got the opportunity to undergo breast cancer detection tests using iBreast screening.
+             </p>
+             <div class="row">
+                 <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                 </p>
+             </div>
+             <br>
+             <br>
+
+             <h3>Dr. Hema Francis</h3>
+             <h5>Medical Officer at IISER Thiruvananthapuram</h5>
+             <br>
+             <p>
+               Dr. Hema Francis is the medical officer at IISER Thiruvananthapuram and the secretary of IMA (Indian Medical Association), Nedumangad. We conversed with her about the lack of knowledge and the rising incidence of breast cancer in our region. She has organised numerous screening camps in rural areas and proposed that we conduct a similar campaign on our campus. She helped in organising a breast cancer screening camp in our institute. She also assisted us in contacting individuals for other events, such as teaching students at nearby schools and getting medical professionals.
+             </p>
+             <div class="row">
+                 <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                 </p>
+             </div>
+             <br>
+             <br>
+
+
+             <h3>Breast Cancer Screening Camp</h3>
+             <h5>In Association with Indian Medical Association</h5>
+             <br>
+             <p>
+               Our team organised a successful Breast Cancer Screening campaign for our institution's female housekeeping staff. IMA (Indian Medical Association) and KIMS Health Centre, Thiruvananthapuram, collaborated with us on the event. Dr. Hema assisted in the organisation of this programme. Dr. Kavitha Ravi, the National Secretary of the Women Doctors Wing in IMA, was the honoured guest during the event. She is an adjunct professor at Government Medical College, Thiruvananthapuram. The examination was administered utilising the iBreast Exam. Four KIMS Health Center technicians handled it. iBreast is a portable gadget that detects breast abnormalities. It is not a confirming test, although it can detect anomalies. <a data-modal-target="#modal7" class="button">Read More</a>.
+             </p>
+               <div class="modal2" id="modal7">
+                 <div class="modal-header">
+                     <div class="title">Breast Cancer Screening Camp</div>
+                     <button data-close-button class="close-button">&times;</button>
+                 </div>
+                 <div class="modal-body text-justify">
+                      We communicated with people from different age groups in the local area. From our interaction, we learned that a few of them have a family history of breast cancer and were potentially at higher risk than others. Hence we arranged for them to be given priority in the screening drive. Participants were between the ages of 35 and 50. Proper written consent was obtained from the participants, and the respective doctors signed an MoU. MoU is attached here. To assure complete safety, we emailed the iGEM headquarters about our programme and obtained their approval before conducting the screening. Our responsibility is to ensure that no stakeholders or the public are affected by our project. Therefore, all safety regulations were fulfilled prior to implementing any programmes, especially large-scale ones.
+                     <br><br>
+                     The participants discussed their testing experiences. Nearly all received screening tests for the first time, demonstrating the inaccessibility of such testing for persons living in rural areas. Eight per cent of individuals who tested returned positive, which is an extremely high percentage. Since the iBreast Exam is not a confirmatory test, they were referred for a proper confirmatory test and further treatment.
+                     <br><br>
+                    <strong>Feedback</strong>: Housekeeping staff who attended the screening camp were grateful that such events were conducted. They even requested regular screening camps, which might be helpful for detecting cancer at the earliest.
+                   </p>
+                 </div>
+               </div>
+               <div id="overlay"></div>
+             </p>
+             <br>
+             Carousel
+             <br>
+             <br>
+
+             <h3>Awareness Talk</h3>
+             <h5>Conducted during Breast Cancer Screening Camp</h5>
+             <br>
+             <p>
+               Through activities such as surveys and interviews with the public, we determined that the public is unaware of breast cancer and how early detection and good knowledge can save thousands of lives. Lack of awareness prevented individuals from getting screened for breast cancer, resulting in late-stage diagnosis. Compared to early detection, the percentage of cancer patients who are cured is substantially lower when the disease is identified at a later stage. Consequently, we saw the need for awareness. We organised a campus-wide breast cancer awareness lecture for our institution's housekeeping staff. Dr. Hema Francis, medical officer of IISER Thiruvananthapuram, delivered the lecture. So that the audience could comprehend, it was conducted in the native tongue (Malayalam). The discussion included breast cancer examination procedures. <a data-modal-target="#modal8" class="button">Read more</a>.
+
+               <div class="modal2" id="modal8">
+                 <div class="modal-header">
+                     <div class="title">Awareness Talk</div>
+                     <button data-close-button class="close-button">&times;</button>
+                 </div>
+                 <div class="modal-body text-justify">
+                    Approximately 80 staff members attended this presentation. It was regarded to be highly useful by the audience. They were delighted to be attending their first breast cancer awareness talk.
+                    <br><br>
+                    <strong>Response</strong>: After the awareness session by Dr. Hema, we spoke with the housekeeping staff to get their feedback on the talk. All of them found the discussion useful. They attended such an awareness talk for the first time and were enthusiastic.
+                    <br><br>
+                   </p>
+                 </div>
+               </div>
+               <div id="overlay"></div>
+             </p>
+             <div class="row">
+                 <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                 </p>
+             </div>
+             <br>
+
+             <h3>Ms Reena</h3>
+             <h5>iBreast Screening Technician</h5>
+             <br>
+             <p>
+               iBreast is a preliminary screening test for breast Cancer. A few members of our team spoke with an iBreast technician to learn how people are scanned at camps, whether people are reluctant to be screened, what challenges they encounter during the procedure, and what limitations the technique has. <a data-modal-target="#modal9" class="button">Read more</a>
+             </p>
+             <div class="modal2" id="modal9">
+               <div class="modal-header">
+                   <div class="title">Ms Reena- iBreast Technician</div>
+                   <button data-close-button class="close-button">&times;</button>
+               </div>
+               <div class="modal-body text-justify">
+                 <p>
+                   For confirmation, a mammogram or FNAC is required. The main aim of organising screenings is to reach middle-class household women who don't prioritise their health over their family and chores. The system involves a portable sensor and a Bluetooth-connected screen to view the image of 1/16th of the area at a stretch. Gradually we scan the entire area in parts and complete the scan. If there are any lesions or lumps, it will show a red colour as an indication. There are a few situations where false positive cases are shown. However, this method has proven quite helpful for screening a number of patients and assisting them in receiving an early diagnosis of their ailment.
+                 </p>
+                 <p>
+                   Overall, she claimed that despite people's initial reluctance, after  learning about cancer and the need for screening, they are prepared to undergo screening and be informed of developments by the doctors. This was an inspiration for us to conduct more activities in the future <a href="">[6]</a>.
+                 </p>
+               </div>
+             </div>
+             <div id="overlay"></div>
+             <div class="row">
+               <img class="img" src="../../static/images/hp_5.png" alt="picture">
+               <p class="article">
+                 <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+               </p>
+             </div>
+             <br>
+
+             <h3>Information Pamphlets</h3>
+             <h5>About Self Breast Examination</h5>
+             <br>
+             <p>
+               The high percentage of positive iBreast Exam results indicated the prevalence of breast cancer. Our institute is nestled in the foothills of the western ghats, 40 kilometres from the main city of Thiruvananthapuram. People in the vicinity of our institute reside in rural areas and lack access to screening tools.
+             </p>
+             <p>
+               Therefore, we decided to educate them on self-breast inspection techniques that can be undertaken in their homes. We distributed pamphlets on campus, in the neighbourhood near campus, and in our hometown. Brochures were available in English and three additional languages (Malayalam, Tamil, and Hindi). Illustrations were utilised to emphasise the <strong>SBE (Self Breast Examination)</strong> approach. It was created so that people may easily comprehend and follow the instructions. Dr. Hema Francis verified it before distribution.
+               <a data-modal-target="#modal9" class="button">Read more</a>
+             </p>
+             <div class="modal2" id="modal9">
+               <div class="modal-header">
+                   <div class="title">Ms Reena- iBreast Technician</div>
+                   <button data-close-button class="close-button">&times;</button>
+               </div>
+               <div class="modal-body text-justify">
+                 <p>
+                   Response: Distributing pamphlet was found very useful as everyone could not attend the awareness talk that we conducted in our institute. The staff of our institute even collected pamphlets for their relatives. Distribution of these in public places was also effective.
+                 </p>
+               </div>
+             </div>
+             <div id="overlay"></div>
+             <p>
+               Pamphlets in <a href="https://static.igem.wiki/teams/4359/wiki/education/pamphlet-english.pdf">English</a>, <a href="https://static.igem.wiki/teams/4359/wiki/education/pamphlet-tamil.pdf">Tamil</a>, and <a href="https://static.igem.wiki/teams/4359/wiki/education/pamphlet-hindi.pdf">Hindi</a> are available here.
+             </p>
+             <div class="row">
+                 <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                 </p>
+             </div>
+             <br>
+             <br>
+
+             <h3>Stage Play for Breast Cancer Awareness</h3>
+             <h5>In Collaboration with Theatrics Club of IISER Thiruvananthapuram</h5>
+             <br>
+             <p>
+              We desired to expand the scope of our awareness campaigns. In addition to expanding the programme, our objective was to spread our message to people of all ages and genders. We decided to stage a play in public. We, in collaboration with the Theatrics society of IISER Thiruvananthapuram, performed a play, <strong>"Let's fight with Courage"</strong>, to the crowd in one of the biggest malls of Thiruvananthapuram city - Mall of Travancore.
+            </p>
+            <p>
+              Team members and drama club members collaborated to create a play about the significance of early breast cancer screening. <a data-modal-target="#modal10" class="button">Read more</a>
+            </p>
+            <div class="modal2" id="modal10">
+              <div class="modal-header">
+                  <div class="title">Stage Play - breast cancer awareness</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body text-justify">
+                <p>
+                  In the drama, a housewife discovers that the lump on her breast may be breast cancer after watching television awareness programmes. Her examination results indicate that she has breast cancer. A few months of treatment were enough to eradicate cancer. It disseminates the idea that cancer screening tests are available and can save lives when used appropriately. We also described how to diagnose breast cancer through our play.
+                </p>
+                <p>
+                  <strong>Response</strong>: The audience considered our performance to be beneficial and appreciated our efforts. In addition, we presented them with leaflets that explained breast cancer detection in depth.
+                </p>
+              </div>
+            </div>
+            <div id="overlay"></div>
+            <div class="row">
+                <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                </p>
+              </div>
+            <br>
+
+            <br>
+
+            <h3>Ms Premi Mathew</h3>
+            <h5>Founder and CEO of PYM Campaign</h5>
+            <br>
+            <p>
+              Premi Mathew is the founder and CEO of Hair for Hope India and Protect your mom. She has survived breast cancer. She initiated the <strong>Protect Your Mom (PYM) campaign</strong> to emphasise the significance of breast cancer screening at an early stage and aims to convey this message to children through whom their mothers will be informed. The mission of <strong>Hair for Hope India</strong> is to donate hair to cancer patients who have lost their hair as a result of chemotherapy.
+            </p>
+            <p>
+              Through our interactions with breast cancer survivors, we learned that although hair loss does not cause discomfort, it can significantly impact a patient's self-esteem. Additionally, it influences how others treat them. It is widely understood that one of the side effects of chemotherapy is hair loss. Thus, we visited Premi Mathew and learned more about her business and her fight against cancer. She has encountered several obstacles during her treatment and was aware of the significance of early detection. To support her wonderful cause, we collaborated with Hair for Hope India and the Protect your Mom campaign. We distributed posters conveying the PYM message.
+            </p>
+            <div class="row">
+                <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                </p>
+            </div>
+            <br>
+            <br>
+
+
+            <h3>Hair Donation Campaign</h3>
+            <h5>In Collaboration with Hair for Hope, India</h5>
+            <br>
+            <p>
+              Our meeting with Premi Mathew prompted us to organise a campus-wide hair donation drive. The least we can do for cancer patients is to donate our hair. It is crucial because, throughout cancer therapy, patients may get unwell and weak. Additionally, losing hair and being isolated from society are difficult to manage. Using wigs to restore their confidence might be of tremendous assistance. Approximately twenty ponytails of hair would be needed to create a wig. Therefore, as many individuals as possible should donate their hair. On August 15, we held a hair donation event with the non-profit Hair for Hope India. <a data-modal-target="#modal11" class="button">Read more</a>.
+              <div class="modal2" id="modal11">
+                <div class="modal-header">
+                    <div class="title">Hair Donation Drive</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    We sent information regarding hair donation to students and faculty at our institution. During the campaign, several students donated their hair. We obtained a written <a href="https://static.igem.wiki/teams/4359/wiki/safety/hair-donation-mou.pdf">MoU (Memorandum of Understanding)</a> from the CEO of the non-profit organisation to prevent any misuse of the donated hair. Only willing individuals with the minimum needed length donated their hair. We got <a href="https://static.igem.wiki/teams/4359/wiki/safety/consent-form-hair-donation.pdf">consent</a> from them before donating hair. We presented the donors with bookmarks as a token of our appreciation. It underscored the significance of their actions. We also informed them about the PYM (Protect Your Mom) campaign and how early breast cancer screening can save lives. We packaged the hair and shipped the package to the Amala medical college in Thrissur, where the donated hair will be transformed into wigs for people with cancer.
+                  </p>
+                </div>
+              </div>
+              <div id="overlay"></div>
+              <div class="row">
+                  <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                  </p>
+              </div>
+            <br>
+            <br>
+
+            <h3>Dr. Shantala Hari Dass</h3>
+            <h5>Associate Director, IndiaBioscience</h5>
+            <br>
+            <p>
+              Dr. Shantala is a neuroscientist and science administrator who is an Associate Director at IndiaBioscience. She is a passionate researcher who is also interested in scientific communication. We had questions regarding how to advance our project's research and communication components. She provided strategies for communicating synbio to non-STEM audiences. She encouraged students to take classes in <strong>synthetic biology</strong>, as they are the next generation and synthetic biology is a booming subject. We had a list of events planned for the outreach portion of our mission. She instructed us to prioritise the essentials and implement them after appropriate planning. After speaking with her, we devised a systematic plan for the outreach initiatives. We decided to offer synbio lessons to school children. Her advice to focus on school students proved helpful, as the questions posed by students throughout our interactions with them expanded our creativity even more.
+            </p>
+            <div class="row">
+                <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                </p>
+            </div>
+            <br>
+            <br>
+
+            <h3>We-Talk</h3>
+            <h5>Women Talk Series</h5>
+            <br>
+            <p>
+            Some of our stakeholders were kind enough to participate in the women's talk series 'We-Talk', which we, along with other iGEM Teams from India, organised. Talks highlighted various issues faced by women. Speakers of our talk series include:
+            <ul>
+              <li>Dr. Manjiri Bakre: CEO and Founder of OncoStem Diagnostics</li>
+              <li>Dr. Indira Palo: Gynaecologist & Obstetrician Doctor</li>
+              <li>Dr. Prerna Lakhwani: Senior Gynecologic Oncologist </li>
+              <li>Dr. Geetha Manjunath: CEO and Co-Founder of Niramai Health Analytics</li>
+            </ul>
+            <p>
+              The topics covered were Menstrual Hygiene, Adolescent Challenges, Cervical Cancer, and Breast Cancer. Their presentations on these topics enlightened the audience and proved helpful. After the three-day lecture series, a panel discussion took place. Each team's collaborators participated and discussed the issues women face. Students from different colleges attended the talk. The interactive sessions at the end of each session were very beneficial.
+            </p>
+            <div class="row">
+                <img class="img" src="../../static/images/hp_5.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 6. </strong>Dr. Rajendra Kurapati</em>
+                </p>
+            </div>
+            <br>
+            <br>
+
+            <h3>Track Your Waste</h3>
+            <h5>Journey Through Bio Waste Management</h5>
+            <br>
+            <p>
+              As our project wetlab progressed, we felt it essential to acknowledge the biowaste we generate and ensure the proper and secure disposal of the bio-wastes produced in our laboratories. The fact that our campus is located in the Western Ghats makes it all the more critical that we pay attention to how we handle the disposal of biological waste. We conducted in-depth research and a number of interviews with individuals involved in the biowaste management system. <a data-modal-target="#modal12" class="button">Read more</a>.
+            </p>
+            <div class="modal2" id="modal12">
+              <div class="modal-header">
+                  <div class="title">Track your waste</div>
+                  <button data-close-button class="close-button">&times;</button>
+              </div>
+              <div class="modal-body text-justify">
+                <p>
+                  It all started with a tip to the red coloured bin and the curiosity to know why different coloured bins and what is the waste of these wastes.
+                </p>
+                <p>
+                  We talked with: Dr. Poonam Thakur - Lab Safety officer; Mrs Nithya Rani NM - Teaching Assistant; Miss Anjitha and Miss Akhila - Housekeeping Staff; Jishnu - IMAGE Vehicle Driver; Mr Peter Sammuel, Manager in operation; Naveen M - MEP Engineer(Mechanical, Engineering and Plumbing Engineer, Dr. Joseph Benaven, the former secretary of IMAGE, Dr. V.Vijayachandran sir, secretary during the early stages of IMAGE plant
+                </p>
+              </div>
+            </div>
+            <div id="overlay"></div>
+            <p>
+              The details of our interaction and our findings throughout the course of our investigation into the waste produced by our institute is attached here.
+              <div>
+                <iframe style="padding: 5px 5% 5% 10%; height: 500px; width: 80%;" src="https://static.igem.wiki/teams/4359/wiki/safety/survey.pdf"></iframe>
+              </div>
+              <br>
+              For more details on the documentary and biowaste survey we conducted, see the <a href="https://2022.igem.wiki/iiser-tvm/education">education page</a>.
+            </p>
+            <br>
+            <br>
+
+            <h3>All India iGEM Meet</h3>
+            <h5>National Gathering of Indian iGEM Teams</h5>
+            <br>
+            <p>
+              The Indian Institute of Science in Bangalore hosted AIIM, the national gathering of all Indian iGEM teams, during July 23–25, 2022. AIIM gave us a forum where we could talk, work together, and improve our presentation abilities while also picking up new information from subject-matter specialists. All the teams got a feel for the final project presentations thanks to the mock jamboree-style presentations held for each group.
+            </p>
+            <p>
+              The AIIM turned out to be incredibly instructive for us. We also had the opportunity to respond to, incorporate, and develop the judges' queries and ideas into our product. Our team had a wonderful experience participating in the AIIM.
+            </p>
+
+            carousel
+            <br>
+            <br>
+
+            <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+              <strong>Summary</strong>
+              <br>
+              <br>
+              Thus we were able to establish an empathetic dialogue with our stakeholders. We contributed to the cancer survivors from a hair donation campaign; we helped the housekeeping staff at our institute get access to screening and awareness talk; we were able to educate people about breast cancer through our drama, pamphlet, project reveal and other meetups. In short, we were able to achieve what we had aimed, and that is to resolve the disconnect between science and society.
+              <a id="subhead3.5">
+            </p>
+            <br>
+
+          </div>
+
+          <div>
+
+            <h2>Project Safety</h2>
+            <br>
+            <p>
+              Safety has been an integral part of our project from the very beginning. To ensure we did our part in safety we interacted with few people and also did a thorough literature review to learn the safety rules and law governing the usage of genetically modified organisms. We were thus able to adopt valuable feedback and prepare consents and get the concerned approvals for our work.
+            </p>
+            <div class="row">
+                <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                </p>
+            </div>
+            <br>
+            <br>
+
+            <h3>Dr. Poonam Thakur</h3>
+            <h5>Assistant Professor</h5>
+            <br>
+            <p>
+              Dr. Poonam is an Assistant Professor at IISER Thiruvananthapuram. She discussed with us the protocols of waste disposal and also guided us throughout all our safety aspects during the project. She was instrumental in our ‘Track Your Waste’ initiative and also helped us review our project’s safety form and protocols. As the biosafety officer for our institute, Dr. Poonam also conducted a <strong>biosafety workshop</strong> on safety and security where she trained us adequately to be wary of the safety aspect of our project. <a data-modal-target="#modal13" class="button">Read more</a>.
+            </p>
+            <div class="modal2" id="modal13">
+              <div class="modal-header">
+                <div class="title">Dr. Poonam Thakur</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    The topics covered were:
+                   </p>
+                   <ul>
+                     <li>Health and safety awareness</li>
+                     <li>Laboratory safety awareness</li>
+                     <li>Waste disposal management</li>
+                   </ul>
+                   <p>
+                     The seminar was truly helpful and helped us prepare and plan our wetlab in the safest possible way.
+                   </p>
+                   <p>
+                     She also prompted us to meticulously research on the present legislations and regulations set by the Ministry of Science and Technology's Department of Biotechnology (DBT).
+                   </p>
+                   <p>
+                     The DBT supports and oversees biotechnology development, as well as establishes guidelines for safe practices and laws for managing genetic engineering in India. Their Biosafety Research Programme emphasises the implementation of biosafety procedures, rules, and guidelines under the Environment (Protection) Act 1986 and Rules 1989 to ensure user and environmental safety from the use of Genetically Modified Organisms (GMOs) and products thereof in research and application. The programme mandated a two-tier process consisting of Institutional Biosafety Committees (IBSC) at the Institute/company and the Review Committee on Genetic Manipulation (RCGM) in the Department of Biotechnology. As a result, we were able to obtain the necessary instructions from their online resources and apply for IBSC and RCGM approval.
+                   </p>
+                 </div>
+            </div>
+            <div id="overlay"></div>
+            <div class="row">
+                 <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                 <p class="article">
+                   <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                 </p>
+               </div>
+            <br>
+
+            <h3>Dr. Harilal Madhavan</h3>
+            <h5>Health Economist</h5>
+            <br>
+            <p>
+              Dr. Harilal Madhavan is an Ad-Hoc faculty at IISER Thiruvananthapuram, Kerala. He is a development health economist specialising in economic and interdisciplinary research on Asian indigenous medicines, health and pharmaceutical policies and intellectual property rights.
+            </p>
+            <p>
+              During our meeting, we discussed our plans about releasing a survey to analyze public awareness, conduct camps and other activities we had in mind. He also introduced the topic human subject research to us and told us the importance of complying by it during all our events and since then we ensured to follow necessary guidelines to respect the interest of our participants. <a data-modal-target="#modal14" class="button">Read more</a>.
+            </p>
+            <div class="modal2" id="modal14">
+              <div class="modal-header">
+                <div class="title">Dr. Harilal Madhavan</div>
+                  <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    Our team held a number of online and offline meetings, webinars, polls, interviews, films, camps, and competitions throughout the course of our project to raise awareness and gather information for improving it. We made sure to take all necessary steps and adhere to all applicable laws and regulations, as well as any institutional guidelines or instructions, that concerns Human Subject Research.
+                    <br>
+                    <ul>
+                    <li>We prepared consent forms prior to all our events like the screening and hair donation camp and also signed a memorandum of understanding with our collaborators.</li>
+                    <li>The surveys conducted were run by the concerned faculty in our institute before releasing it. We also gained the participants consent and their guardians consent (in case of minor participants) for filling the form.</li>
+                    <li>All webinars and interactions were recorded only with the permission of the participants.</li>
+                  </ul>
+                  </p>
+                </div>
+              </div>
+            <div id="overlay"></div>
+            <div class="row">
+              <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                <p class="article">
+                  <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                </p>
+              </div>
+              <br>
+
+              <h3>Dr. Rahul Roy</h3>
+              <h5>Associate Professor, IISc Bangalore</h5>
+              <br>
+              <p>
+                He is an Associate Professor in the Chemical Engineering department at the Indian Institute of Science (IISc) and also an Associate Faculty at the Centre for BioSystems Science and Engineering.
+              </p>
+              <p>
+                We met with Dr. Rahul to gain insights into how to safely engineer cytolysin A as a display system for our OMVs. In the past few years, he has worked intensively with ClyA to determine how natural ClyA can operate as a toxin against mammalian cells. He provided the following recommendations:
+              </p>
+              <ul>
+                <li>He clarified that the protomeric form of ClyA was the predominant conformation in the bacterial outer membrane and that ClyA does not cause significant leakage of cargo from vesicles or of periplasm from bacteria, which strengthened our choice to use ClyA in our project.</li>
+                <li>We also received some valuable suggestions that certain substitution mutations could be made to attenuate ClyA and it could effectively prevent its toxicity by inhibiting oligomerization.
+                <li>He suggested attenuating ClyA using the following mutation:
+                  <br>
+                  The Y178F mutation in the cholesterol binding motif of the beta-tongue of ClyA prevents oligomerization into a pore-forming complex and hinders the pore-forming ability of mammalian cell membranes.
+                 </li>
+              </ul>
+             <p>
+                This mutation helped us secure the required level of safety for our Cytolysin A study.
+              </p>
+              <div class="row">
+                  <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                  <p class="article">
+                    <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                  </p>
+              </div>
+              <br>
+
+
+             <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+               <strong>Summary</strong>
+               <br>
+               <br>
+              Through our efforts, we were able to scrupulously follow the general safety requirements, safety guidelines prescribed by our institute, iGEM’s safety rules and policies throughout the execution of our project. We were able to develop a solution that is safe both for the environment and the people who depend on it.<a id="subhead3.6">
+             </p>
+             <br>
+           </div>
+
+           <br>
+           <h2>Future Plans</h2>
+           <br>
+           <p>
+             The allotted eight months of the iGEM competition is not enough to bring out the project's full potential. Moreover, we had several reservations about the feasibility and execution of these phases. DUONCO must go through several stages of clinical trials before it can be used in treatment. We met with experts from various fields to learn more about this and to plan future experiments.
+           </p>
+           <div class="row">
+               <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+               <p class="article">
+                 <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+               </p>
+           </div>
+           <br>
+           <br>
+           <h3>Dr. Rona Joseph</h3>
+           <h5>Oncologist at RCC, Thiruvananthapuram</h5>
+           <br>
+           <p>
+             Dr. Rona is an Assistant Professor at the department of oncology at RCC (Regional Cancer Centre). We discussed the adverse effects of chemotherapeutic and immunotherapeutic treatments during our meeting. She urged us to continue developing our project and informed us of the other available targeted therapies that target antibodies. T-DM1 is an FDA-approved, effective drug for treating HER2-positive breast cancer. In addition, GMO-based pharmaceuticals are also available in the market; however, none of them is ideal. She stated that one of the side effects of antibody-directed therapy is the development of resistance to the drug. Furthermore, to determine whether our treatment has similar side effects, it must undergo clinical trials during which most drugs are typically rejected. Only after multiple stages of testing can the efficacy of a particular treatment be confirmed.
+           </p>
+         <div class="row">
+                      <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                      <p class="article">
+                        <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                      </p>
+          </div>
+          <br>
+          <br>
+          <h3>Dr. Priya Srinivas</h3>
+          <h5>Scientist at RGCB, Thiruvananthapuram</h5>
+          <br>
+          <p>
+            Dr. Priya is a scientist at the Rajiv Gandhi Centre for Biotechnology (RGCB), Thiruvananthapuram. She is working on understanding the mechanisms leading to the early onset of breast cancer. She was able to answer several questions we faced while taking our project further.
+          </p>
+          <ol>
+            <li>How is DUONCO better than existing therapies, and at what stage would it be best suited for administration?
+              <br>
+              The expression of HER2 in cells of various stages is not consistent. Experimental studies showed that there still will be enough expression in stages one, two, and three for the drug to be internalised. Gene copy number in the case of HER2 increases with progression, so it only increases the internalisation efficiency of the OMV.
+              <br>
+              She also noted that FDA-approved drugs are significantly fewer in the current market, and a drug targeting the HER2 receptor will be relevant.</li>
+            <li>What will be the mode of administration?
+              <br>
+              Since tumours develop inside the ducts, she suggested a novel methodology for introducing drugs through nipple ducts (developed by Dr. Sara Sukumar, John Hopkins Hospital).</li>
+            <li>How to ensure that OMVs are stable till reaching the target?
+              <br>
+              She said that well-nourished patients would not respond well to drugs. Cancer cells require glucose, and if glucose is plenty, then drugs will not have action. So, she asked us to induce a state of glucose starvation. Serum concentration is essential in drug trials. In cell lines, 10% serum is used, but 2.5% serum should be used for clinical trials[7].</li>
+              <ol>
+                <div class="row">
+                             <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                             <p class="article">
+                               <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                             </p>
+                 </div>
+            <br>
+            <br>
+            <h3>Dr. Ram Mohan Ram Kumar</h3>
+            <h5>Scientist at RGCB, Thiruvananthapuram</h5>
+            <br>
+            <p>
+            Dr. Ram Mohan is an established scientist working in the field of nanomedicine to aid in diagnosing and treating diseases. He works as a scientist at Rajiv Gandhi Centre for Biotechnology (RGCB), Thiruvananthapuram. He suggested substituting exosomes for OMVs as a medication carrier. In addition, he proposed chemical conjugation for loading peptides onto the surface. <strong>Electroporation, sonication, and CaCl2 are the several methods he proposed for loading drugs into vesicles</strong>. The stability of the vesicles is compromised by electroporation, per his recommendation. He is familiar with employing CaCl2 for internalisation. When we inquired about his opinion regarding the mode of administration, he stated that it depends on the optimisation technique. He <strong>emphasised the significance of half-life and instructed us to determine the half-lives of the prodrugs and enzymes we would be working with</strong>. As we are working on the preliminary stages of the project, we considered his recommendations and adopted those we deemed feasible for our level.
+          </p>
+          <div class="row">
+                       <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                       <p class="article">
+                         <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                       </p>
+           </div>
+           <br>
+           <br>
+           <h3>Ms Varsha Jaisimha</h3>
+           <h5>Member of the iGEM Foundation's Engineering Committee</h5>
+           <br>
+           <p>
+            Ms Varsha Jaisimha is a former IISER Pune iGEM team member and also participated in After iGEM for a year. She is currently a member of the iGEM Foundation's engineering committee. She is accustomed to presenting iGEM work to a variety of audiences. We sought her since we were uncertain of how to present our project on a big stage. She provided recommendations for the poster and the presentation. Even while we included human practices in other aspects of our project, such as the wetlab and dry lab, this may not have been adequately communicated during the presentation. During presentations, she urged us to make a special effort to highlight our collaborative efforts. Presentations require effective time management. Within the presentation time provided, the project must be presented effectively. During our presentation, we will be sure to address these concerns. We later attended Ms Varsha's presentation at the All India iGEM Meet.
+          </p>
+          <div class="row">
+                       <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                       <p class="article">
+                         <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                       </p>
+           </div>
+           <br>
+           <br>
+           <h3>Ms Sangita Topiwala</h3>
+           <h5>Director of Market Access at Sanofi India Ltd</h5>
+           <br>
+           <p>
+           She is the Director of Market Access at Sanofi India Ltd and was previously the Director of Oncology and Transplantation at BU Head Oncology and Transplantation, Sanofi India Ltd.
+         </p>
+         <p>
+           Ms Sangita has 20 years of career experience in the oncology department in the Indian market. She was part of the pioneer team that introduced high-dose chemotherapy in India as a need in cancer therapy. Later, she joined SANOFI AVENTIS (<strong>Sanofi Aventis</strong>), a French multinational pharmaceutical and healthcare company. It engages in the research and development, manufacturing and marketing of pharmaceutical drugs, principally in the prescription market) and is currently working in the Market access department.<a class="button" id="six">Read More</a>
+
+                    Interaction with ma'am was an eye-opener for us to the marketing world and its workings. She gradually took us through all the phases a product had to undergo before reaching people. She briefed us about the significant steps involved.
+                   <br><br>
+                   <ul>
+                     <li>The initial step is preclinical lab work, and if a product is approved and appropriate, it goes to Phase one, two, and three trials. A country-specific local trial is required in some places, while others only require Phase 3 regulations. Most countries agree to launch with an assurance of PMS (post-market surveillance). Few countries also proceed to test real-world efficacy (RWE).</li>
+                     <li>The second step includes evaluating markets, population classifications, and paying capability. Modern medical treatment should combine safety, adherence, quality of life, targeted delivery, and other factors for effective therapy. Government approval is also necessary. NICE (The National Institute for Health and Care Excellence, UK) reviews treatment reimbursement based on HTA (health technology assessment) standards. Market prices are set using International Reference Pricing.</li>
+                     <li>Step three includes commercialising, conceptualising, engaging, and consumer understanding. Some corporations start an early access programme that requires special approvals from the host country, resulting in customer experience and an excellent advisory board by product launch.</li>
+                   </ul>
+                   <br>
+                   <p>
+                   We had questions about how to proceed with our project in the future, and we learned that the cost we fix would vary depending on whether the project is in its early phases and whether it requires a licence or a proof of concept. We didn't see how a drug delivery system would be different. She enumerated the pros and cons. <strong>Bioequivalence tests are needed</strong>. Using an existing medicine increases safety, but we must first pass an inferiority trial. But this would reduce failures in phases one, two, and three trials. <strong>She also discussed how a delivery system could obtain an IP patent if the conceptualisation can be proven</strong>. She advised us to refer to the CDSCO, Drugs and cosmetics act under DCGI. The act requires clinical trial phase three in the intended country or a waiver promising phase four. We were also introduced to a commercially available nanoparticle-based targeted delivery method, Abraxane, to refer more and develop our future direction.
+
+         </p>
+         <div class="row">
+                      <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                      <p class="article">
+                        <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                      </p>
+          </div>
+          <br>
+          <br>
+          <h3>Kerala Start Mission</h3>
+          <h5>An Agency by Government of Kerala</h5>
+          <br>
+          <p>
+          Kerala Startup Mission is an agency started by the Government of Kerala to support rising entrepreneurs in Kerala. At the Kerala Technopark, we had the opportunity to discuss our concept with Mr Anoop Ambika, CEO of Kerala Startup Mission. He was interested in our proposal and advised that we discuss the process of forming a company, determining who would be the CEO and dividing the stakes among the team members. He also suggested that we approach the Startup Mission via their "Idea Grant" for student startup enterprises to receive the initial funding required to finish our proof of concept work and give us a push to begin licensing our project to interested companies or programs like that of C-CAMP's DIA mentioned earlier.
+        </p>
+        <div class="row">
+                     <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                     <p class="article">
+                       <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                     </p>
+         </div>
+         <br>
+         <br>
+         <h3>Other Interactions</h3>
+         <h5>Marketing</h5>
+         <br>
+         <p>
+           During the All India iGEM Meet, we had a round table chat where we could pitch and discuss our proposals with various founders of Indian biotech firms. These individuals included CEOs, corporate executives, and senior entrepreneurs. The teams interacted for around 15 minutes at each round table, establishing interesting talks about turning ideas into commercial businesses. We had a comprehensive chat with Mr Vaibhav Bhatia, founder of Lamark Biotech, who offered us insights into the process of patenting and licensing your ideas as researchers moving into the industry.
+       </p>
+       <div class="row">
+                    <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+                    <p class="article">
+                      <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+                    </p>
+        </div>
+        <br>
+        <br>
+        <p style="border-width:3px; border-style:solid; border-color:##002147; padding: 1em;">
+          <strong>Summary</strong>
+          <br>
+          <br>
+          We could create an experimental plan for our subsequent experiments using these discussions. All the interactions also prompted us to consider the clinical trials more closely once the drug delivery system is developed. It involves multiple steps. Choosing the appropriate test model is also crucial. For selecting the proper design and set of experiments, engaging in more thorough discussions and literature reviews is necessary. <a id="subhead3.7">
+        </p>
+        <br>
+
+        <br>
+        <h2>Conclusion</h2>
+        <br>
+        <p>
+          Each step in the project was the product of extensive literature research and numerous conversations among ourselves, experts, and stakeholders. Human Practices are inevitable in any iGEM project since they bridge the gap between developers and society.
+        </p>
+        <p>
+          Our different interactions helped us discover several aspects of the problem we were attempting to solve. Human practices helped us grasp the broader impact of our undertaking and the potential negative consequences on society. This shows the project's dual nature in that we significantly contribute to its evolution by possibly attempting or making efforts to improve further and reduce harm. We were accustomed to focusing entirely on the subject matter being from a scientific background. But we were completely unfamiliar with our country's market restrictions, and while conducting the study, we recognised the significance of data protection, privacy, and consent.
+        </p>
+        <p>
+          Our initiative is still in its early stages, and we hope to meet various experts and stakeholders we have not reached out to in the future phases.
+        </p>
+        <div class="row">
+            <img class="img" src="https://static.igem.wiki/teams/4359/wiki/human-practices/single-17.png" alt="picture">
+            <p class="article">
+              <em class="figure-legend"><strong>Figure 3. </strong>At Vithura Panchayat Office</em>
+            </p>
+        </div>
+        <br>
+        <a id="subhead3.8">
+
+      <h2>References</h2>
+      <br>
+
+
+
+
+
+
+                <h3>Breast Cancer Screening Camp</h3>
+                <h5 style="color:#002147">In association with Indian Medical Association</h5>
+                <br>
+                <p>
+                  Our team organised a successful Breast Cancer Screening campaign for our institution's female housekeeping staff. IMA (Indian Medical Association) and KIMS Health Centre, Thiruvananthapuram collaborated on the event. Dr. Hema assisted in the organisation of this programme. Dr. Kavitha Ravi was the honoured guest during the event. She is an adjunct professor at Government Medical College, Thiruvananthapuram. <a class="button" id="six">Read More</a>
+                </p>
+
+                      <p style="text-align: left;">
+                        The examination was administered utilising the iBreast Exam. It was handled by four KIMS Health Center technicians. The iBreastExam is a portable gadget that detects breast abnormalities. It is not a confirming test, although it can detect anomalies. The one-day screening camp was attended by around 35 housekeeping staff members. Participants were between the ages of 35 and 50. P roper written consent was obtained from the participants, and the respective doctors signed an MOU. To assure complete safety, we emailed the iGEM headquarters about our programme and obtained their approval before conducting tests. It is our responsibility to ensure that no stakeholders or members of the public are affected in any way by our project. Therefore, all safety regulations were fulfilled prior to implementing any programmes, especially large-scale ones.
+                        <br><br>
+                        The participants discussed their testing experiences. Nearly all of them were receiving screening tests for the first time, demonstrating the inaccessibility of such testing for persons living in rural areas. 8 percent of individuals who were tested came back positive, which is an extremely high percentage. Since the iBreast Exam is not a confirmatory test, they were referred for a proper confirmatory test and further for treatment.
+                        <br><br>
+                        The memorandum is available <a href="">here.</a>
+                        <br>
+                        The consent form can be found <a href="">here.</a>
+                      </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-8">
-    <h2>Overview</h2>
-    <hr>
-    <p>At iGEM we believe societal considerations should be upfront and integrated throughout the design and execution of synthetic biology projects. “Human Practices” refers to iGEM teams' efforts to actively consider how the world affects their work and their work affects the world. Through your Human Practices activities, your team should demonstrate how you have thought carefully and creatively about whether your project is responsible and good for the world. We invite you to explore issues relating (but not limited) to the ethics, safety, security, and sustainability of your project, and to show how this exploration feeds back into your project purpose, design, and execution.</p>
-    <p>Please note you can compete for the Silver Medal criterion #3, Gold Medal criterion #1 and the Best Integrated Human Practices prize with this page.</p>
-    <p>For more information, please see the <a href="https://responsibility.igem.org/human-practices/what-is-human-practices">Human Practices Hub</a>.
-    <p>On this page, your team should document all of your Human Practices work and activities. You should write about the Human Practices topics you considered in your project, document any activities you conducted to explore these topics (such as engaging with experts and stakeholders), describe why you took a particular approach (including referencing any work you built upon), and explain if and how you integrated takeaways from your Human Practices work back into your project purpose, design and/or execution.</p>
-  </div>
-  <div class="col-lg-4">
-    <h2>Inspirations</h2>
-    <hr>
-    <ul>
-      <li><a href="https://2019.igem.org/Team:Thessaly/Human_Practices">2019 Thessaly</a></li>
-      <li><a href="https://2019.igem.org/Team:Linkoping_Sweden/Human_Practices">2019 Linkoping Sweden</a></li>
-      <li><a href="https://2019.igem.org/Team:FDR-HB_Peru/Human_Practices">2019 FDR HB Peru</a></li>
-      <li><a href="https://2020.igem.org/Team:William_and_Mary/Human_Practices">2020 William and Mary</a></li>
-      <li><a href="https://2020.igem.org/Team:Rochester/Human_Practices">2020 Rochester</a></li>
-      <li><a href="https://2020.igem.org/Team:Leiden/Human_Practices">2020 Leiden</a></li>
-      <li><a href="https://2020.igem.org/Team:Baltimore_BioCrew/Human_Practices">2020 Baltimore BioCrew</a></li>
-    </ul>
-  </div>
-</div>
+    <script  src="../../static/modal.js"></script>
 
-{% endblock %}
+
+<!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white ">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+          <ul class="m-2 p-2">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Nam mauris velit</a></li>
+            <li><a href="#">Etiam vitae mauris</a></li>
+            <li><a href="#">Fusce scelerisque</a></li>
+            <li><a href="#">Sed faucibus</a></li>
+            <li><a href="#">Mauris efficitur nulla</a></li>
+          </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+      </div>
+    </div>
+    <hr>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Wiki Tools: Teams are allowed to remove it -->
+<style>
+    .wiki-tools-footer {
+        --bs-gutter-x: 1.5rem;
+        background: #222124;
+        margin: 0;
+        max-width: 100%;
+        padding: 1rem 3rem;
+        display: flex;
+        gap: 1.5em;
+    }
+    .wiki-tools-footer a {
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        transition: color 0.3s;
+    }
+    .wiki-tools-footer a:hover {
+        color: #08C784;
+    }
+    .wiki-tools-footer img {
+        object-fit: contain;
+    }
+    header{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #084bc7;
+    height: 10%;
+    padding: 1%;
+  }
+</style>
+
+<section class="wiki-tools-footer container">
+    <a id="wiki-tools-link">Access Wiki Tools</a>
+    <a id="wiki-tools-repo">View Source Code</a>
+    <img id="wiki-tools-pipeline">
+</section>
+
+<script>
+    const wikiToolsLink = document.getElementById('wiki-tools-link')
+    const wikiToolsRepo = document.getElementById('wiki-tools-repo')
+    const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
+
+    const path = document.location.pathname.split('/')
+
+    const competitionSlug = document.location.host.split('.')[0]
+    const teamSlug = path[1]
+    const page = path[2] === '' ? 'index' : path[2]
+
+    wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
+    wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
+    wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+</script>
+
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
+</script>
+
+
+<!-- Bootstrap Bundle with Popper -->
+<!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
+<script src="../../static/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

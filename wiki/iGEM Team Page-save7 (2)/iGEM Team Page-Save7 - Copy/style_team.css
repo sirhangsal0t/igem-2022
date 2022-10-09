@@ -8,11 +8,11 @@
     box-sizing: border-box;
     outline: none;
   }
-  
+
   html {
     font-size: 62.5%;
   }
-  
+
   :root {
     --primary-color: #2b81e4;
     --secondary-color: #eee;
@@ -21,20 +21,20 @@
     --light-grey-color: #777;
     --black-colour: rgb(0, 0, 0);
   }
-  
+
   .center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .container {
     background-color: var(--secondary-color);
     margin: 3.5rem;
     box-shadow: 0 1rem 3rem var(--grey-color);
     overflow: hidden;
   }
-  
+
   /* --------------------------- */
 
   /* Team page */
@@ -56,7 +56,7 @@
     padding: 5rem 0 10rem 0;
     z-index: 2;
   }
-  
+
   .team-heading {
     font-size: 8rem;
     text-align: center;
@@ -75,28 +75,28 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
-    
+
 
   .cards-wrapper-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 100vw;
-    
+
   }
   .cards-wrapper {
     display: flex;
     justify-content: space-evenly;
     margin-top: 5rem;
   }
-  
+
 
   .card {
     width: 35rem;
     position: relative;
     perspective: 150rem;
   }
-  
+
   .card-image {
     width: 100%;
     border-radius: 1rem 1rem 0 0;
@@ -107,9 +107,9 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    
+
   }
-  
+
   .front-side {
     text-align: center;
     background-color: var(--white-color);
@@ -119,14 +119,14 @@
     opacity: 0.9;
     transition: opacity 0.4s, transform 0.4s, box-shadow 0.4s;
   }
-  
+
   .change > .front-side {
     transform: translateZ(-5rem) translateX(3rem);
     box-shadow: 0 2rem 4rem #777;
     opacity: 0.5;
     z-index: 0;
   }
-  
+
   .tour-name {
     font-size: 2.5rem;
     font-weight: 700;
@@ -137,13 +137,13 @@
     color: var(--white-color);
     text-shadow: 0 0 1rem #000;
   }
-  
+
   .card-list {
     width: 80%;
     margin: auto;
     padding: 2rem 0 3rem 0;
   }
-  
+
   .card-list-item {
     font-size: 2rem;
     font-weight: 500;
@@ -156,8 +156,8 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
-  
-  
+
+
   .card-list-item-desc {
     font-size: 1.5rem;
     font-weight: 500;
@@ -183,19 +183,19 @@
     opacity: 0.5;
     transition: opacity 0.4s, transform 0.4s, box-shadow 0.4s;
   }
-  
+
   .change > .back-side {
     transform: translateZ(0) translateX(0);
     box-shadow: 0 0.5rem 2rem #aaa;
     opacity: 0.9;
   }
-  
+
   .description {
     font-size: 2rem;
     font-weight: 300;
     color: var(--white-color);
   }
-  
+
   .card-button {
     color: var(--primary-color);
     background-color: var(--white-color);
@@ -206,7 +206,7 @@
     border-radius: 5rem;
     cursor: pointer;
   }
-  
+
   .navigation-button {
     position: absolute;
     top: 0.5rem;
@@ -241,13 +241,13 @@
     0%   {text-shadow: 0rem 0rem 0rem var(--white-color);}
     50%  {text-shadow: 0rem 0rem 1rem var(--white-color);}
     100% {text-shadow: 0rem 0rem 0rem var(--white-color);}
-  }  
-  
+  }
+
   @keyframes Hover_Over_Text {
     0%   {color: var(--light-grey-color);}
     100% {color: var(--black-colour);}
-  } 
-  
+  }
+
   @keyframes Hover_Over_Nav_Button {
     0%   {color: var(--light-grey-color);
         background-color: rgba(255, 255, 255, 0.8);}
@@ -258,4 +258,4 @@
   @keyframes Hover_Over_Image {
     0%   {opacity: 1;}
     100% {opacity: 0.9;}
-  } 
+  }

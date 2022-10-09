@@ -81,15 +81,18 @@ footer a:hover { color: white; text-decoration: underline; }
   .img {
   display: block;
   margin: 4% auto;
-  width: 60%;
+  width:auto;
+  height:30%;
+  max-height:350px;
 }
 
 .figure-legend {
   display : block;
-  margin-left: inherit;
+  margin-left: auto;
   margin-right: auto;
-  padding-left: 30%;
-  width: 60%;
+  padding: 0 10%;
+  width: 100%;
+  text-align: center;
 }
 
 *{
@@ -381,6 +384,6 @@ td {
 
 }
 
-.video-center {
-
+.button:hover {
+  cursor:pointer;
 }

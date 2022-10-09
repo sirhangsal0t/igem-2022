@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://static.igem.wiki/common/icons/favicons/igem-2022.svg"/>
+    <link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+    <script  src="../../static/jquery.min.js"></script>
+    <script src="https://2021.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- Bootstrap CSS -->
+<!--    <link href="{{ url_for('static', filename = 'bootstrap.min.css') }}" rel="stylesheet"> -->
+<link href="../../static/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<!--    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">-->
+<link href="../../static/style.css" rel="stylesheet">
+<link href="../../static/style/modal.css" rel="stylesheet">
+<style media="screen">
+
+   * {
+     font-family: inter
+   }
+</style>
+    <style>
+        .wrapall {
+    display: grid;
+    position: relative;
+
+    justify-items: center;
+    align-items: center;
+    z-index: 1;
+    /* background-color: blanchedalmond;
+    background-image: url('images/background1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
+.wrapall_progress_cover {
+    position: fixed;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+    margin-top: 50vh;
+    margin-bottom: 50vh;
+    width: 10px;
+    height: 20vh;
+    margin-left: 1vw;
+    z-index: 5;
+}
+
+.wrapall_masterbg_cover {
+    display: none;
+    position: fixed;
+    z-index: 1;
+}
+
+.wrapall_masterbg {
+    display: none;
+    position: fixed;
+    width: 100vw;
+
+}
+
+.wrapall_progress_bar {
+    position: relative;
+    border-radius: 9px;
+    width: 1vw;
+    height: 1vh;
+    background-color: lightblue;
+    opacity: 1;
+    z-index: 6;
+}
+
+.wrapall_main-heading {
+    grid-column: 2/3;
+    margin: 2rem;
+    font-size: 60px;
+}
+
+.wrapall_hd {
+    grid-column: 2/3;
+    margin: 2rem;
+}
+
+.wrapall_spline {
+    grid-column: 2/3;
+    height: 100vh;
+}
+
+.wrapall_hd2 {
+    grid-column: 2/3;
+    margin: 1rem;
+}
+
+.wrapall_para {
+    grid-column: 2/3;
+    font-size: medium;
+}
+
+.wrapall_para2 {
+    grid-column: 2/3;
+    justify-self: start;
+}
+
+.wrapall_img {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    grid-column: 2/3;
+    justify-self: center;
+    border-radius: 7px;
+    width: 700px;
+    height: 600px;
+}
+
+.wrapall_video {
+    grid-column: 2/3;
+    width: 80vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.wrapall_table {
+    grid-column: 2/3;
+}
+
+.tablecont {
+    width: 84vw;
+    overflow-x: scroll !important;
+}
+
+table {
+    border: none !important;
+    border-collapse: revert !important;
+    width: 85% !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 21px;
+}
+
+th {
+    padding: 5px !important;
+    border: none !important;
+    background-color: #e1e1e1 !important;
+    border-radius: 4px;
+    color: #000000 !important;
+}
+
+
+td {
+    padding: 5px;
+    background-color: #d9d9d9;
+    color: #000000;
+    border-radius: 4px;
+}
+}
+    </style>
+    <title>Modeling | IISER_TVM - iGEM 2022</title>
+
+</head>
+
+<div class="wrapper-wrapper">
+  <div class="wrapper">
+
+  </div>
+</div>
+
+<div class="postloader">
+<body style="background-color: #fdfff0">
+<div class="progress-bar">
+  <div class="progress-bar-loader">
+
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+
+    <!---- TEAM NAME ---->
+    <a class="navbar-brand" href="#">IISER_TVM</a>
+
+    <!---- SMALL SCREEN MENU ICON ---->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto left-aligned">
+
+        <!---- HOME ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+
+        <!---- TEAM ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('pages', page='team') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Team
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='team') }}">Team</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='attributions') }}">Attributions</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='collaborations') }}">Collaborations</a></li>
+          </ul>
+        </li>
+
+        <!---- PROJECT ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Project
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='communication') }}">Communication</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='contribution') }}">Contribution</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='description') }}">Description</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='engineering') }}">Engineering</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='experiments') }}">Experiments</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='implementation') }}">Implementation</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='notebook') }}">Notebook</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='partnership') }}">Partnership</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='proof-of-concept') }}">Proof of Concept</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='results') }}">Results</a></li>
+          </ul>
+        </li>
+
+        <!---- PARTS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Parts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='part-collection') }}">Part Collection</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='parts') }}">Parts</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='improve') }}">Improve</a></li>
+          </ul>
+        </li>
+
+        <!---- SAFETY ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='safety') }}">Safety</a>
+        </li>
+
+        <!---- HUMAN PRACTICES ---->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('pages', page='human-practices') }}">Human Practices</a>
+        </li>
+
+        <!---- AWARDS ---->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Awards
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='education') }}">Education</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='entrepreneurship') }}">Entrepreneurship</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='hardware') }}">Hardware</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='inclusivity') }}">Inclusivity</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='measurement') }}">Measurement</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='model') }}">Model</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='plant') }}">Plant</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='software') }}">Software</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('pages', page='sustainable') }}">Sustainable</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<header class="masthead" style= background:url("../../static/images/math_modeling_banner.png"); id="alder">
+
+</header>
+
+<div class="cointainer my-4 mx-4">
+    <div class="row">
+      <div class="col-3">
+        <ul class="list-group fixed-content" id="sidenav">
+          <ul class="navbar-links">
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head1">Introduction</a>
+            </li>
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head2">OMV Internalisation</a>
+            </li>
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head3">Transcription and Translation</a>
+            </li>
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head4">Electroporation</a>
+            </li>
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head5">Ligand Receptor Interaction</a>
+            </li>
+            <li class="navbar-dropdown list-group-item list-group-item-action">
+              <a href="#head5">References</a>
+            </li>
+            </li>
+          </ul>
+        </ul>
+    </div>
+
+
+
+    <div data-bs-target="sidenav" data-bs-spy="scroll" class="col-9" style="padding-top: 20px" >
+      <div class="container " data-bs-spy="scroll"  data-bs-offset="-200px"   >
+        <br>
+        <!-- CONTENT GOES HERE FOR MODELING ------------------------->
+        <div>
+            <h1>Dry Lab</h1>
+            <h1>Mathematical modeling</h1>
+            <p>
+              Mathematical modeling plays a crucial role in understanding the project keeping precision l'esprit. For DUONCO, we
+              segregated the entire project into its constituent steps to look at the avenues we had in hand.
+            </p>
+            <br><br><br>
+            <img class="wrapall_img" src="../../static/images/Project plan.png" alt="">
+            <br><br><br>
+            <p class="wrapall_para">We identified 7 areas where we could work on. Upon further counselling from experts, we
+              realistically narrowed down our search to four. These avenues have been described below. We have also provided
+              with a picture of our understanding as well as all the equations used and have cited the works we have used for
+              achieving our goals</p>
+
+            <h1 class="wrapall_hd"> PROTEIN PRODUCTION </h1>
+            <p class="wrapall_para">
+
+              A main question we wanted to answer was about the rate of production of proteins inside the bacteria. By knowing
+              our inputs precisely, how could we predict the rate of production of proteins inside the bacteria? This is
+              important for us because the same quantity of protein will be expressed on the surface of the OMV, and we wanted to
+              control this density. To answer this question, we initially made a flow diagram of the genetic activity of our interest inside the cell. The diagram is as given below.
+            </p>
+            <img class="wrapall_img" src="../../static/images/gene circuit-03.png" alt="">
+            <p class="wrapall_para">
+              Here,to get the Protein output vs IPTG concentration on the extracellular space, we try to take into account each
+              and every
+              metabolic process that could be realistically modeled within the time frame available to us.
+
+              Our gene of interest is inserted into E.coli SKBR3 using the plasmid pGEX-4T-1. The plasmid we used in our case
+              had the
+              tac promoter in place for the lac operator that a normal lac operon model has. Though we included every factor we
+              could think of
+              in the model, we have done so based on the following assumptions
+            </p>
+            <h2 class="wrapall_hd2">Assumptions</h2>
+            <p class="wrapall_para2">
+              <ul class="wrapall_para">
+              <li> IPTG is transported by both LacY and by free diffusion</li>
+              <br>
+              <li> No catabolite repression as to LBbroth has no glucose</li>
+              <br>
+              <li> pTac drives transcription at a rate \(11 \times\)of LacUV5</li>
+              <br>
+              <li> LacI dimerizes and the dimer alone binds to the operator site LacO. We neglect tetramerization of LacI</li>
+              <br>
+              <li> LacI dimer binds with 1:1 stochiometry to LacO site</li>
+              <br>
+              <li> IPTG is not metabolized by LacZ and quation for LazZ are neglected</li>
+              <br>
+              <li> 2 IPTG molecules bind to a single dimer</li>
+              <br>
+              <li> Neglecting cell growth and cell division, DNA content stays the same for throughout</li>
+              <br>
+              <li> Copy number of pGEX4T1 with PBR322 origin is 20</li>
+              <br>
+              <li> Lac operon has other leakage factors that don't contribute significantly to the output</li>
+        </ul>
+            </p>
+            <br>
+            <p class="wrapall_para2">
+              Equations for the genomic copy are as given below
+
+              <br>
+              <br>
+              (1.a) Constitutive transcription of LacI and pTacI promoter as a zero-order equation
+              \[\phi \overset{k_{SMR}}\to M_{R}\]
+              \[\frac{dM_{R}}{dt} = k_{sMR} - \lambda_{M_{R}} M_{R}\]
+
+
+              (1.b) Translation of LacI mRNA to the repressor protein denoted R, following first order kinetics
+              \[M_{R} \overset{k_{SR}}\to M_{R} + R\]
+
+
+              (1.c) Dimerization of R following second order kinetics
+              \[2R\underset{k_{-2R}}{\stackrel{k_{2R}}{\rightleftharpoons}}R_{2}\]
+              \[\frac{dR}{dt} = k_{sR}M_{R} + 2k_{-2R} R_{2} - 2 k_{2R}{R}^{2} - \lambda_{R} R\]
+
+              Since the concentration of the operator is constant, it is equal to that of the combination of
+              free operator and repressor bound operator
+              \[O_{T} = O + R_{2}O\]
+              \[\frac{dR_{2}}{dt} = k_{2R}{R}^2 - k_{-2R} R_{2} - k_{r} R_{2} O + k_{-r} (O_{T} - O) - k_{dr1} R_{2} {I}^{2} + k_{-dr1} [I_{2}R_{2}] - \lambda_{R_{2}} R_{2}\]
+
+
+              (2.a) The dimer \(R_{2}\) binds with the operator O in a 1-1 manner
+              \[R_{2} + O \underset{k_{-r}}{\stackrel{k_{r}}{\rightleftharpoons}} R_{2}O\]
+
+
+              (3.a) IPTG(denoted I) binds with the dimer R_{2} such that 2 IPTG molecules bind with 1 dimer \(R_{2}\)
+              \[2I + R_{2} \underset{k_{-dr1}}{\stackrel{k_{dr1}}{\rightleftharpoons}} I_{2}R_{2}\]
+
+
+              (3.b) IPTG can also bind to the repressor-operator\(R_{2}O\) complex such that 2 IPTG molecules bind to
+              1\(R_{2}O\)
+              \[2I + R_{2}O \underset{k_{-dr2}}{\stackrel{k_{dr2}}{\rightleftharpoons}} I_{2}R_{2} + O\]
+              \[\frac{dO}{dt} = -k_{r} R_{2} O + k_{-r} (O_{T} - O) + k_{dr2} (O_{T} - O) {I}^{2} - k_{dr1} R_{2} {I}^{2}\]
+
+
+              (4.a) Transcription of LacY gene under pTac promoter is dependent on the concentration of free operator
+              \[O \overset{k_{S1MY}}\to O + mRNA_{Y}\]
+
+              \[\frac{dM_{Y}}{dt} = k_{s0MY} (O_{T} - O) + k_{s1MY} O - \lambda_{MY} M_{Y}\]
+
+
+              (4.b) Leaky transcription of LacY can be modelled as dependent on concentration of bound receptor \(R_{2}O\)
+              \[R_{2}O \overset{k_{SOMY}}\to R_{2}O + mRNA_{Y}\]
+
+
+              (4.c) Translation of LacY protein(denoted Y) follows first order kinetics
+              \[M_{Y}\overset{k_{SY}}\to M_{Y}+Y\]
+
+
+              (5.a) The facilitated tranportation of IPTG from the extra cellular region where its concentration is \(I_{ex}\)
+              to the
+              intracellular region where its concentration is I. This reaction is modelled with Michaelis Menten equations
+              \[Y + I_{ex} \underset{k_{-p}}{\stackrel{k_{p}}{\rightleftharpoons}}YT_{ex} \stackrel{kft}\to Y + I\]
+              \[\frac{d YI_{ex}}{dt} = -(k_{ft} + k_{-p}) YI_{ex} + k_{p} Y I_{ex} - \lambda_{YI_{ex} YI_{ex}}\]
+              \[\frac{dY}{dt} = k_{sY} M_{Y} + (k_{ft} + k_{-p}) YI_{ex} - k_{p} Y I_{ex} - \lambda_{Y} Y\]
+
+
+              (5.b) IPTG diffuses across the membrane
+              \[I_{ex} \underset{k_{t}}{\stackrel{k_{t}}{\rightleftharpoons}}I_{in}\]
+              \[\frac{dI_{in}}{dt} = -2 k_{dr1} R_{2} {I}^{2} + 2 k_{-dr1} [I_{2}R_{2}] - 2 k_{dr2} (O_{T} - O) {I}^{2} + 2 k_{-dr2} O [I_{2}R_{2}] + k_{ft} YI_{ex} + k_{t} (I_{ex} - I) + 2 \lambda_{[I_{2}R_{2}]} [I_{2}R_{2}] + \lambda_{YI_{ex}} Y_{I_{ex}}\]
+
+
+              (6.a) The degradation equations are mentioned below
+              \[M_{R}\overset{\lambda_{M_{R}}}\to\phi\]
+
+              \[M_{Y}\overset{\lambda_{M_{Y}}}\to\phi\]
+
+              \[R\overset{\lambda_{R}}\to\phi\]
+
+              \[R_{2}\overset{\lambda_{R2}}\to\phi\]
+
+              \[Y\overset{\lambda_{Y}}\to\phi\]
+
+              \[YI_{ex}\overset{\lambda YI_{ex}}\to I\]
+
+              \[I_{2}R_{2}\overset{\lambda_{I_{2}R_{2}}}\to I\]
+
+              \[mRNA_{Y}\overset{\lambda M_{Y}}\to \phi\]
+
+              \[C\overset{\lambda c}\to \phi\]
+
+
+
+              <!-- (6.b) IPTG diffuses across the membrane
+              \[I_{ex} \underset{Kt}{\stackrel{k_{p}}{\rightleftharpoons}}I_{in}\]
+              \[\frac{dI_{ex}}{dt} = k_{-t} I_{in} + k_{p} YI_{ex} - k_{t} I_{ex}\]
+              \[\frac{dI_{in}}{dt} = k_{t} YI_{ex} + k_{t} I_{ex} - k_{-t} I_{in} - \lambda_{I_{in}} I_{in}\]
+            </p> -->
+
+              <h2 class="wrapall_hd2"> Equations for Plasmid</h2>
+              <p class="wrapall_para2">
+
+                (7.a) Transcription of LacI and pTacI promoter in the plasmid
+              \[\phi \overset{k_{SMR}}\to M_{R}\]
+              \[\frac{dM_{Rp}}{dt} = k_{sMR} - \lambda_{M_{R}} M_{Rp}\]
+
+
+              (7.b) Translation of LacI mRNA to the repressor protein, denoted Rp for the plasmid
+              \[M_{Rp} \overset{k_{SR}}\to M_{Rp} + Rp\]
+
+
+              (7.c) Dimerization of Rp for the plasmid
+              \[2Rp\underset{k_{-2R}}{\stackrel{k_{2R}}{\rightleftharpoons}}R_{2p}\]
+              \[\frac{dRp}{dt} = k_{sR}M_{Rp} + 2k_{-2R} R_{2p} - 2 k_{2R}{Rp}^{2} - \lambda_{R} Rp\]
+
+              Here too, the concentration of the operator is constant, it is equal to that of the combination of
+              free operator and repressor bound operator
+              \[O_{Tp} = Op + R_{2p}Op\]
+              \[\frac{dR_{2p}}{dt} = k_{2R}{Rp}^2 - k_{-2Rp} R_{2p} - k_{r} R_{2p} Op + k_{-r} (O_{Tp} - Op) - k_{dr1} R_{2p} {Ip}^{2} + k_{-dr1} [I_{2}R_{2}p] - \lambda_{R_{2}} R_{2p}\]
+
+
+              (8.a) The dimer \(R_{2p}\) binds with the operator Op of plasmid in a 1-1 manner
+              \[R_{2p} + Op \underset{k_{-r}}{\stackrel{k_{r}}{\rightleftharpoons}} R_{2p}Op\]
+
+
+              (9.a) IPTG(denoted I) binds with the dimer R_{2p} such that 2 IPTG molecules bind with 1 dimer \(R_{2}\)
+              \[2I + R_{2p} \underset{k_{-dr1}}{\stackrel{k_{dr1}}{\rightleftharpoons}} I_{2}R_{2}p\]
+
+
+              (9.b) IPTG can also bind to the repressor-operator\(R_{2}Op\) complex such that 2 IPTG molecules bind to
+              \(R_{2}Op\)
+              \[2Ip + R_{2}Op \underset{k_{-dr2}}{\stackrel{k_{dr2}}{\rightleftharpoons}} I_{2}R_{2}p + Op\]
+              \[\frac{dOp}{dt} = -k_{r} R_{2p} Op + k_{-r} (O_{Tp} - Op) + k_{dr2} (O_{Tp} - Op) {I}^{2} - k_{dr1} R_{2p} {I}^{2}\]
+
+
+              (10.a) Transcription of LacY gene of plasmid under pTac promoter is dependent on the concentration of free operator
+              \[Op \overset{k_{S1MY}}\to Op + M_{Yp}\]
+
+              \[\frac{dM_{Yp}}{dt} = k_{s0MY} (O_{Tp} - Op) + k_{s1MY} O - \lambda_{MY} M_{Yp}\]
+
+
+              (10.b) Accounting for the leaky transcription of LacY gene\)
+              \[R_{2}Op \overset{k_{SOMY}}\to R_{2}Op + M_{Yp}\]
+
+
+              (10.c) Translation of LacY protein(denoted Yp)
+              \[M_{Yp}\overset{k_{SY}}\to M_{Yp}+Yp\]
+
+
+                (11.a) Transcription of ClyA(denoted c) under the pTac promoter is dependent on concentration of free operator
+                and the rate constant is 11 times \(k_{S1MY}\)
+                \[O \overset{k_{S1MYp}}\to O + M_{Yp}\]
+                \[\frac{ dM_{Yp}}{dt} = k_{SIMPp} O + K_{leakyp}\]
+
+                (11.b) Leaky transcription of ClyA
+                \[R_{2p}Op \overset{k_{leakyp}}\to R_{2p}Op + M_{Yp}\]
+
+                (12.a) Translation of \(M_{Yp}\) to the protein ClyA
+                \[M_{Yp} \overset{KM_{Yp}}\to M_{Yp} + C\]
+                \[\frac{dC}{dt} = k_{M_{Yp}} M_{Yp}\]
+
+              </p>
+              <div class="wrapall_table">
+                <span><span>
+                    <p><span>Table 1</span>. Symbols used for the <em>lac</em> operon
+                      species
+                    </p>
+                  </span></span>
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Symbol</th>
+                        <th>Species denoted</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>\(M_{R}\)</td>
+                        <td>LacI repressor mRNA</td>
+                      </tr>
+                      <tr>
+                        <td>R</td>
+                        <td>LacI repressor monomer</td>
+                      </tr>
+                      <tr>
+                        <td>R<sub>2</sub></td>
+                        <td>LacI repressor dimer</td>
+                      </tr>
+                      <tr>
+                        <td>O</td>
+                        <td><em>lacO</em> operator</td>
+                      </tr>
+                      <tr>
+                        <td>R<sub>2</sub>O</td>
+                        <td>Repressor-operator complex</td>
+                      </tr>
+                      <tr>
+                        <td>I</td>
+                        <td>Intracellular inducer IPTG</td>
+                      </tr>
+                      <tr>
+                        <td>I<sub>ex</sub></td>
+                        <td>Extracellular inducer IPTG</td>
+                      </tr>
+                      <tr>
+                        <td>I<sub>2</sub>R<sub>2</sub></td>
+                        <td>Repressor-inducer complex</td>
+                      </tr>
+                      <tr>
+                        <td>\(M_{Y}\)</td>
+                        <td>LacY permease mRNA</td>
+                      </tr>
+                      <tr>
+                        <td>Y</td>
+                        <td>LacY permease</td>
+                      </tr>
+                      <tr>
+                        <td>YI<sub>ex</sub></td>
+                        <td>Permease-inducer complex</td>
+                      </tr>
+                      <tr>
+                        <td>C</td>
+                        <td>Cly-A Protein complex</td>
+                      </tr>
+                      <tr>
+                        <td>∅</td>
+                        <td>Generic source or sink</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <span><span>
+                    <p><span>Table 2</span>. Parameters of the <em>lac</em> operon reaction
+                      model</p>
+                  </span></span>
+                <div>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Symbol</th>
+                        <th>Value</th>
+                        <th>Units</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><em>V</em><sub>E. coli</sub></td>
+                        <td>8 × 10<sup>−16</sup></td>
+                        <td>L</td>
+                        <td>E. coli volume
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>O<sub>T</sub></td>
+                        <td>1</td>
+                        <td>(copy number)</td>
+                        <td>operator content ([O]<sub>T</sub> ≈ 2.08 nM)</td>
+                      </tr>
+                      <tr>
+                        <td>[O<sub>T</sub>]</td>
+                        <td>1</td>
+                        <td>(copy number)</td>
+                        <td>operator content ([O]<sub>T</sub> ≈ 2.08 nM)</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>sMR</sub></td>
+                        <td>0.23</td>
+                        <td>nM·min<sup>−1</sup></td>
+                        <td><em>lacI</em> transcription rate<a name="btblfn2" href="#tblfn2" ></a></td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>sR</sub></td>
+                        <td>15</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacI monomer translation rate constant<a name="btblfn2" href="#tblfn2"
+                            ></a></td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>2R</sub></td>
+                        <td>50</td>
+                        <td>nM<sup>−1</sup>·min<sup>−1</sup></td>
+                        <td>LacI dimerization rate constant<a name="btblfn3" href="#tblfn3" ></a></td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>−2R</sub></td>
+                        <td>10<sup>−3</sup></td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacI dimer dissociation rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>r</sub></td>
+                        <td>960</td>
+                        <td>nM<sup>−1</sup>·min<sup>−1</sup></td>
+                        <td>association rate constant for repression</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>−r</sub></td>
+                        <td>2.4</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>dissociation rate constant for repression</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>dr1</sub></td>
+                        <td>3 × 10<sup>−7</sup></td>
+                        <td>nM<sup>−2</sup>·min<sup>−1</sup></td>
+                        <td>association rate constant for 1st derepression mechanism</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>−dr1</sub></td>
+                        <td>12</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>dissociation rate constant for 1st derepression mechanism</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>dr2</sub></td>
+                        <td>3·10<sup>−7</sup></td>
+                        <td>nM<sup>−2</sup>·min<sup>−1</sup></td>
+                        <td>association rate constant for 2nd derepression mechanism</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>−dr2</sub></td>
+                        <td>4.8·10<sup>3</sup></td>
+                        <td>nM<sup>−1</sup>·min<sup>−1</sup></td>
+                        <td>dissociation rate constant for 2nd derepression mechanism</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>s1MY</sub></td>
+                        <td>0.5</td>
+                        <td>min<sup>−1</sup></td>
+                        <td><em>lacY</em> transcription rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>s0MY</sub></td>
+                        <td>0.01</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>leak <em>lacY</em> transcription rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>sY</sub></td>
+                        <td>30</td>
+                        <td>min<sup>−1</sup></td>
+                        <td><em>lacY</em> translation rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>p</sub></td>
+                        <td>0.12</td>
+                        <td>nM<sup>−1</sup>·min<sup>−1</sup></td>
+                        <td>LacY-IPTG<sub>ex</sub> association rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>−p</sub></td>
+                        <td>0.1</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacY-IPTG<sub>ex</sub> dissociation rate constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>ft</sub></td>
+                        <td>6.10<sup>4</sup></td>
+                        <td>min<sup>−1</sup></td>
+                        <td>IPTG-facilitated transport constant
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>t</sub></td>
+                        <td>0.92</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>IPTG passive diffusion constant</td>
+                      </tr>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>Mc</sub></td>
+                        <td>30</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>Rate of translation of ClyA</td>
+                      </tr>
+                      </tr>
+                      <tr>
+                        <td><em>k</em><sub>S1Myp</sub></td>
+                        <td>0.5</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>Rate of transcription of ClyA</td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>MR</sub></td>
+                        <td>0.462</td>
+                        <td>min<sup>−1</sup></td>
+                        <td><em>lacI</em> mRNA degradation constant
+                            </td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>MY</sub></td>
+                        <td>0.462</td>
+                        <td>min<sup>−1</sup></td>
+                        <td><em>lacY</em> mRNA degradation constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>R</sub></td>
+                        <td>0.2</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>repressor monomer degradation constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>R2</sub></td>
+                        <td>0.2</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacY degradation constant
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>Y</sub></td>
+                        <td>0.2</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacY-inducer degradation constant
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>YIex</sub></td>
+                        <td>0.2</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>LacY-inducer degradation constant
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>I2R2</sub></td>
+                        <td>0.2</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>repressor-inducer degradation constant</td>
+                      </tr>
+                      <tr>
+                        <td><em>λ</em><sub>Iin</sub></td>
+                        <td>Negligible</td>
+                        <td>min<sup>−1</sup></td>
+                        <td>Degradation constant of IPTG inside cell</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+
+            <h1 class="wrapall_hd">OMV INTERNALISATION</h1>
+            <p class="wrapall_para">
+              One of the avenues of modeling we were hoping to achieve was OMV internalization.OMV internalisation is the process where the OMV goes into the cell and releases its contents.
+
+              This is one of the most important areas of the project we hoped to model.
+              The output from this step gives us clues if our experiments are theoretically sound.
+
+
+              OMV internalization is important for our project because it allows for the targeted
+              delivery of the prodrug and enzyme to cancer cells that overexpress both HER2 and CX3CR1.
+              <br><br>
+              This system is designed to function like an AND gate, where the drug is only active in cells that overexpress both
+              markers. Additionally, modeling OMV
+              internalization can help to optimize the system for maximum efficacy and minimize side effects.. OMV
+              internalisation was also
+              mathematically modelled using one dimensional differential equation allowing us to attain
+              greater accuracy in overall understanding of the mechanism.
+
+              Initial vescicular association with the membrane can be descibed as given below
+              \[C+C_{bs} \underset{k_{d}}{\stackrel{k_{a}}{\rightleftharpoons}} C_{b}\]
+
+              Where \(C\) stands for the free vescicles, \(C_{bs}\) for the number of free cell-surface receptors and \(C_{b}\) for
+              the number of vesicles with single ligand bound to surface receptor. \(k_{a}\) and \(k_{d}\) represent the
+              association and dissociation rate constants
+              Let the equation describing vesicular internalization given by the below equation
+              \[C_{b} \overset{k_{int}}\to C_{i}\]
+              The factors affecting the equilibrium reaction can be denoted as below
+              \[\frac{dC_{b}}{dt} = k_{a}C_{bs}C - k_{d}C_{b} - k_{int}C_{b}\]
+              Similarly, the free receptor change could be taken into account as given below
+              \[\frac{C_{bs}}{dt} = -k_{a}C_{bs} + k_{d}C_{b}\]
+              Internalization can be expressed by the equation below
+              \[\frac{dC_{i}}{dt} = k_{int}C_{b}\]
+
+              <h2 class="wrapall_hd2">Where the variables stand for:</h2>
+
+              <div class="wrapall_table">
+
+                  <table>
+                    <thead>
+                      <tr class="rowsep-1 valign-bottom">
+                        <th scope="col">Symbol</th>
+                        <th scope="col">Species denoted</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>\(C\)</td>
+                        <td>Concentration of Vescicles</td>
+                      </tr>
+                      <tr>
+                        <td>\(C_{b}\)</td>
+                        <td>Concentration of bounded vescicles</td>
+                      </tr>
+                      <tr>
+                        <td>\(C_{bs}\)</td>
+                        <td>Concentration of free binding sites</td>
+                      </tr>
+                      <tr>
+                        <td>\(C_{i}\)</td>
+                        <td>Concentration of internalized vesicles</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+
+              <p class="wrapall_para">Solving the equation numerically gives us the plot below</p>
+              <!-- \[C_{b}+C_{bs} \underset{k_{d 2}}{\stackrel{k_{d 2}}{\rightleftharpoons}} C_2\]
+            \[\frac{d C_{b}}{d t}=L_v k_{a} C C_{bs}-k_{d} C_{b}-\left(L_v-1\right) k_{a 2} C_{b} C_{bs}+2 k_{d 2} C_2\]
+            \[\frac{d C}{d t}=-2 k_{a} C C_{bs}+k_{d} C_{b}\]
+            \[\frac{d C_{0}}{d t}\!=\!-\!2k_{a1}C_{0}R_{s}\!+\!k_{d1}C_{1}\]
+            \[{\frac{d C_{2}}{d t}}=k_{a2}C_{1}R_{s}-2k_{d2}C_{2}\]
+            \[\frac{d C_{i n t}}{d t}=k_{i n t}C_{s}+\left(k_{d e g}-k_{r e c}\right)C_{i n t}\]
+            \[\]
+            \[\] -->
+            </p>
+            <img class="wrapall_img" src="/images/OMV internalization_seaborn.png" alt="">
+
+
+              <h1 class="wrapall_hd">ELECTROPORATION</h1>
+              <p class="wrapall_para">
+                Electroporation is the method of using high voltage electric pulses to increase cell permeability
+                facilitating delivery of drug and genetic material into the cell. In our project this technique has played
+                a crucial role in loading the drug into the OMV’s which acts as the vehicle for drug delivery in this
+                targeted model of delivery. The challenge was to optimize the size of the pore so as to enhance the
+                rate of drug carried in each OMV without compromising the drug loading process. Hence a
+                mathematical model was created to calculate the optimum pore size to be created and the most
+                effective carrying capacity of each OMV. This was done with help of one-dimensional differential
+                equations that took the pore size and carrying capacity as the variables. Protocols to be followed are to
+                be carefully studied as serious damage to OMVs jeopardise the final aim of the drug delivery
+                mechanism.
+
+                <h2 class="wrapall_hd2">Pore Density</h2>
+                <p class="wrapall_para">We assume the OMV's to be spherical in nature occupying a radius R. The electric field
+                  applied induces pores on the surface.
+                  Their exact size and radius distribution depends on the electric field being applied. One must be careful with
+                  this process, because any slight mistake
+                  could lead to irreversible electroporation and disruption of the membrane integrity.
+
+                  The pore density N is governed by the well known Krassova and Filev equation, given below
+                  \[\frac{d N}{d t}=\alpha\exp\left(\frac{V_{m}}{V_{e
+                  p}}\right)^{2}\left[1-\frac{N}{N_{0}\exp\left(q\left(\frac{V_{m}}{V_{e p}}\right)^{2}\right)}\right]\]
+                </p>
+
+                <p class="wrapall_para">Where {V_{m}} is the transmembrane potential of the spherical cell in a uniform electric
+                  field defined as:
+                  \[{V_{m}} = 1.5E \times r_{c}cos\psi\]
+                </p>
+
+                <p class="wrapall_para">We isolate particulars of these equation using the below constants
+                  \[K = \alpha{e}^{\frac{V_{m}^{2}}{V_{ep}^{2}}}\]
+                  \[C = \frac{ {e}^{-q{\frac{V_{m}^{2}}{V_{ep}^{2}}}}}{N_{o}}\]
+                </p>
+                <p class="wrapall_para"> The equation then becomes:
+                  \[\frac{dN_{ep}}{dt} = K(1 - N_{ep}C)\]
+                  Solving the above ordinary differential equation yeilds us:
+                  \[-{\frac{ln(1 - N_{ep}C)}{C}}{\rvert}_{N_{epo}}^{{N_{ep}}^{t}}\]
+                  \[-KCt = ln{(\frac{1 - {N_{ep}}^{t}C}{1 - {N_{ep}}^{o}C})}\]
+                  \[e^{-kct} = \frac{1 - {N_{ep}}^{t}C}{1 - {N_{ep}}^{o}C}\]
+                  \[e^{-kct}{(1 - {N_{ep}}^{o}C)} = {1 - {N_{ep}}^{t}C}\]
+                  The constants for our case are given below:
+                  \[\alpha = 1\times10^{9}\]
+                  \[V_{m} = 0.08\]
+                  \[V_{ep} = 0.258\]
+                  \[{(\frac{V_{m}}{V_{p}})} = 0.3100775194\]
+                  \[{(\frac{V_{m}}{V_{p}})}^{2} = 0.096148\]
+                  \[e^{{(\frac{V_{m}}{V_{p}})}^{2}} = 1.10092\]
+                  \[e^{-{(\frac{V_{m}}{V_{p}})}^{2}} = 1.10092\]
+                  \[r_{m} = 0.8\times{10}^{-9}m\]
+                  \[r_{a} = 0.51\times{10}^{-9}m\]
+                  \[\frac{r_{m}}{r_{\alpha}} = 1.5686\]
+                  \[q = 2.46059\]
+                  \[K = \alpha{e}^{\frac{V_{m}^{2}}{V_{ep}^{2}}} = 1.10092\]
+                  \[C = \frac{ {e}^{-q{\frac{V_{m}^{2}}{V_{ep}^{2}}}}}{N_{o}}= {(\frac{0.789322}{N_{o}})}\]
+                  We plug in these values for our original equation. It leads us to the plot shown below.
+                  \[{N_{ep}}^{t} = {\frac{1 - e^{-kct}{(1 - {N_{ep}}^{o}C)}}{C}}\]
+                  <!-- \[{N_{ep}}^{o} \to {N_{ep}}\; at\; t  = 0\]
+            \[{N_{ep}}^{t} \to {N_{ep}}\;  at\; t\] -->
+                </p>
+                <h1 class="wrapall_hd2">Discussion</h1>
+                <p class="wrapall_para">As expected the pore density exponentially decays off to 0 as we increase the field
+                  strength(characterized by membrane voltage Vm)</p>
+              </p>
+              <video controls loop class="wrapall_video" src="videos/Pore density.mp4"></video>
+              <h1 class="wrapall_hd">PRODRUG ENZYME INTERACTION</h1>
+              <p class="wrapall_para">
+                Prodrug is the precursor drug that is inactive independently but activates itself as it combines with the
+                promoiety. The damage to healthy cells is prevented by this inactive nature of prodrug, as the specific
+                combination of proteins found on the cancerous cells will make sure that only pro drug and pro
+                moiety enters the cell only in them and even if accidentally it enters in other cells only one of them
+                enters and being inactive will cause no damage to the cell. The prodrug enzyme kinetics are quite
+                important in understanding amount of prodrug required to destroy each cell and load it respectively.
+                Chemical instability, poor water solubility, rapid pre systemic metabolism, inadequate absorption, and
+                toxicity and many more hurdles in usual drug delivery mechanisms are overcome by the prodrug
+                method. This method also has less toxicity and is efficient compared to other methods making it a
+                suitable candidate for such processes.
+
+                <h2 class="wrapall_hd2">Assumptions</h2>
+                <p class="wrapall_para2">(i) Effect of serum concentration of 5-FC on measured tissue concentration of 5-FC is
+                  negligible</p>
+                <p class="wrapall_para2">(i) Effect of bound 5-FC and 5-FU on measured tissue concentrations of 5-FC and 5-FU is
+                  negligible</p>
+                <p class="wrapall_para2">(i) Distribution of 5-FC and 5-FU between interstitial and intercellular spaces is
+                  effectively instantaneous with a distribution volume of 1.0</p>
+                <p class="wrapall_para2">(i) The concentration of 5-FC, 5-FU and F Nuc withing the compartments is homogenous
+                </p>
+                <p class="wrapall_para2">(i) The tranport of 5-FU and of the tissue for first-order kinetics is same for each of
+                  the animals studied here</p>
+                <p class="wrapall_para2">(i) Measured levels of 5-FU and FNuc are both, unidirectional</p>
+                <p class="wrapall_para2">(i) FNuc is effecively rapped within the tumor tissue</p>
+                <div class="wrapall_table">
+                  <table>
+                    <tr>
+                      <th>Rate</th>
+                      <th>\[{k_{1}}^{app}\]</th>
+                      <th>\[{k_{3}}^{app}\]</th>
+                      <th>\[\frac{k_{1} \times k_{3}}{k_{2}+k_{3}}\]</th>
+                      <th>\[{k_{1}}^{app}\]</th>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>0.316</td>
+                      <td>0.0029</td>
+                      <td>0.0012</td>
+                      <td>0.0090</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>0.831</td>
+                      <td>0.0023</td>
+                      <td>0.0025</td>
+                      <td>0.0018</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>0.728</td>
+                      <td>0.0010</td>
+                      <td>0.0010</td>
+                      <td>0.0009</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>0.287</td>
+                      <td>0.0022</td>
+                      <td>0.0008</td>
+                      <td>0.0010</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>0.267</td>
+                      <td>0.0028</td>
+                      <td>0.0010</td>
+                      <td>0.0011</td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="wrapall_para">
+                  \[k_{i} = \frac{ {k_{1}}^{app}\times{k_{3}^{app}}}{{k_{2}}^{app} + {k_{3}^{app}}}\]
+                  \[Rate = -\frac{d[A]}{dt} = k[A]\]
+                  \[\frac{d[A]}{A} = -kdt\]
+                  \[\int_{[A]_{o}}^{[A]}\frac{d[A]}{[A]} = -\int_{to}^{t}kdt\]
+                  \[\int_{1}^{[A]}\frac{d[A]}{[A]} = -\int_{to}^{t}kdt\]
+                  \[ln[A] - ln[A_{o}] = -kt\]
+                  \[ln[A] = -kt + ln[A_{o}]\]
+                  \[t_{1/2} = \frac{ln2}{k}\]
+                  \[t_{1/2} = 551.26\; \pm 404.92s\]
+
+              <h1>LIGAND RECEPTOR INTERACTION</h1>
+              <p>
+                Ligand receptor interactions are a major class of protein-protein interactions that regulate life
+                processes and helps maintain specificity of various proteins and their functions. The conformational
+                change that the ligand undergoes effectively acts as a lock and key mechanism which discriminates
+                between proteins and makes sure that only the specific ligand binds to the receptor site.
+                Understanding ligand receptor interactions and quantifying their rates are crucial for designing the pro
+                drug delivery mechanism and ensuring the selective targeting of cancerous cells with minimum
+                collateral damage to healthy cells. The rate at which ligand binds at the receptor mechanism and the
+                probability of a ligand failing to do so give us important information in deciding the optimum dosage of
+                the pro drug to be loaded. It also helps in finding the rate of reaction and the time taken for the
+                successful completion of the binding. We proceed with finding the binding energies using Autodock Vina,
+                a popular molecular docking software.
+
+
+              </p>
+
+
+                </p>
+                <h2>References</h2>
+                <p class="wrapall_para">Eigenbrot C, Ultsch M, Dubnovitsky A, Abrahmsén L, Härd T. Structural basis for high-affinity HER2 receptor binding by an engineered protein. Proc Natl Acad Sci U S A. 2010 Aug 24;107(34):15039-44. doi: 10.1073/pnas.1005025107. Epub 2010 Aug 9. PMID: 20696930; PMCID: PMC2930565.</p>
+                <br>
+                <p class="wrapall_para">Jones Emily J., Booth Catherine, Fonseca Sonia, Parker Aimee, Cross Kathryn, Miquel-Clopés Ariadna, Hautefort Isabelle, Mayer Ulrike, Wileman Tom, Stentz Régis, Carding Simon R.
+        . The Uptake, Trafficking, and Biodistribution of Bacteroides thetaiotaomicron Generated Outer Membrane Vesicles  .Frontiers in Microbiology, 2020, Vol 11, 10.3389/fmicb.2020.00057
+                     </p>
+                <p class="wrapall_para"></p>
+              </p>
+
+
+          </div>
+
+        <!-- -------------------------------------------------------->
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <div id="mod-container" class="mod-containercss">
+    <div class="mod-background">
+      <div class="mod">
+        <h2>I'm a Modal</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          <svg class="mod-svg" xmlns="" width="100%" height="100%" preserveAspectRatio="none">
+                  <rect x="0" y="0" fill="none" width="1280" height="206" rx="3" ry="3"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src='../../static/style/modalscript.js'></script>
+    <script  src="../../static/style/modaljs.js"></script>
+
+
+<!-- Footer: MUST mention license AND have a link to team wiki's repository on gitlab.igem.org -->
+<footer class="pt-5 pb-5 footer py-5 mt-5 bg-dark text-white ">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6 col-xs-12">
+        <h4 class="mb-3">Heading</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis</p>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+          <ul class="m-2 p-2">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Nam mauris velit</a></li>
+            <li><a href="#">Etiam vitae mauris</a></li>
+            <li><a href="#">Fusce scelerisque</a></li>
+            <li><a href="#">Sed faucibus</a></li>
+            <li><a href="#">Mauris efficitur nulla</a></li>
+          </ul>
+      </div>
+      <div class="col-lg-3 col-xs-12">
+        <h4 class="mt-lg-0 mt-sm-4 mb-3">Contact</h4>
+        <p>22, Lorem ipsum dolor, consectetur adipiscing</p>
+        <p class="mb-0">(541) 754-3010</p>
+        <p>info@hsdf.com</p>
+      </div>
+    </div>
+    <hr>
+    <!-- The following MUST be on every page: license information and link to the repository on gitlab.igem.org -->
+    <div class="row mt-4">
+      <div class="col">
+        <p class="mb-0"><small>© 2022 - Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</small></p>
+	      <p><small>The repository used to create this website is available at <a href="https://gitlab.igem.org/2022/iiser-tvm">gitlab.igem.org/2022/iiser-tvm</a>.</small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- Wiki Tools: Teams are allowed to remove it -->
+<style>
+    .wiki-tools-footer {
+        --bs-gutter-x: 1.5rem;
+        background: #222124;
+        margin: 0;
+        max-width: 100%;
+        padding: 1rem 3rem;
+        display: flex;
+        gap: 1.5em;
+    }
+    .wiki-tools-footer a {
+        text-decoration: none;
+        color: white;
+        font-weight: 400;
+        transition: color 0.3s;
+    }
+    .wiki-tools-footer a:hover {
+        color: #08C784;
+    }
+    .wiki-tools-footer img {
+        object-fit: contain;
+    }
+    header{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #084bc7;
+    height: 10%;
+    padding: 1%;
+  }
+</style>
+
+<section class="wiki-tools-footer container">
+    <a id="wiki-tools-link">Access Wiki Tools</a>
+    <a id="wiki-tools-repo">View Source Code</a>
+    <img id="wiki-tools-pipeline">
+</section>
+<script>
+  setTimeout(function(){
+      $('.wrapper-wrapper').animate({opacity: 0}, 2000).attr('style', 'display: none;')
+;
+      $('.postloader').attr('style', 'display: block !important; opacity: 0;')
+.animate({opacity: 1}, 2000);
+  }, 7000);
+</script>
+<script>
+    const wikiToolsLink = document.getElementById('wiki-tools-link')
+    const wikiToolsRepo = document.getElementById('wiki-tools-repo')
+    const wikiToolsPipeline = document.getElementById('wiki-tools-pipeline')
+
+    const path = document.location.pathname.split('/')
+
+    const competitionSlug = document.location.host.split('.')[0]
+    const teamSlug = path[1]
+    const page = path[2] === '' ? 'index' : path[2]
+
+    wikiToolsLink.href = `https://tools.igem.org/wiki-tools/${competitionSlug}/${teamSlug}/${page}`
+    wikiToolsRepo.href = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}`
+    wikiToolsPipeline.src = `https://gitlab.igem.org/${competitionSlug}/${teamSlug}/badges/main/pipeline.svg`
+</script>
+
+<!--scrollspy-->
+<script>
+  var scrollspy= new bootstrap.ScrollSpy(document.body, {target: "#sidenav"})
+</script>
+
+<script>
+  $(window).on('scroll', function() {
+    a = $(window).scrollTop()
+    b = $(window).height()
+    c = $(document).height()
+
+    var scrollpercent = (a/(c-b))*100
+    $('.progress-bar-loader').css({height:scrollpercent}, 100)
+    console.clear
+    console.log(scrollpercent)
+    console.log(a)
+    console.log(b)
+    console.log(c)
+  })
+</script>
+<!-- Bootstrap Bundle with Popper -->
+<!--<script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>-->
+<script src="../../static/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
